@@ -1,0 +1,93 @@
+{
+  "surface": "component-library",
+  "name": "Primitives/Forms/Advanced/CommonUpload",
+  "storyId": "primitives-forms-advanced-commonupload--default",
+  "group": "Primitives",
+  "url": "iframe.html?id=primitives-forms-advanced-commonupload--default",
+  "viewport": "desktop",
+  "timestamp": "2026-07-07T05:59:52.130Z",
+  "score": 85,
+  "penalty": 18,
+  "violations": [
+    {
+      "id": "label",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag412"
+      ],
+      "description": "Ensure every form element has a label",
+      "help": "Form elements must have labels",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/label?application=playwright",
+      "nodes": [
+        {
+          "selector": "input",
+          "html": "<input class=\"sr-only\" tabindex=\"-1\" type=\"file\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the document has a main landmark",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": ".flex-col",
+          "html": "<div class=\"pointer-events-none relative z-10 flex flex-col text-sm\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "input",
+          "html": "<input class=\"sr-only\" tabindex=\"-1\" type=\"file\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 4,
+    "violationNodes": 5,
+    "passes": 22,
+    "incomplete": 1
+  }
+}

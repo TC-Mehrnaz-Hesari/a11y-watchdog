@@ -1,0 +1,16 @@
+# Credentials — never commit
+.env
+.env.*
+*.env
+
+# Dependencies / build output
+node_modules/
+.next/
+out/
+
+# Read-only reference clones (not part of this repo)
+tc-app-theme/
+tc-pricing-website/
+
+# OS
+.DS_Store

@@ -1,0 +1,57 @@
+{
+  "surface": "pricing",
+  "name": "Pricing Home",
+  "url": "http://tc-pricing-website-staging-alb-932992966.ap-southeast-2.elb.amazonaws.com/",
+  "viewport": "mobile",
+  "timestamp": "2026-07-07T05:58:00.244Z",
+  "score": 89,
+  "penalty": 12,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag143"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "nodes": [
+        {
+          "selector": ".tracking-tight > span",
+          "html": "<span style=\"color:hsl(201 78% 65%)\"> Prices</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #60bbeb, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".font-black.text-lg.text-white > span",
+          "html": "<span style=\"color:hsl(201 78% 65%)\"> Prices</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #60bbeb, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": ".pb-\\[calc\\(5rem\\+env\\(safe-area-inset-bottom\\)\\)\\] > section",
+          "html": "<section class=\"text-center text-white\" style=\"background:linear-gradient(135deg, hsl(215 47% 32%) 0%, hsl(215 55% 22%) 100%);padding:48px 16px 40px\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 2,
+    "violationNodes": 3,
+    "passes": 43,
+    "incomplete": 2
+  }
+}

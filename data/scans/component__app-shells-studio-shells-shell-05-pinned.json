@@ -1,0 +1,172 @@
+{
+  "surface": "component-library",
+  "name": "App Shells/Studio Shells",
+  "storyId": "app-shells-studio-shells--shell-05-pinned",
+  "group": "App Shells",
+  "url": "iframe.html?id=app-shells-studio-shells--shell-05-pinned",
+  "viewport": "desktop",
+  "timestamp": "2026-07-07T05:59:39.622Z",
+  "score": 57,
+  "penalty": 75,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag143"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "nodes": [
+        {
+          "selector": ".sm\\:flex > .font-semibold.text-base",
+          "html": "<p class=\"text-base font-semibold\">Hey, Kristina</p>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.11 (foreground color: #ffffff, background color: #f2f2f2, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".text-primary-foreground\\/50",
+          "html": "<p class=\"text-primary-foreground/50 text-sm md:max-lg:hidden\">Welcome back to dashboard</p>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.05 (foreground color: #f9f8f8, background color: #f2f2f2, font size: 9.8pt (13.125px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".bg-white\\/15",
+          "html": "<button data-slot=\"common-button\" type=\"button\" class=\"relative shrink-0 it...\">",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.09 (foreground color: #ffffff, background color: #f4f4f4, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "a[href$=\"trilogycare.com.au\"]",
+          "html": "<a href=\"https://trilogycare.com.au\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary\">Trilogy Care</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.32 (foreground color: #007f7e, background color: #f2f2f2, font size: 9.8pt (13.125px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".text-primary[target=\"_blank\"][rel=\"noopener noreferrer\"]:nth-child(2)",
+          "html": "<a href=\"https://trilogycare.com.au/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary\">Privacy Policy</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.32 (foreground color: #007f7e, background color: #f2f2f2, font size: 9.8pt (13.125px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "list",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2a",
+        "wcag131"
+      ],
+      "description": "Ensure that lists are structured correctly",
+      "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/list?application=playwright",
+      "nodes": [
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(1) > .w-full[data-slot=\"sidebar-group-content\"][data-sidebar=\"group-content\"] > ul[data-slot=\"sidebar-menu\"][data-sidebar=\"menu\"]",
+          "html": "<ul data-slot=\"sidebar-menu\" data-sidebar=\"menu\" class=\"flex w-full min-w-0 flex-col gap-0\">",
+          "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed: div"
+        }
+      ]
+    },
+    {
+      "id": "listitem",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2a",
+        "wcag131"
+      ],
+      "description": "Ensure <li> elements are used semantically",
+      "help": "<li> elements must be contained in a <ul> or <ol>",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/listitem?application=playwright",
+      "nodes": [
+        {
+          "selector": ".group\\/collapsible[data-slot=\"collapsible\"][data-state=\"closed\"]:nth-child(2) > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]",
+          "html": "<li data-slot=\"sidebar-menu-item\" data-sidebar=\"menu-item\" class=\"group/menu-item relative\">",
+          "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+        },
+        {
+          "selector": ".group\\/collapsible[data-slot=\"collapsible\"][data-state=\"closed\"]:nth-child(3) > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]",
+          "html": "<li data-slot=\"sidebar-menu-item\" data-sidebar=\"menu-item\" class=\"group/menu-item relative\">",
+          "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+        },
+        {
+          "selector": ".group\\/collapsible[data-slot=\"collapsible\"][data-state=\"closed\"]:nth-child(4) > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]",
+          "html": "<li data-slot=\"sidebar-menu-item\" data-sidebar=\"menu-item\" class=\"group/menu-item relative\">",
+          "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+        },
+        {
+          "selector": ".group\\/collapsible[data-slot=\"collapsible\"][data-state=\"closed\"]:nth-child(5) > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]",
+          "html": "<li data-slot=\"sidebar-menu-item\" data-sidebar=\"menu-item\" class=\"group/menu-item relative\">",
+          "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+        },
+        {
+          "selector": ".group\\/collapsible[data-slot=\"collapsible\"][data-state=\"closed\"]:nth-child(6) > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]",
+          "html": "<li data-slot=\"sidebar-menu-item\" data-sidebar=\"menu-item\" class=\"group/menu-item relative\">",
+          "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+        },
+        {
+          "selector": ".group\\/collapsible[data-slot=\"collapsible\"][data-state=\"closed\"]:nth-child(7) > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]",
+          "html": "<li data-slot=\"sidebar-menu-item\" data-sidebar=\"menu-item\" class=\"group/menu-item relative\">",
+          "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+        },
+        {
+          "selector": ".group\\/collapsible[data-slot=\"collapsible\"][data-state=\"closed\"]:nth-child(8) > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]",
+          "html": "<li data-slot=\"sidebar-menu-item\" data-sidebar=\"menu-item\" class=\"group/menu-item relative\">",
+          "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element"
+        }
+      ]
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": ".gap-2\\.5 > .font-semibold.text-base",
+          "html": "<span class=\"text-base font-semibold\">Payment</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(1) > .px-2.text-sidebar-foreground\\/70.transition-\\[margin\\,opacity\\]",
+          "html": "<div data-slot=\"sidebar-group-label\" data-sidebar=\"group-label\" class=\"flex h-8 shrink-0 it...\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(1) > .w-full[data-slot=\"sidebar-group-content\"][data-sidebar=\"group-content\"] > ul[data-slot=\"sidebar-menu\"][data-sidebar=\"menu\"] > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"] > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![href=\"#\"][data-slot=\"sidebar-menu-button\"] > span",
+          "html": "<span>Home</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(2)",
+          "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-2\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 5,
+    "violationNodes": 18,
+    "passes": 37,
+    "incomplete": 1
+  }
+}

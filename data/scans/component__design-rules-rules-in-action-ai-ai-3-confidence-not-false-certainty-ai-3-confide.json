@@ -1,0 +1,64 @@
+{
+  "surface": "component-library",
+  "name": "Design/Rules/Rules in Action/AI/AI-3 — Confidence, not false certainty",
+  "storyId": "design-rules-rules-in-action-ai-ai-3-confidence-not-false-certainty--ai-3-confidence-not-false-certainty",
+  "group": "Design",
+  "url": "iframe.html?id=design-rules-rules-in-action-ai-ai-3-confidence-not-false-certainty--ai-3-confidence-not-false-certainty",
+  "viewport": "desktop",
+  "timestamp": "2026-07-07T05:59:36.083Z",
+  "score": 85,
+  "penalty": 17,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag143"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "nodes": [
+        {
+          "selector": ".hover\\:bg-muted.rounded-md.px-3\\.5:nth-child(2) > .opacity-70.tabular-nums",
+          "html": "<span class=\"tabular-nums opacity-70\">64%</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.03 (foreground color: #949494, background color: #ffffff, font size: 9.8pt (13.125px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".hover\\:bg-muted.rounded-md.px-3\\.5:nth-child(3) > .opacity-70.tabular-nums",
+          "html": "<span class=\"tabular-nums opacity-70\">38%</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.03 (foreground color: #949494, background color: #ffffff, font size: 9.8pt (13.125px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".bg-teal-100 > .max-w-\\[16rem\\].truncate.min-w-0",
+          "html": "<span class=\"min-w-0 max-w-[16rem] truncate\">Declarative — stated as fact</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.07 (foreground color: #007f7e, background color: #d5f1f0, font size: 8.4pt (11.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": "header",
+          "html": "<header class=\"overflow-hidden rounded-xl bg-secondary px-6 py-6 text-secondary-foreground\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 2,
+    "violationNodes": 4,
+    "passes": 31,
+    "incomplete": 0
+  }
+}

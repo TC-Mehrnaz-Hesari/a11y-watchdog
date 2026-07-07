@@ -1,0 +1,103 @@
+{
+  "surface": "component-library",
+  "name": "Design/Rules/Rules in Action/Decision Trees/Data display",
+  "storyId": "design-rules-rules-in-action-decision-trees-data-display--guided-walk",
+  "group": "Design",
+  "url": "iframe.html?id=design-rules-rules-in-action-decision-trees-data-display--guided-walk",
+  "viewport": "desktop",
+  "timestamp": "2026-07-07T05:59:36.954Z",
+  "score": 85,
+  "penalty": 17,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag143"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "nodes": [
+        {
+          "selector": ".ring-primary\\/20",
+          "html": "<span class=\"inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary ring-1 ring-primary/20\">YES / NO</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.1 (foreground color: #007f7e, background color: #e2efee, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the order of headings is semantically correct",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/heading-order?application=playwright",
+      "nodes": [
+        {
+          "selector": ".p-3.bg-card.rounded-lg:nth-child(1) > h3",
+          "html": "<h3 class=\"mt-2 text-sm font-semibold text-foreground\">Task before shape</h3>",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the document has a main landmark",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": ".mb-4",
+          "html": "<div class=\"mb-4 flex flex-wrap items-center justify-between gap-3\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".mb-3",
+          "html": "<p class=\"mb-3 text-sm text-muted-foreground\">Answer each question to land on the display component — the real one renders live with aged-care data.</p>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".items-start",
+          "html": "<div class=\"flex items-start gap-2\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".gap-x-6",
+          "html": "<div class=\"flex flex-wrap items-center gap-x-6 gap-y-2 rounded-lg border border-border bg-muted/30 px-4 py-3 text-xs text-muted-foreground\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 4,
+    "violationNodes": 7,
+    "passes": 30,
+    "incomplete": 0
+  }
+}

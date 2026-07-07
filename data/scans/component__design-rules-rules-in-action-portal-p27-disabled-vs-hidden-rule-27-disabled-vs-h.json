@@ -1,0 +1,86 @@
+{
+  "surface": "component-library",
+  "name": "Design/Rules/Rules in Action/Portal/P27 — Disabled vs hidden",
+  "storyId": "design-rules-rules-in-action-portal-p27-disabled-vs-hidden--rule-27-disabled-vs-hidden",
+  "group": "Design",
+  "url": "iframe.html?id=design-rules-rules-in-action-portal-p27-disabled-vs-hidden--rule-27-disabled-vs-hidden",
+  "viewport": "desktop",
+  "timestamp": "2026-07-07T05:59:33.308Z",
+  "score": 81,
+  "penalty": 24,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag143"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "nodes": [
+        {
+          "selector": ".hover\\:bg-muted.px-3.py-1\\.5:nth-child(2) > .leading-tight > .opacity-70.text-\\[11px\\].block",
+          "html": "<span class=\"block text-[11px] opacity-70\">Read-only</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.03 (foreground color: #949494, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".border-primary\\/60 > .leading-tight > .block.text-sm.font-semibold",
+          "html": "<span class=\"block text-sm font-semibold\">Care Partner</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.23 (foreground color: #007f7e, background color: #e6f2f2, font size: 9.8pt (13.125px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".border-primary\\/60 > .leading-tight > .opacity-70.text-\\[11px\\].block",
+          "html": "<span class=\"block text-[11px] opacity-70\">Submits claims</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.64 (foreground color: #45a2a1, background color: #e6f2f2, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".hover\\:bg-muted.px-3.py-1\\.5:nth-child(4) > .leading-tight > .opacity-70.text-\\[11px\\].block",
+          "html": "<span class=\"block text-[11px] opacity-70\">Approves budgets</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.03 (foreground color: #949494, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the order of headings is semantically correct",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/heading-order?application=playwright",
+      "nodes": [
+        {
+          "selector": ".gap-2.flex.items-center > h3",
+          "html": "<h3 class=\"truncate text-sm font-semibold text-foreground\">Margaret Whitfield</h3>",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": "header",
+          "html": "<header class=\"overflow-hidden rounded-xl bg-secondary px-6 py-6 text-secondary-foreground\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 3,
+    "violationNodes": 6,
+    "passes": 31,
+    "incomplete": 0
+  }
+}

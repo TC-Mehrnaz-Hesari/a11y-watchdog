@@ -1,0 +1,18 @@
+{
+  "surface": "component-library",
+  "name": "Composites/CommonTour",
+  "storyId": "composites-commontour--first-run-tour",
+  "group": "Composites",
+  "url": "iframe.html?id=composites-commontour--first-run-tour",
+  "viewport": "desktop",
+  "timestamp": "2026-07-07T06:00:00.604Z",
+  "score": 100,
+  "penalty": 0,
+  "violations": [],
+  "counts": {
+    "violations": 0,
+    "violationNodes": 0,
+    "passes": 29,
+    "incomplete": 2
+  }
+}

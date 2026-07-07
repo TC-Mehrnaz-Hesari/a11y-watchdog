@@ -1,0 +1,18 @@
+{
+  "surface": "component-library",
+  "name": "Composites/Communication/CommonEmailComposer",
+  "storyId": "composites-communication-commonemailcomposer--default",
+  "group": "Composites",
+  "url": "iframe.html?id=composites-communication-commonemailcomposer--default",
+  "viewport": "desktop",
+  "timestamp": "2026-07-07T05:59:58.075Z",
+  "score": 100,
+  "penalty": 0,
+  "violations": [],
+  "counts": {
+    "violations": 0,
+    "violationNodes": 0,
+    "passes": 31,
+    "incomplete": 1
+  }
+}

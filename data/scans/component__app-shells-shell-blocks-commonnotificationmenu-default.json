@@ -1,0 +1,53 @@
+{
+  "surface": "component-library",
+  "name": "App Shells/Shell Blocks/CommonNotificationMenu",
+  "storyId": "app-shells-shell-blocks-commonnotificationmenu--default",
+  "group": "App Shells",
+  "url": "iframe.html?id=app-shells-shell-blocks-commonnotificationmenu--default",
+  "viewport": "desktop",
+  "timestamp": "2026-07-07T05:59:44.642Z",
+  "score": 96,
+  "penalty": 4,
+  "violations": [
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the document has a main landmark",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 2,
+    "violationNodes": 2,
+    "passes": 17,
+    "incomplete": 2
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "surface": "component-library",
+  "name": "App Shells/Shell Blocks/NotificationDropdown",
+  "storyId": "app-shells-shell-blocks-notificationdropdown--default",
+  "group": "App Shells",
+  "url": "iframe.html?id=app-shells-shell-blocks-notificationdropdown--default",
+  "viewport": "desktop",
+  "timestamp": "2026-07-07T05:59:42.269Z",
+  "score": 91,
+  "penalty": 10,
+  "violations": [
+    {
+      "id": "aria-dialog-name",
+      "impact": "serious",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure every ARIA dialog and alertdialog node has an accessible name",
+      "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-dialog-name?application=playwright",
+      "nodes": [
+        {
+          "selector": "#radix-_r_0_",
+          "html": "<div data-side=\"bottom\" data-align=\"end\" data-state=\"open\" role=\"dialog\" id=\"radix-_r_0_\" data-slot=\"popover\" class=\"z-50 origin-(--radix...\" tabindex=\"-1\" style=\"max-width: 26rem; --...\">",
+          "failureSummary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        }
+      ]
+    },
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag143"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "nodes": [
+        {
+          "selector": ".min-w-0",
+          "html": "<span class=\"min-w-0 max-w-[16rem] truncate\">8 New</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.07 (foreground color: #007f7e, background color: #d5f1f0, font size: 8.4pt (11.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 2,
+    "violationNodes": 2,
+    "passes": 27,
+    "incomplete": 2
+  }
+}
