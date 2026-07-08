@@ -1,0 +1,451 @@
+{
+  "surface": "trilogy-ai-plan",
+  "name": "Home",
+  "url": "https://trilogy-care.github.io/trilogy-ai-plan/",
+  "viewport": "mobile",
+  "timestamp": "2026-07-08T00:48:09.637Z",
+  "score": 25,
+  "penalty": 298,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag143"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "nodes": [
+        {
+          "selector": ".snav-brand-name",
+          "html": "<span class=\"snav-brand-name\">Trilogy Care &nbsp;·&nbsp; <span>AI Innovations</span></span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.75 (foreground color: #64748b, background color: #0f172a, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".snav-day",
+          "html": "<span class=\"snav-day\">Day 62 of 90</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.93 (foreground color: #475569, background color: #1e293b, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "a[href$=\"progress.html\"]",
+          "html": "<a class=\"snav-tab\" href=\"progress.html\"><span class=\"snav-dot\" style=\"background:#3b82f6;\"></span> Progress</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #64748b, background color: #0d1b2e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "a[href$=\"agedcare-compare.html\"]",
+          "html": "<a class=\"snav-tab\" href=\"agedcare-compare.html\"><span class=\"snav-dot\" style=\"background:#f97316;\"></span> AgedCare Compare</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #64748b, background color: #0d1b2e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "a[href$=\"seo-strategy.html\"]",
+          "html": "<a class=\"snav-tab\" href=\"seo-strategy.html\"><span class=\"snav-dot\" style=\"background:#54a0ff;\"></span> SEO Strategy</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #64748b, background color: #0d1b2e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "a[href$=\"jarvis.html\"]",
+          "html": "<a class=\"snav-tab\" href=\"jarvis.html\"><span class=\"snav-dot\" style=\"background:#e74c3c;\"></span> JARVIS</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #64748b, background color: #0d1b2e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "a[href$=\"partners-hub.html\"]",
+          "html": "<a class=\"snav-tab\" href=\"partners-hub.html\"><span class=\"snav-dot\" style=\"background:#00cec9;\"></span> Partners Hub</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #64748b, background color: #0d1b2e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "a[href$=\"agent-intelligence.html\"]",
+          "html": "<a class=\"snav-tab\" href=\"agent-intelligence.html\"><span class=\"snav-dot\" style=\"background:#f59e0b;\"></span> Agent Intelligence</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #64748b, background color: #0d1b2e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "a[href$=\"elias.html\"]",
+          "html": "<a class=\"snav-tab\" href=\"elias.html\"><span class=\"snav-dot\" style=\"background:#9b59b6;\"></span> Elias</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #64748b, background color: #0d1b2e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".snav-ext[target=\"_blank\"]:nth-child(2)",
+          "html": "<a class=\"snav-ext\" href=\"https://app.asana.com/0/1211908105374551/list\" target=\"_blank\">Asana</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.28 (foreground color: #475569, background color: #0d1b2e, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".snav-ext[target=\"_blank\"]:nth-child(3)",
+          "html": "<a class=\"snav-ext\" href=\"https://trilogy-dash-3zgz7xkb.manus.space/csuite\" target=\"_blank\">Manus</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.28 (foreground color: #475569, background color: #0d1b2e, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "a[href$=\"linear.app\"]",
+          "html": "<a class=\"snav-ext\" href=\"https://linear.app\" target=\"_blank\">Linear</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.28 (foreground color: #475569, background color: #0d1b2e, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".conservative > .sc-roi",
+          "html": "<span class=\"sc-roi\">~$2.10 per $1 invested</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #7f96b2, background color: #213045, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".base > .sc-label",
+          "html": "<div class=\"sc-label\">Base Case</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #2e86de, background color: #10243c, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".base > .sc-roi",
+          "html": "<span class=\"sc-roi\">~$3.70 per $1 invested (IDC avg)</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #2e86de, background color: #132e4c, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".priority-row:nth-child(3) > .p2.priority-badge",
+          "html": "<span class=\"priority-badge p2\">P2</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.56 (foreground color: #2e86de, background color: #1a304a, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".priority-row:nth-child(4) > .p2.priority-badge",
+          "html": "<span class=\"priority-badge p2\">P2</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.56 (foreground color: #2e86de, background color: #1a304a, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".priority-row:nth-child(5) > .p2.priority-badge",
+          "html": "<span class=\"priority-badge p2\">P2</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.56 (foreground color: #2e86de, background color: #1a304a, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(4) > .highlight.org-card > .badge-blue.oc-badge",
+          "html": "<span class=\"oc-badge badge-blue\">CGO — Reports to CEO (Luke)</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #2e86de, background color: #122b49, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(8) > .highlight.org-card > .badge-blue.oc-badge",
+          "html": "<span class=\"oc-badge badge-blue\">Marketing</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #2e86de, background color: #122b49, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".purple-hl > .badge-purple.oc-badge",
+          "html": "<span class=\"oc-badge badge-purple\">BD</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.26 (foreground color: #9b59b6, background color: #202340, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(9) > div:nth-child(1) > div:nth-child(1)",
+          "html": "<div style=\"font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);padding:4px 14px;background:rgba(46,134,222,0.08);border-radius:20px;border:1px solid rgba(46,134,222,0.15);text-align:center;align-self:flex-start;\">Performance Pod</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #2e86de, background color: #10243c, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".org-card:nth-child(2) > div:nth-child(1) > .badge-blue.oc-badge",
+          "html": "<span class=\"oc-badge badge-blue\" style=\"white-space:nowrap;\">8–12 agents</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.66 (foreground color: #2e86de, background color: #192e47, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".org-card:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)",
+          "html": "<div style=\"font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;\">Agents</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.15 (foreground color: #2e86de, background color: #172436, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".org-card:nth-child(3) > div:nth-child(1) > div > .oc-person",
+          "html": "<div class=\"oc-person\">New Hire — Critical Path</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #6e849e, background color: #152335, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".org-card:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)",
+          "html": "<div style=\"font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;\">Agents</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.38 (foreground color: #2976c4, background color: #152335, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".org-card:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1)",
+          "html": "<div style=\"font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;\">Skills</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #6e849e, background color: #152335, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".org-card:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2)",
+          "html": "<div style=\"font-size:10px;color:var(--muted);font-style:italic;\">Built for hire on day one</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #6e849e, background color: #152335, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".teal-hl.org-card > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)",
+          "html": "<div style=\"font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;\">Agents</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.28 (foreground color: #2e86de, background color: #0c2333, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".org-card:nth-child(1) > div:nth-child(3)",
+          "html": "<div style=\"font-size:9px;padding:2px 7px;border-radius:20px;background:rgba(46,134,222,0.08);color:var(--accent);border:1px solid rgba(46,134,222,0.15);display:inline-block;margin-bottom:8px;font-weight:700;\">Moderate Fit — 90-day</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.75 (foreground color: #2e86de, background color: #192c44, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(6) > .org-card:nth-child(1) > div:nth-child(4)",
+          "html": "<div style=\"font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:4px;\">Agents</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.15 (foreground color: #2e86de, background color: #172436, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(6) > .org-card:nth-child(2) > div:nth-child(4)",
+          "html": "<div style=\"font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:4px;\">Agents</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.15 (foreground color: #2e86de, background color: #172436, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(6) > .org-card:nth-child(3) > div:nth-child(4)",
+          "html": "<div style=\"font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:4px;\">Agents</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.15 (foreground color: #2e86de, background color: #172436, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(2) > .org-card:nth-child(2) > .oc-tags > .oc-tag:nth-child(1)",
+          "html": "<span class=\"oc-tag\">Objection handling</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.46 (foreground color: #7f96b2, background color: #222f40, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(2) > .org-card:nth-child(2) > .oc-tags > .oc-tag:nth-child(2)",
+          "html": "<span class=\"oc-tag\">Script adherence</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.46 (foreground color: #7f96b2, background color: #222f40, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(2) > .org-card:nth-child(3) > .oc-tags > .oc-tag:nth-child(1)",
+          "html": "<span class=\"oc-tag\">Conversion rates</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.46 (foreground color: #7f96b2, background color: #222f40, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(2) > .org-card:nth-child(3) > .oc-tags > .oc-tag:nth-child(2)",
+          "html": "<span class=\"oc-tag\">Call volume</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.46 (foreground color: #7f96b2, background color: #222f40, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(9) > div:nth-child(3) > div:nth-child(1)",
+          "html": "<div style=\"font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple);padding:4px 14px;background:rgba(155,89,182,0.07);border-radius:20px;border:1px solid rgba(155,89,182,0.15);text-align:center;\">BD AI — Month 2+</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.48 (foreground color: #9b59b6, background color: #171f38, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".org-card:nth-child(2) > .badge-purple.oc-badge",
+          "html": "<span class=\"oc-badge badge-purple\" style=\"margin-top:6px;\">Scoped</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.05 (foreground color: #9b59b6, background color: #242943, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(3) > .org-card:nth-child(2) > .oc-tags > .oc-tag:nth-child(1)",
+          "html": "<span class=\"oc-tag\">Andy Wallace</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.46 (foreground color: #7f96b2, background color: #222f40, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(3) > .org-card:nth-child(2) > .oc-tags > .oc-tag:nth-child(2)",
+          "html": "<span class=\"oc-tag\">Compliance</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.46 (foreground color: #7f96b2, background color: #222f40, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".org-card:nth-child(3) > .badge-purple.oc-badge",
+          "html": "<span class=\"oc-badge badge-purple\" style=\"margin-top:6px;\">Pipeline</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #aa72c1, background color: #202740, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "div:nth-child(10) > span:nth-child(4)",
+          "html": "<span style=\"opacity:0.5;\">Faded cards = Month 2+ scope</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.4 (foreground color: #465970, background color: #0d1b2e, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".foundations",
+          "html": "<div class=\"jtbd-hdr foundations\">Foundations — Sustainable Output</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.8 (foreground color: #2e86de, background color: #192b42, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "section:nth-child(10) > div:nth-child(4) > div > div:nth-child(1)",
+          "html": "<div style=\"font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#e74c3c;margin-bottom:4px;\">Key Dependency</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #e74c3c, background color: #181d2f, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "section:nth-child(10) > div:nth-child(4) > span",
+          "html": "<span style=\"font-size:10px;font-weight:700;color:#e74c3c;background:rgba(231,76,60,0.1);padding:4px 14px;border-radius:20px;border:1px solid rgba(231,76,60,0.2);white-space:nowrap;\">Imran + Tim</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #e74c3c, background color: #2d2230, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": "section:nth-child(10) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)",
+          "html": "<div style=\"font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:2px;\">Business Intelligence</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.76 (foreground color: #2e86de, background color: #192c43, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".fr",
+          "html": "<div class=\"fr\">Confidential — Updated 22 May 2026</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.97 (foreground color: #3b4c63, background color: #0d1b2e, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the document has a main landmark",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "landmark-unique",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure landmarks are unique",
+      "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-unique?application=playwright",
+      "nodes": [
+        {
+          "selector": ".site-nav",
+          "html": "<nav class=\"site-nav\">",
+          "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": ".hero",
+          "html": "<div class=\"hero\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "#commercial",
+          "html": "<section id=\"commercial\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "#agents",
+          "html": "<section id=\"agents\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "#priorities > .sec-eyebrow",
+          "html": "<div class=\"sec-eyebrow\">Commercial Priority Stack</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "#priorities > .sec-title",
+          "html": "<div class=\"sec-title\">Everest Model — AI Mapped to Strategy</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "#priorities > .sec-sub",
+          "html": "<div class=\"sec-sub\">The build order follows commercial priority. The KPI framework went live on 1 April; P1 and P2 are now substantially built, with P3 and P4 work shipping through May.</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(1) > .p1.priority-badge",
+          "html": "<span class=\"priority-badge p1\">P1</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(1) > .pr-initiative",
+          "html": "<div class=\"pr-initiative\">Campaign visibility — real-time dashboards, weekly A/B tests</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(2) > .p1.priority-badge",
+          "html": "<span class=\"priority-badge p1\">P1</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(2) > .pr-initiative",
+          "html": "<div class=\"pr-initiative\">AI-first approach — 50%+ manual work automated across pod</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(3) > .p2.priority-badge",
+          "html": "<span class=\"priority-badge p2\">P2</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(3) > .pr-initiative",
+          "html": "<div class=\"pr-initiative\">Lead attribution — multi-touch, channel ROAS real-time</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(4) > .p2.priority-badge",
+          "html": "<span class=\"priority-badge p2\">P2</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(4) > .pr-initiative",
+          "html": "<div class=\"pr-initiative\">Marketing automation — lifecycle, personalised by segment</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(5) > .p2.priority-badge",
+          "html": "<span class=\"priority-badge p2\">P2</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(5) > .pr-initiative",
+          "html": "<div class=\"pr-initiative\">Paid media efficiency — audience segmentation, retargeting -5% CPC</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(6) > .p3.priority-badge",
+          "html": "<span class=\"priority-badge p3\">P3</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(6) > .pr-initiative",
+          "html": "<div class=\"pr-initiative\">ORM — sentiment analysis, Google avg 4.2 → 4.5</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(7) > .p3.priority-badge",
+          "html": "<span class=\"priority-badge p3\">P3</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(7) > .pr-initiative",
+          "html": "<div class=\"pr-initiative\">Lifecycle nurture — 5+ recaptured leads/month, drop-off &lt;3%</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".p4",
+          "html": "<span class=\"priority-badge p4\">P4</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".priority-row:nth-child(8) > .pr-initiative",
+          "html": "<div class=\"pr-initiative\">SEO + AEO/GEO — organic +5–10% MoM, AI search visibility 50%+</div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "#team",
+          "html": "<section id=\"team\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "#jobs",
+          "html": "<section id=\"jobs\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "section:nth-child(10)",
+          "html": "<section>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "#timeline",
+          "html": "<section id=\"timeline\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "section:nth-child(12)",
+          "html": "<section>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 4,
+    "violationNodes": 77,
+    "passes": 24,
+    "incomplete": 1
+  }
+}

@@ -5,11 +5,17 @@ focus order, touch-target size and screen-reader support decide whether a
 home-care participant can actually use the product. The Watchdog measures it.
 
 Automated axe-core (WCAG 2.1 A/AA + best practice) scans across the real
-user-facing surfaces:
+user-facing surfaces. **Targets are discovered from GitHub** — the scanner asks
+the org what exists, so new repos are covered automatically on the next run:
 
-- **Marketing site** — trilogycare.com.au key pages, desktop + mobile viewports
-- **Pricing website** — the public pricing tool
-- **Component library** — tc-app-theme Storybook stories
+- **Storybook repos** — every non-archived org repo with a `.storybook/`
+  directory is shallow-cloned into `work/` (gitignored), built, and its stories
+  sampled with axe
+- **Live sites** — every repo that sets a GitHub homepage URL is scanned
+  (desktop + mobile viewports) if publicly reachable; login-walled apps are
+  skipped automatically
+- **Curated pages** — key trilogycare.com.au pages listed in
+  `scanner/targets.js`
 
 …rendered as a gamified dashboard: scores and letter grades per surface, a
 leaderboard with medals, achievement badges, and a **Quest Board** where every
@@ -36,9 +42,14 @@ npm run build && npm start     # http://localhost:3000
 # Re-run scans (writes data/scans/*.json)
 cd scanner
 npm install
-node scan-web.js               # public sites
-node scan-storybook.js         # tc-app-theme Storybook (needs a local build)
+node scan-web.js               # curated pages + GitHub-discovered live sites
+node scan-storybook.js         # GitHub-discovered Storybook repos (clones/builds into work/)
 ```
+
+GitHub discovery uses the `gh` CLI and needs an authenticated session with
+read access to the org (`gh auth login`). Useful env vars:
+`WATCHDOG_ORG` (default `Trilogy-Care`), `WATCHDOG_REPOS` (comma-separated
+override for Storybook discovery), `FORCE_REBUILD=1` (rebuild Storybooks).
 
 ## Access control
 

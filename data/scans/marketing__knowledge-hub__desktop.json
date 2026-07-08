@@ -3,7 +3,7 @@
   "name": "Knowledge Hub",
   "url": "https://trilogycare.com.au/knowledge-hub",
   "viewport": "desktop",
-  "timestamp": "2026-07-07T05:57:28.853Z",
+  "timestamp": "2026-07-08T00:47:09.815Z",
   "score": 55,
   "penalty": 83,
   "violations": [
@@ -72,7 +72,7 @@
       "nodes": [
         {
           "selector": ".mb-12 > a[href=\"/\"]",
-          "html": "<a class=\"flex items-center\" href=\"/\"><img alt=\"Trilogy Care\" width=\"300\" height=\"97\" decoding=\"async\" data-nimg=\"1\" class=\"h-12 w-auto\" style=\"color:transparent\" src=\"/_next/static/media/202509_Tc_Logo_01.823a9381.svg\"></a>",
+          "html": "<a class=\"flex items-center\" href=\"/\"><img alt=\"Trilogy Care\" width=\"300\" height=\"97\" decoding=\"async\" data-nimg=\"1\" class=\"h-12 w-auto\" style=\"color:transparent\" src=\"/_next/static/media/202509_Tc_Logo_01.823a9381.svg\" role=\"img\" data-uw-rm-alt=\"ALT\"></a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {

@@ -4,17 +4,46 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { WEB_TARGETS, VIEWPORTS } from "./targets.js";
 import { runAxe, slug } from "./scan-lib.js";
+import { discoverHomepageTargets } from "./discover.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.resolve(__dirname, "../data/scans");
 
+/** Publicly reachable without auth? Skip login-walled internal apps. */
+async function reachable(url) {
+  try {
+    const res = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(10000) });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
 async function main() {
   await mkdir(OUT_DIR, { recursive: true });
+
+  // Merge curated targets with sites repos advertise on GitHub (homepage field).
+  const curatedUrls = new Set(WEB_TARGETS.map((t) => t.url.replace(/\/$/, "")));
+  const targets = [...WEB_TARGETS];
+  const discovered = await discoverHomepageTargets().catch((e) => {
+    console.error(`GitHub homepage discovery failed (${e.message}); using curated targets only.`);
+    return [];
+  });
+  for (const t of discovered) {
+    if (curatedUrls.has(t.url.replace(/\/$/, ""))) continue;
+    if (!(await reachable(t.url))) {
+      console.log(`[skip] ${t.surface}: ${t.url} not publicly reachable`);
+      continue;
+    }
+    targets.push(t);
+  }
+  console.log(`Scanning ${targets.length} targets (${targets.length - WEB_TARGETS.length} discovered from GitHub).`);
+
   const browser = await chromium.launch();
   let done = 0;
-  const total = WEB_TARGETS.length * 2;
+  const total = targets.length * 2;
 
-  for (const target of WEB_TARGETS) {
+  for (const target of targets) {
     for (const [vpName, vp] of Object.entries(VIEWPORTS)) {
       const ctx = await browser.newContext({
         viewport: vp,

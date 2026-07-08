@@ -1,0 +1,217 @@
+{
+  "surface": "tc-portal",
+  "name": "Home",
+  "url": "https://portal.trilogycare.com.au",
+  "viewport": "desktop",
+  "timestamp": "2026-07-08T00:47:45.447Z",
+  "score": 57,
+  "penalty": 75,
+  "violations": [
+    {
+      "id": "button-name",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag412"
+      ],
+      "description": "Ensure buttons have discernible text",
+      "help": "Buttons must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/button-name?application=playwright",
+      "nodes": [
+        {
+          "selector": ".cursor-default",
+          "html": "<button type=\"button\" class=\"m-0 cursor-default appearance-none items-start border-0 p-0 ring-0 select-text focus:outline-hidden\" data-state=\"closed\" data-grace-area-trigger=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        },
+        {
+          "selector": ".p-\\[7px\\]",
+          "html": "<button target=\"_self\" class=\"relative shrink-0 it...\" type=\"button\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        },
+        {
+          "selector": ".rounded-\\[var\\(--rounded-rule\\)\\]",
+          "html": "<button class=\"flex shrink-0 appear...\" id=\"\" role=\"checkbox\" type=\"button\" aria-checked=\"false\" aria-required=\"false\" data-state=\"unchecked\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        }
+      ]
+    },
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag143"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "nodes": [
+        {
+          "selector": "h4",
+          "html": "<h4 data-v-3142ac0e=\"\" class=\"text-xl text-gray-600\"> Log into your Trilogy Account </h4>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "image-alt",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag111"
+      ],
+      "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+      "help": "Images must have alternative text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/image-alt?application=playwright",
+      "nodes": [
+        {
+          "selector": ".w-28",
+          "html": "<img class=\"w-28\" src=\"/logo.svg\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the document has a main landmark",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\" class=\"h-full bg-gray-100\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "link-name",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2a",
+        "wcag244",
+        "wcag412"
+      ],
+      "description": "Ensure links have discernible text",
+      "help": "Links must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-name?application=playwright",
+      "nodes": [
+        {
+          "selector": ".shrink-0.items-center.flex > a",
+          "html": "<a href=\"https://portal.trilogycare.com.au/login\"><img class=\"w-28\" src=\"/logo.svg\"></a>",
+          "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        }
+      ]
+    },
+    {
+      "id": "meta-viewport",
+      "impact": "moderate",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag144"
+      ],
+      "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+      "help": "Zooming and scaling must not be disabled",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/meta-viewport?application=playwright",
+      "nodes": [
+        {
+          "selector": "meta[name=\"viewport\"]",
+          "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">",
+          "failureSummary": "Fix any of the following:\n  maximum-scale on <meta> tag disables zooming on mobile devices"
+        }
+      ]
+    },
+    {
+      "id": "nested-interactive",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2a",
+        "wcag412"
+      ],
+      "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+      "help": "Interactive controls must not be nested",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/nested-interactive?application=playwright",
+      "nodes": [
+        {
+          "selector": ".cursor-default",
+          "html": "<button type=\"button\" class=\"m-0 cursor-default appearance-none items-start border-0 p-0 ring-0 select-text focus:outline-hidden\" data-state=\"closed\" data-grace-area-trigger=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element has focusable descendants"
+        }
+      ]
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\" class=\"h-full bg-gray-100\">",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": ".mb-10",
+          "html": "<div class=\"mb-10 flex items-center justify-between gap-2\"><img class=\"w-40\" src=\"/logo.svg\" alt=\"Logo\"><!----></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "h4",
+          "html": "<h4 data-v-3142ac0e=\"\" class=\"text-xl text-gray-600\"> Log into your Trilogy Account </h4>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".gap-1.col-span-12.flex-col:nth-child(2)",
+          "html": "<div data-v-3142ac0e=\"\" class=\"flex flex-col gap-1 col-span-12\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".gap-1.col-span-12.flex-col:nth-child(3) > div:nth-child(1)",
+          "html": "<div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "#\\32 ebc886c-1a2d-4710-9bed-184a42abc8ec",
+          "html": "<input data-maska-tokens=\"[object Object]\" id=\"2ebc886c-1a2d-4710-9...\" inputmode=\"text\" type=\"password\" name=\"password\" maxlength=\"280\" autocomplete=\"current-password\" required=\"\" placeholder=\"Enter your password\" class=\"rounded-input inline...\" max=\"2026-07-08\" min=\"0\" step=\"1\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".gap-2.col-span-12[data-v-3142ac0e=\"\"]:nth-child(4)",
+          "html": "<div data-v-3142ac0e=\"\" class=\"col-span-12 flex items-center gap-2\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".col-span-6",
+          "html": "<div class=\"relative col-span-6 hidden lg:flex\"><img class=\"h-full w-full object-cover\" src=\"/images/guest/right-img-big.jpg\" alt=\"Side image\"></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 9,
+    "violationNodes": 17,
+    "passes": 36,
+    "incomplete": 0
+  }
+}

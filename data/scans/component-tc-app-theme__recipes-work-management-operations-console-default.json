@@ -1,0 +1,153 @@
+{
+  "surface": "tc-app-theme",
+  "name": "Recipes/Work Management/Operations Console",
+  "storyId": "recipes-work-management-operations-console--default",
+  "group": "Recipes",
+  "url": "Trilogy-Care/tc-app-theme iframe.html?id=recipes-work-management-operations-console--default",
+  "viewport": "desktop",
+  "timestamp": "2026-07-08T00:45:00.741Z",
+  "score": 69,
+  "penalty": 44,
+  "violations": [
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the order of headings is semantically correct",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/heading-order?application=playwright",
+      "nodes": [
+        {
+          "selector": ".text-card-foreground.shadow-black\\/\\[0\\.04\\].border-border\\/60:nth-child(1) > .gap-4.flex-col.justify-center > .flex-col.w-full.flex > .text-center.flex-col.w-full > h5",
+          "html": "<h5 class=\"min-w-0 max-w-full text-2xl font-semibold break-words text-foreground\">128</h5>",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": ".h-12 > .items-start.flex-col.flex",
+          "html": "<div class=\"flex flex-col items-start\"><span class=\"text-base font-semibold\">Trilogy Care</span><span class=\"text-xs font-light\">Home Care</span></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(1) > .px-2.text-sidebar-foreground\\/70.transition-\\[margin\\,opacity\\]",
+          "html": "<div data-slot=\"sidebar-group-label\" data-sidebar=\"group-label\" class=\"flex h-8 shrink-0 it...\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[data-active=\"true\"] > span",
+          "html": "<span>Dashboard</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(1) > .text-sm[data-slot=\"sidebar-group-content\"][data-sidebar=\"group-content\"] > ul[data-slot=\"sidebar-menu\"][data-sidebar=\"menu\"] > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(2) > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![data-size=\"default\"][data-active=\"false\"] > span",
+          "html": "<span>Participants</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(1) > .text-sm[data-slot=\"sidebar-group-content\"][data-sidebar=\"group-content\"] > ul[data-slot=\"sidebar-menu\"][data-sidebar=\"menu\"] > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(3) > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![data-size=\"default\"][data-active=\"false\"] > span",
+          "html": "<span>Packages</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(3) > .min-w-5.peer-hover\\/menu-button\\:text-sidebar-accent-foreground.peer-data-\\[size\\=default\\]\\/menu-button\\:top-1\\.5",
+          "html": "<div data-slot=\"sidebar-menu-badge\" data-sidebar=\"menu-badge\" class=\"pointer-events-none ...\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(4) > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![data-size=\"default\"][data-active=\"false\"] > span",
+          "html": "<span>Care partners</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(5) > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![data-size=\"default\"][data-active=\"false\"] > span",
+          "html": "<span>Suppliers</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(2) > .px-2.text-sidebar-foreground\\/70.transition-\\[margin\\,opacity\\]",
+          "html": "<div data-slot=\"sidebar-group-label\" data-sidebar=\"group-label\" class=\"flex h-8 shrink-0 it...\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(2) > .text-sm[data-slot=\"sidebar-group-content\"][data-sidebar=\"group-content\"] > ul[data-slot=\"sidebar-menu\"][data-sidebar=\"menu\"] > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(1) > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![data-size=\"default\"][data-active=\"false\"] > span",
+          "html": "<span>Bills</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(1) > .min-w-5.peer-hover\\/menu-button\\:text-sidebar-accent-foreground.peer-data-\\[size\\=default\\]\\/menu-button\\:top-1\\.5",
+          "html": "<div data-slot=\"sidebar-menu-badge\" data-sidebar=\"menu-badge\" class=\"pointer-events-none ...\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(2) > .text-sm[data-slot=\"sidebar-group-content\"][data-sidebar=\"group-content\"] > ul[data-slot=\"sidebar-menu\"][data-sidebar=\"menu\"] > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(2) > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![data-size=\"default\"][data-active=\"false\"] > span",
+          "html": "<span>Claims</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(2) > .text-sm[data-slot=\"sidebar-group-content\"][data-sidebar=\"group-content\"] > ul[data-slot=\"sidebar-menu\"][data-sidebar=\"menu\"] > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(3) > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![data-size=\"default\"][data-active=\"false\"] > span",
+          "html": "<span>Budgets</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(3) > .px-2.text-sidebar-foreground\\/70.transition-\\[margin\\,opacity\\]",
+          "html": "<div data-slot=\"sidebar-group-label\" data-sidebar=\"group-label\" class=\"flex h-8 shrink-0 it...\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(3) > .text-sm[data-slot=\"sidebar-group-content\"][data-sidebar=\"group-content\"] > ul[data-slot=\"sidebar-menu\"][data-sidebar=\"menu\"] > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(1) > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![data-size=\"default\"][data-active=\"false\"] > span",
+          "html": "<span>Marketing</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(3) > .text-sm[data-slot=\"sidebar-group-content\"][data-sidebar=\"group-content\"] > ul[data-slot=\"sidebar-menu\"][data-sidebar=\"menu\"] > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(2) > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![data-size=\"default\"][data-active=\"false\"] > span",
+          "html": "<span>Care reviews</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"]:nth-child(2) > .min-w-5.peer-hover\\/menu-button\\:text-sidebar-accent-foreground.peer-data-\\[size\\=default\\]\\/menu-button\\:top-1\\.5",
+          "html": "<div data-slot=\"sidebar-menu-badge\" data-sidebar=\"menu-badge\" class=\"pointer-events-none ...\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(4) > .px-2.text-sidebar-foreground\\/70.transition-\\[margin\\,opacity\\]",
+          "html": "<div data-slot=\"sidebar-group-label\" data-sidebar=\"group-label\" class=\"flex h-8 shrink-0 it...\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".min-w-0[data-slot=\"sidebar-group\"][data-sidebar=\"group\"]:nth-child(4) > .text-sm[data-slot=\"sidebar-group-content\"][data-sidebar=\"group-content\"] > ul[data-slot=\"sidebar-menu\"][data-sidebar=\"menu\"] > .group\\/menu-item[data-slot=\"sidebar-menu-item\"][data-sidebar=\"menu-item\"] > .group-data-\\[collapsible\\=icon\\]\\:p-2\\![data-size=\"default\"][data-active=\"false\"] > span",
+          "html": "<span>Settings</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".bg-secondary",
+          "html": "<span class=\"flex size-8 items-center justify-center rounded-full bg-secondary text-xs font-semibold text-secondary-foreground\">JA</span>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".group-data-\\[collapsible\\=icon\\]\\:hidden.min-w-0",
+          "html": "<div class=\"min-w-0 group-data-[collapsible=icon]:hidden\"><p class=\"truncate text-xs font-medium text-foreground\">Jordan Avery</p><p class=\"truncate text-[11px] text-muted-foreground\">Pod E1 · Operations</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 2,
+    "violationNodes": 22,
+    "passes": 47,
+    "incomplete": 1
+  }
+}

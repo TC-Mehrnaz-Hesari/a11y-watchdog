@@ -1,0 +1,36 @@
+{
+  "surface": "tc-app-theme",
+  "name": "App Shells/Studio Shells",
+  "storyId": "app-shells-studio-shells--shell-12-pinned",
+  "group": "App Shells",
+  "url": "Trilogy-Care/tc-app-theme iframe.html?id=app-shells-studio-shells--shell-12-pinned",
+  "viewport": "desktop",
+  "timestamp": "2026-07-08T00:44:37.849Z",
+  "score": 98,
+  "penalty": 2,
+  "violations": [
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 1,
+    "violationNodes": 1,
+    "passes": 41,
+    "incomplete": 1
+  }
+}

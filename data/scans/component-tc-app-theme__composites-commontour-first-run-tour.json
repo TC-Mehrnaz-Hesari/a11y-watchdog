@@ -1,0 +1,18 @@
+{
+  "surface": "tc-app-theme",
+  "name": "Composites/CommonTour",
+  "storyId": "composites-commontour--first-run-tour",
+  "group": "Composites",
+  "url": "Trilogy-Care/tc-app-theme iframe.html?id=composites-commontour--first-run-tour",
+  "viewport": "desktop",
+  "timestamp": "2026-07-08T00:44:57.728Z",
+  "score": 100,
+  "penalty": 0,
+  "violations": [],
+  "counts": {
+    "violations": 0,
+    "violationNodes": 0,
+    "passes": 29,
+    "incomplete": 2
+  }
+}

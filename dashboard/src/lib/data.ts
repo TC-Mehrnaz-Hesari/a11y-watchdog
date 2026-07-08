@@ -20,7 +20,8 @@ export interface Violation {
 }
 
 export interface ScanRecord {
-  surface: "marketing" | "pricing" | "component-library";
+  /** "marketing", "pricing", or a GitHub repo name (discovered surfaces). */
+  surface: string;
   name: string;
   url: string;
   viewport: string;
@@ -54,6 +55,11 @@ export const SURFACE_LABELS: Record<string, string> = {
   pricing: "Pricing Website",
   "component-library": "Component Library",
 };
+
+/** Known surfaces get friendly names; GitHub-discovered ones show the repo name. */
+export function surfaceLabel(surface: string): string {
+  return SURFACE_LABELS[surface] ?? surface;
+}
 
 // ---------- Loading ----------
 

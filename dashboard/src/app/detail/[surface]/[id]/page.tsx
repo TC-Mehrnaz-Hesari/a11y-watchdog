@@ -4,7 +4,7 @@ import {
   getScan,
   explain,
   wcagLabel,
-  SURFACE_LABELS,
+  surfaceLabel,
 } from "@/lib/data";
 import { Card, ScoreRing, ImpactBadge, SurfaceTag } from "@/components/ui";
 
@@ -29,7 +29,7 @@ export default async function ScanDetailPage({
             <h1 className="text-2xl font-bold text-navy">{scan.name}</h1>
             <SurfaceTag
               surface={scan.surface}
-              label={SURFACE_LABELS[scan.surface] ?? scan.surface}
+              label={surfaceLabel(scan.surface)}
             />
           </div>
           <p className="mt-1 text-sm text-slate-500">

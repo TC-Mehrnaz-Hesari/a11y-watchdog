@@ -7,7 +7,7 @@ import {
   getRankedIssues,
   getBadges,
   totalXpAvailable,
-  SURFACE_LABELS,
+  surfaceLabel,
 } from "@/lib/data";
 import {
   Card,
@@ -144,7 +144,7 @@ export default function OverviewPage() {
                     <span className="ml-1.5 text-xs text-slate-400">{s.viewport}</span>
                   </td>
                   <td className="py-2.5 pr-3">
-                    <SurfaceTag surface={s.surface} label={SURFACE_LABELS[s.surface]} />
+                    <SurfaceTag surface={s.surface} label={surfaceLabel(s.surface)} />
                   </td>
                   <td className="py-2.5 pr-3 tabular-nums text-slate-600">
                     {s.counts.violationNodes}
@@ -216,7 +216,7 @@ export default function OverviewPage() {
                     </DetailLink>
                   </td>
                   <td className="py-2 pr-3">
-                    <SurfaceTag surface={s.surface} label={SURFACE_LABELS[s.surface]} />
+                    <SurfaceTag surface={s.surface} label={surfaceLabel(s.surface)} />
                   </td>
                   <td className="py-2 pr-3 text-slate-600">{s.viewport}</td>
                   <td className="py-2 pr-3 tabular-nums text-slate-600">

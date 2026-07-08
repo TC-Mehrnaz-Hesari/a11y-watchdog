@@ -1,0 +1,105 @@
+{
+  "surface": "tc-app-theme",
+  "name": "Composites/Dashboard/CommonStatRing",
+  "storyId": "composites-dashboard-commonstatring--thresholds",
+  "group": "Composites",
+  "url": "Trilogy-Care/tc-app-theme iframe.html?id=composites-dashboard-commonstatring--thresholds",
+  "viewport": "desktop",
+  "timestamp": "2026-07-08T00:44:51.859Z",
+  "score": 83,
+  "penalty": 20,
+  "violations": [
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the document has a main landmark",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html lang=\"en\">",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": ".text-card-foreground.rounded-xl.bg-card:nth-child(1) > .items-start.gap-2.justify-between",
+          "html": "<div class=\"flex items-start justify-between gap-2\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".text-card-foreground.rounded-xl.bg-card:nth-child(1) > .gap-6.items-end.justify-between > .items-baseline.gap-1.flex",
+          "html": "<div class=\"flex items-baseline gap-1\"><span class=\"text-4xl leading-none font-semibold text-foreground tabular-nums\">88</span><span class=\"text-base text-muted-foreground\">/100</span></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".text-card-foreground.rounded-xl.bg-card:nth-child(2) > .items-start.gap-2.justify-between",
+          "html": "<div class=\"flex items-start justify-between gap-2\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".text-card-foreground.rounded-xl.bg-card:nth-child(2) > .gap-6.items-end.justify-between > .items-baseline.gap-1.flex",
+          "html": "<div class=\"flex items-baseline gap-1\"><span class=\"text-4xl leading-none font-semibold text-foreground tabular-nums\">62</span><span class=\"text-base text-muted-foreground\">/100</span></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".text-card-foreground.rounded-xl.bg-card:nth-child(3) > .items-start.gap-2.justify-between",
+          "html": "<div class=\"flex items-start justify-between gap-2\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".text-card-foreground.rounded-xl.bg-card:nth-child(3) > .gap-6.items-end.justify-between > .items-baseline.gap-1.flex",
+          "html": "<div class=\"flex items-baseline gap-1\"><span class=\"text-4xl leading-none font-semibold text-foreground tabular-nums\">38</span><span class=\"text-base text-muted-foreground\">/100</span></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".text-card-foreground.rounded-xl.bg-card:nth-child(4) > .items-start.gap-2.justify-between",
+          "html": "<div class=\"flex items-start justify-between gap-2\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".text-card-foreground.rounded-xl.bg-card:nth-child(4) > .gap-6.items-end.justify-between > .items-baseline.gap-1.flex",
+          "html": "<div class=\"flex items-baseline gap-1\"><span class=\"text-4xl leading-none font-semibold text-foreground tabular-nums\">14</span><span class=\"text-base text-muted-foreground\">/100</span></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 3,
+    "violationNodes": 10,
+    "passes": 24,
+    "incomplete": 1
+  }
+}

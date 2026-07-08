@@ -1,4 +1,4 @@
-import { getRankedIssues, explain, wcagLabel, SURFACE_LABELS, IMPACT_WEIGHTS, totalXpAvailable } from "@/lib/data";
+import { getRankedIssues, explain, wcagLabel, surfaceLabel, IMPACT_WEIGHTS, totalXpAvailable } from "@/lib/data";
 import { Card, ImpactBadge, SurfaceTag, DetailLink, XPChip } from "@/components/ui";
 
 export const metadata = { title: "Quest Board — A11y Watchdog" };
@@ -74,7 +74,7 @@ export default function TopFixesPage() {
                         <DetailLink scanId={s.scanId} surface={s.surface}>
                           {s.name}
                         </DetailLink>
-                        <SurfaceTag surface={s.surface} label={SURFACE_LABELS[s.surface] ?? s.surface} />
+                        <SurfaceTag surface={s.surface} label={surfaceLabel(s.surface)} />
                         <span className="text-xs text-slate-500">
                           {s.viewport} · {s.nodeCount} element{s.nodeCount === 1 ? "" : "s"}
                         </span>

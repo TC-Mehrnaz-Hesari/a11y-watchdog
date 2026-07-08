@@ -8,9 +8,8 @@ node_modules/
 .next/
 out/
 
-# Read-only reference clones (not part of this repo)
-tc-app-theme/
-tc-pricing-website/
+# Scanner working area — repos cloned on demand from GitHub discovery
+work/
 
 # OS
 .DS_Store
