@@ -1,17 +1,22 @@
 {
-  "name": "scanner",
+  "name": "a11y-watchdog-scanner",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "private": true,
   "type": "module",
+  "description": "axe-core + Playwright accessibility scanner with GitHub-driven target discovery",
+  "scripts": {
+    "scan": "node scan-web.js && node scan-storybook.js",
+    "scan:web": "node scan-web.js",
+    "scan:storybook": "node scan-storybook.js",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "@axe-core/playwright": "^4.12.1",
     "playwright": "^1.61.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0"
   }
 }

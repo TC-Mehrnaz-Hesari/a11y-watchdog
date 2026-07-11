@@ -11,6 +11,7 @@ import {
 } from "@/lib/data";
 import {
   Card,
+  StatTile,
   ScoreRing,
   ScorePill,
   ImpactBar,
@@ -20,6 +21,9 @@ import {
   GradeBadge,
   XPChip,
   Medal,
+  RankChip,
+  Th,
+  Td,
 } from "@/components/ui";
 
 export default function OverviewPage() {
@@ -32,6 +36,8 @@ export default function OverviewPage() {
   const badges = getBadges();
   const xpAvailable = totalXpAvailable();
   const leaderboard = [...surfaces].sort((a, b) => b.score - a.score);
+  const totalNodes = scans.reduce((a, s) => a + s.counts.violationNodes, 0);
+  const criticalNodes = impactCounts.critical ?? 0;
   const lastScan = scans
     .map((s) => s.timestamp)
     .sort()
@@ -40,56 +46,80 @@ export default function OverviewPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-navy">Accessibility Overview</h1>
-        <p className="mt-1 text-sm text-slate-500">
+        <h1 className="text-3xl font-bold tracking-tight text-navy">
+          Accessibility Overview
+        </h1>
+        <p className="mt-1.5 text-sm text-slate-500">
           {scans.length} scans across {surfaces.length} surfaces · last scan{" "}
-          {lastScan ? new Date(lastScan).toLocaleString("en-AU", { dateStyle: "medium", timeStyle: "short" }) : "—"}
+          {lastScan
+            ? new Date(lastScan).toLocaleString("en-AU", { dateStyle: "medium", timeStyle: "short" })
+            : "—"}
         </p>
       </div>
 
-      {/* Score row: overall + surface leaderboard */}
-      <div className="grid gap-6 md:grid-cols-[auto_1fr]">
-        <Card className="flex flex-col items-center justify-center gap-3 md:min-w-56">
-          <ScoreRing score={overall} size={150} label="Overall score" />
-          <div className="flex items-center gap-2">
-            <GradeBadge score={overall} />
-            <span className="text-xs text-slate-500">
-              current grade ·{" "}
-              <span className="font-bold text-navy tabular-nums">{xpAvailable} XP</span>{" "}
-              up for grabs
+      {/* Hero: overall score + estate stats + impact mix */}
+      <div className="grid gap-6 lg:grid-cols-[260px_1fr]">
+        <Card className="flex flex-col items-center justify-center gap-4">
+          <ScoreRing score={overall} size={160} label="Overall score" />
+          <div className="flex items-center gap-2.5">
+            <GradeBadge score={overall} size="lg" />
+            <span className="text-xs leading-snug text-slate-500">
+              current grade
+              <span className="mt-0.5 block">
+                <span className="font-bold text-navy tabular-nums">{xpAvailable} XP</span> up for
+                grabs
+              </span>
             </span>
           </div>
         </Card>
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className="flex flex-col gap-6">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <StatTile value={scans.length} label="Pages & components scanned" />
+            <StatTile value={surfaces.length} label="Surfaces monitored" />
+            <StatTile
+              value={totalNodes}
+              label="Affected elements"
+              tone={totalNodes > 0 ? "warn" : "good"}
+            />
+            <StatTile
+              value={criticalNodes}
+              label="Critical elements"
+              tone={criticalNodes > 0 ? "bad" : "good"}
+            />
+          </div>
+          <Card title="Affected elements by impact" className="flex-1">
+            <ImpactBar counts={impactCounts} />
+          </Card>
+        </div>
+      </div>
+
+      {/* Surface leaderboard */}
+      <Card title="Surface leaderboard">
+        <ul className="divide-y divide-slate-100">
           {leaderboard.map((s, rank) => (
-            <Card key={s.surface} className="flex flex-col justify-between gap-4">
-              <div>
-                <div className="flex items-center justify-between">
-                  <SurfaceTag surface={s.surface} label={s.label} />
-                  <Medal rank={rank} />
-                </div>
-                <p className="mt-2 text-xs text-slate-500">
+            <li key={s.surface} className="flex flex-wrap items-center gap-x-4 gap-y-2 py-3.5">
+              <span className="w-8 shrink-0 text-center">
+                <Medal rank={rank} />
+              </span>
+              <div className="min-w-40 flex-1">
+                <SurfaceTag surface={s.surface} label={s.label} />
+                <p className="mt-1 text-xs text-slate-500">
                   {s.scanCount} scans · {s.violationNodes} affected elements
                 </p>
               </div>
-              <div className="flex items-end justify-between">
-                <ScoreRing score={s.score} size={84} />
-                <div className="text-right text-xs text-slate-500">
-                  <GradeBadge score={s.score} />
-                  <p className="mt-2">
-                    <span className="font-bold text-bad tabular-nums">{s.criticalCount}</span>{" "}
-                    critical
-                  </p>
-                  <p>
-                    <span className="font-bold text-warn tabular-nums">{s.seriousCount}</span>{" "}
-                    serious
-                  </p>
-                </div>
+              <p className="text-xs text-slate-500">
+                <span className="font-bold text-bad tabular-nums">{s.criticalCount}</span> critical
+                {" · "}
+                <span className="font-bold text-warn tabular-nums">{s.seriousCount}</span> serious
+              </p>
+              <div className="flex items-center gap-3">
+                <GradeBadge score={s.score} />
+                <ScorePill score={s.score} />
               </div>
-            </Card>
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </Card>
 
       {/* Badges */}
       <Card title="Achievements">
@@ -98,28 +128,21 @@ export default function OverviewPage() {
             <li
               key={b.name}
               title={b.description}
-              className={`flex flex-col items-center gap-1 rounded-xl border p-4 text-center ${
+              className={`flex flex-col items-center gap-1.5 rounded-xl p-4 text-center ring-1 transition-shadow ${
                 b.earned
-                  ? "border-teal/30 bg-teal-light"
-                  : "border-slate-200 bg-slate-50 opacity-45 grayscale"
+                  ? "bg-teal-light ring-teal/25 shadow-sm"
+                  : "bg-slate-50 ring-slate-200 opacity-45 grayscale"
               }`}
             >
               <span aria-hidden="true" className="text-3xl">
                 {b.emoji}
               </span>
               <span className="text-xs font-bold text-navy">{b.name}</span>
-              <span className="text-[10px] leading-tight text-slate-500">
-                {b.description}
-              </span>
+              <span className="text-[10px] leading-tight text-slate-500">{b.description}</span>
               <span className="sr-only">{b.earned ? "Earned" : "Locked"}</span>
             </li>
           ))}
         </ul>
-      </Card>
-
-      {/* Impact distribution */}
-      <Card title="Affected elements by impact">
-        <ImpactBar counts={impactCounts} />
       </Card>
 
       <div className="grid gap-6 lg:grid-cols-2">
@@ -127,31 +150,32 @@ export default function OverviewPage() {
         <Card title="Worst offenders">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500">
-                <th className="pb-2 pr-3 font-semibold">Page / component</th>
-                <th className="pb-2 pr-3 font-semibold">Surface</th>
-                <th className="pb-2 pr-3 font-semibold">Issues</th>
-                <th className="pb-2 text-right font-semibold">Score</th>
+              <tr className="border-b border-slate-200">
+                <Th>Page / component</Th>
+                <Th>Surface</Th>
+                <Th>Issues</Th>
+                <Th align="right">Score</Th>
               </tr>
             </thead>
             <tbody>
               {worst.map((s) => (
-                <tr key={s.scanId} className="border-b border-slate-100 last:border-0">
-                  <td className="max-w-52 truncate py-2.5 pr-3">
+                <tr
+                  key={s.scanId}
+                  className="border-b border-slate-100 transition-colors last:border-0 hover:bg-slate-50/60"
+                >
+                  <Td className="max-w-52 truncate">
                     <DetailLink scanId={s.scanId} surface={s.surface}>
                       {s.name}
                     </DetailLink>
                     <span className="ml-1.5 text-xs text-slate-400">{s.viewport}</span>
-                  </td>
-                  <td className="py-2.5 pr-3">
+                  </Td>
+                  <Td>
                     <SurfaceTag surface={s.surface} label={surfaceLabel(s.surface)} />
-                  </td>
-                  <td className="py-2.5 pr-3 tabular-nums text-slate-600">
-                    {s.counts.violationNodes}
-                  </td>
-                  <td className="py-2.5 text-right">
+                  </Td>
+                  <Td className="tabular-nums text-slate-600">{s.counts.violationNodes}</Td>
+                  <Td align="right">
                     <ScorePill score={s.score} />
-                  </td>
+                  </Td>
                 </tr>
               ))}
             </tbody>
@@ -159,36 +183,35 @@ export default function OverviewPage() {
         </Card>
 
         {/* Top quests preview */}
-        <Card title="Top quests">
+        <Card
+          title="Top quests"
+          action={
+            <Link
+              href="/top-fixes"
+              className="text-xs font-bold text-teal-dark underline-offset-2 hover:underline"
+            >
+              Quest board →
+            </Link>
+          }
+        >
           <ol className="space-y-4">
             {topIssues.map((issue, i) => (
               <li key={issue.ruleId} className="flex gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-light text-xs font-bold text-teal-dark"
-                >
-                  {i + 1}
-                </span>
+                <RankChip rank={i + 1} />
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="font-semibold text-navy">{issue.help}</span>
                     <ImpactBadge impact={issue.impact} />
                     <XPChip xp={issue.priority} />
                   </div>
-                  <p className="mt-0.5 text-xs text-slate-500">
+                  <p className="mt-1 text-xs text-slate-500">
                     {issue.totalNodes} elements across {issue.affectedScans.length} scans ·{" "}
-                    <code className="rounded bg-slate-100 px-1">{issue.ruleId}</code>
+                    <code className="rounded bg-slate-100 px-1 py-px">{issue.ruleId}</code>
                   </p>
                 </div>
               </li>
             ))}
           </ol>
-          <Link
-            href="/top-fixes"
-            className="mt-5 inline-block rounded-lg bg-teal px-4 py-2 text-sm font-semibold text-white hover:bg-teal-dark"
-          >
-            Open the quest board →
-          </Link>
         </Card>
       </div>
 
@@ -197,38 +220,37 @@ export default function OverviewPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500">
-                <th className="pb-2 pr-3 font-semibold">Page / component</th>
-                <th className="pb-2 pr-3 font-semibold">Surface</th>
-                <th className="pb-2 pr-3 font-semibold">Viewport</th>
-                <th className="pb-2 pr-3 font-semibold">Violations</th>
-                <th className="pb-2 pr-3 font-semibold">Elements</th>
-                <th className="pb-2 pr-3 font-semibold">Passes</th>
-                <th className="pb-2 text-right font-semibold">Score</th>
+              <tr className="border-b border-slate-200">
+                <Th>Page / component</Th>
+                <Th>Surface</Th>
+                <Th>Viewport</Th>
+                <Th>Violations</Th>
+                <Th>Elements</Th>
+                <Th>Passes</Th>
+                <Th align="right">Score</Th>
               </tr>
             </thead>
             <tbody>
               {scans.map((s) => (
-                <tr key={s.scanId} className="border-b border-slate-100 last:border-0">
-                  <td className="max-w-72 truncate py-2 pr-3">
+                <tr
+                  key={s.scanId}
+                  className="border-b border-slate-100 transition-colors last:border-0 hover:bg-slate-50/60"
+                >
+                  <Td className="max-w-72 truncate">
                     <DetailLink scanId={s.scanId} surface={s.surface}>
                       {s.name}
                     </DetailLink>
-                  </td>
-                  <td className="py-2 pr-3">
+                  </Td>
+                  <Td>
                     <SurfaceTag surface={s.surface} label={surfaceLabel(s.surface)} />
-                  </td>
-                  <td className="py-2 pr-3 text-slate-600">{s.viewport}</td>
-                  <td className="py-2 pr-3 tabular-nums text-slate-600">
-                    {s.counts.violations}
-                  </td>
-                  <td className="py-2 pr-3 tabular-nums text-slate-600">
-                    {s.counts.violationNodes}
-                  </td>
-                  <td className="py-2 pr-3 tabular-nums text-slate-600">{s.counts.passes}</td>
-                  <td className="py-2 text-right">
+                  </Td>
+                  <Td className="text-slate-600">{s.viewport}</Td>
+                  <Td className="tabular-nums text-slate-600">{s.counts.violations}</Td>
+                  <Td className="tabular-nums text-slate-600">{s.counts.violationNodes}</Td>
+                  <Td className="tabular-nums text-slate-600">{s.counts.passes}</Td>
+                  <Td align="right">
                     <ScorePill score={s.score} />
-                  </td>
+                  </Td>
                 </tr>
               ))}
             </tbody>

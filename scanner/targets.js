@@ -1,5 +1,7 @@
-// Scan targets for A11y Watchdog.
-// Surfaces: "marketing" (trilogycare.com.au), "pricing" (staging deploy), "component-library" (Storybook, added dynamically).
+// Curated seed targets for A11y Watchdog. These are guaranteed-scanned pages;
+// scan-web.js additionally auto-discovers pages per site (sitemap + homepage
+// links) and whole sites from GitHub (repos with a homepage URL), so this list
+// only needs entries discovery can't find on its own.
 
 export const WEB_TARGETS = [
   // --- Trilogy Care marketing site (apex serves 200; www 301s to apex) ---

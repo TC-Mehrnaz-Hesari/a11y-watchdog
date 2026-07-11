@@ -21,7 +21,7 @@ async function ghJson(args) {
 
 let repoCache = null;
 
-export async function listRepos() {
+async function listRepos() {
   if (repoCache) return repoCache;
   repoCache = (
     await ghJson([
@@ -85,4 +85,83 @@ export async function discoverHomepageTargets() {
 
 export function cloneUrl(repo) {
   return `https://github.com/${ORG}/${repo}.git`;
+}
+
+// ---------- Page auto-discovery (per site) ----------
+
+// Assets and non-page links we never want to scan.
+const NON_PAGE = /\.(pdf|zip|jpe?g|png|gif|svg|webp|ico|css|js|mjs|json|xml|mp4|webm|woff2?)$/i;
+
+async function fetchText(url) {
+  const res = await fetch(url, {
+    redirect: "follow",
+    signal: AbortSignal.timeout(10000),
+    headers: { "User-Agent": "A11yWatchdog/1.0 (internal accessibility audit)" },
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.text();
+}
+
+/** Normalise to a comparable page URL (same-origin, no hash/query, no trailing slash). */
+function normalisePage(href, base) {
+  try {
+    const u = new URL(href, base);
+    if (u.origin !== new URL(base).origin) return null;
+    if (NON_PAGE.test(u.pathname)) return null;
+    u.hash = "";
+    u.search = "";
+    return u.href.replace(/\/$/, "") || u.origin;
+  } catch {
+    return null;
+  }
+}
+
+/** Human name from a URL path: "/services/self-managed" -> "Services / Self Managed". */
+export function pageName(url) {
+  const { pathname } = new URL(url);
+  if (pathname === "/" || pathname === "") return "Home";
+  return pathname
+    .split("/")
+    .filter(Boolean)
+    .map((seg) =>
+      seg.replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+    )
+    .join(" / ");
+}
+
+/**
+ * Auto-discover a site's pages: sitemap.xml when available, otherwise (and
+ * additionally) same-origin links found on the homepage. Shallow paths are
+ * preferred so the cap lands on the site's main pages, not deep articles.
+ * Returns up to `cap` URLs, homepage first.
+ */
+export async function discoverSitePages(homeUrl, cap = 10) {
+  const home = normalisePage(homeUrl, homeUrl) ?? homeUrl.replace(/\/$/, "");
+  const found = new Set();
+
+  try {
+    const xml = await fetchText(new URL("/sitemap.xml", home).href);
+    for (const m of xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/gi)) {
+      const u = normalisePage(m[1], home);
+      if (u) found.add(u);
+    }
+  } catch {
+    /* no sitemap — fall through to homepage links */
+  }
+
+  try {
+    const html = await fetchText(home);
+    for (const m of html.matchAll(/href\s*=\s*["']([^"']+)["']/gi)) {
+      if (/^(mailto:|tel:|javascript:)/i.test(m[1])) continue;
+      const u = normalisePage(m[1], home);
+      if (u) found.add(u);
+    }
+  } catch {
+    /* unreachable homepage — caller filters via reachable() */
+  }
+
+  found.delete(home);
+  const depth = (u) => new URL(u).pathname.split("/").filter(Boolean).length;
+  const pages = [...found].sort((a, b) => depth(a) - depth(b) || a.length - b.length);
+  return [home, ...pages].slice(0, cap);
 }

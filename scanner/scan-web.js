@@ -4,10 +4,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { WEB_TARGETS, VIEWPORTS } from "./targets.js";
 import { runAxe, slug } from "./scan-lib.js";
-import { discoverHomepageTargets } from "./discover.js";
+import { discoverHomepageTargets, discoverSitePages, pageName } from "./discover.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.resolve(__dirname, "../data/scans");
+const PAGES_PER_SITE = Number(process.env.WATCHDOG_PAGES_PER_SITE) || 10;
+
+const normalise = (url) => url.replace(/\/$/, "");
 
 /** Publicly reachable without auth? Skip login-walled internal apps. */
 async function reachable(url) {
@@ -19,29 +22,60 @@ async function reachable(url) {
   }
 }
 
-async function main() {
-  await mkdir(OUT_DIR, { recursive: true });
-
-  // Merge curated targets with sites repos advertise on GitHub (homepage field).
-  const curatedUrls = new Set(WEB_TARGETS.map((t) => t.url.replace(/\/$/, "")));
+/**
+ * Build the target list autonomously:
+ *   1. curated seeds (targets.js) — always in
+ *   2. live sites repos advertise on GitHub (homepage field)
+ *   3. each site's pages, crawled from its sitemap/homepage links
+ */
+async function buildTargets() {
   const targets = [...WEB_TARGETS];
+  const seen = new Set(targets.map((t) => normalise(t.url)));
+
   const discovered = await discoverHomepageTargets().catch((e) => {
-    console.error(`GitHub homepage discovery failed (${e.message}); using curated targets only.`);
+    console.error(`GitHub homepage discovery failed (${e.message}); using curated seeds only.`);
     return [];
   });
   for (const t of discovered) {
-    if (curatedUrls.has(t.url.replace(/\/$/, ""))) continue;
+    if (seen.has(normalise(t.url))) continue;
     if (!(await reachable(t.url))) {
       console.log(`[skip] ${t.surface}: ${t.url} not publicly reachable`);
       continue;
     }
+    seen.add(normalise(t.url));
     targets.push(t);
   }
-  console.log(`Scanning ${targets.length} targets (${targets.length - WEB_TARGETS.length} discovered from GitHub).`);
+
+  // Expand every site root into its pages (sitemap + homepage links).
+  const roots = new Map(); // origin -> surface
+  for (const t of targets) {
+    const origin = new URL(t.url).origin;
+    if (!roots.has(origin)) roots.set(origin, t.surface);
+  }
+  for (const [origin, surface] of roots) {
+    const pages = await discoverSitePages(origin, PAGES_PER_SITE).catch(() => []);
+    for (const url of pages) {
+      if (seen.has(normalise(url))) continue;
+      seen.add(normalise(url));
+      targets.push({ surface, name: pageName(url), url });
+    }
+  }
+
+  return targets;
+}
+
+async function main() {
+  await mkdir(OUT_DIR, { recursive: true });
+
+  const targets = await buildTargets();
+  console.log(
+    `Scanning ${targets.length} pages across ${new Set(targets.map((t) => t.surface)).size} surfaces ` +
+      `(${targets.length - WEB_TARGETS.length} auto-discovered).`
+  );
 
   const browser = await chromium.launch();
   let done = 0;
-  const total = targets.length * 2;
+  const total = targets.length * Object.keys(VIEWPORTS).length;
 
   for (const target of targets) {
     for (const [vpName, vp] of Object.entries(VIEWPORTS)) {
@@ -51,7 +85,7 @@ async function main() {
           "Mozilla/5.0 (A11yWatchdog/1.0; internal accessibility audit; +mehrnazh@trilogycare.com.au)",
       });
       const page = await ctx.newPage();
-      const label = `${target.name} [${vpName}]`;
+      const label = `${target.surface} · ${target.name} [${vpName}]`;
       try {
         // domcontentloaded (not networkidle): these sites keep analytics/chat
         // sockets open so networkidle never fires. Then settle for late content.

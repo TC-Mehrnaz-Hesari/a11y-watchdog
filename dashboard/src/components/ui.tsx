@@ -1,18 +1,73 @@
 import Link from "next/link";
 import { IMPACT_ORDER, scoreTone, grade } from "@/lib/data";
 
+// ---------- Cards & tiles ----------
+
+export function Card({
+  title,
+  action,
+  children,
+  className = "",
+}: {
+  title?: string;
+  action?: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <section
+      className={`rounded-2xl bg-white p-6 shadow-card ring-1 ring-navy/5 ${className}`}
+    >
+      {(title || action) && (
+        <div className="mb-4 flex items-center justify-between gap-3">
+          {title && (
+            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+              {title}
+            </h2>
+          )}
+          {action}
+        </div>
+      )}
+      {children}
+    </section>
+  );
+}
+
+export function StatTile({
+  value,
+  label,
+  tone = "default",
+}: {
+  value: React.ReactNode;
+  label: string;
+  tone?: "default" | "good" | "warn" | "bad";
+}) {
+  const toneClass = {
+    default: "text-navy",
+    good: "text-good",
+    warn: "text-warn",
+    bad: "text-bad",
+  }[tone];
+  return (
+    <div className="rounded-2xl bg-white p-5 shadow-card ring-1 ring-navy/5">
+      <p className={`text-3xl font-bold ${toneClass}`}>{value}</p>
+      <p className="mt-1 text-xs font-medium text-slate-500">{label}</p>
+    </div>
+  );
+}
+
 // ---------- Gamification bits ----------
 
 const GRADE_STYLES = {
-  good: "bg-green-100 text-green-800 border-green-300",
-  warn: "bg-amber-100 text-amber-800 border-amber-300",
-  bad: "bg-red-100 text-red-800 border-red-300",
+  good: "bg-good/10 text-good ring-good/25",
+  warn: "bg-warn/10 text-warn ring-warn/25",
+  bad: "bg-bad/10 text-bad ring-bad/25",
 };
 
 export function GradeBadge({ score, size = "md" }: { score: number; size?: "md" | "lg" }) {
   return (
     <span
-      className={`inline-flex items-center justify-center rounded-lg border font-black ${GRADE_STYLES[scoreTone(score)]} ${
+      className={`inline-flex items-center justify-center rounded-xl font-black ring-1 ${GRADE_STYLES[scoreTone(score)]} ${
         size === "lg" ? "h-12 w-12 text-2xl" : "h-8 w-8 text-sm"
       }`}
       title={`Grade for score ${score}`}
@@ -24,7 +79,7 @@ export function GradeBadge({ score, size = "md" }: { score: number; size?: "md" 
 
 export function XPChip({ xp }: { xp: number }) {
   return (
-    <span className="inline-block rounded-full bg-navy px-2.5 py-0.5 text-xs font-bold text-white">
+    <span className="inline-block whitespace-nowrap rounded-full bg-linear-to-r from-teal to-teal-dark px-2.5 py-0.5 text-xs font-bold text-white shadow-sm">
       +{xp} XP
     </span>
   );
@@ -33,29 +88,93 @@ export function XPChip({ xp }: { xp: number }) {
 const MEDALS = ["🥇", "🥈", "🥉"];
 
 export function Medal({ rank }: { rank: number }) {
+  if (rank < 3)
+    return (
+      <span aria-label={`Rank ${rank + 1}`} className="text-2xl leading-none">
+        {MEDALS[rank]}
+      </span>
+    );
   return (
-    <span aria-label={`Rank ${rank + 1}`} className="text-2xl">
-      {MEDALS[rank] ?? `#${rank + 1}`}
+    <span
+      aria-label={`Rank ${rank + 1}`}
+      className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-slate-100 px-1.5 text-xs font-bold text-slate-500"
+    >
+      {rank + 1}
     </span>
   );
 }
 
-// ---------- Impact badge ----------
+export function RankChip({ rank }: { rank: number }) {
+  return (
+    <span
+      aria-hidden="true"
+      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-light text-sm font-bold text-teal-dark"
+    >
+      {rank}
+    </span>
+  );
+}
 
-const IMPACT_STYLES: Record<string, string> = {
-  critical: "bg-red-100 text-red-800 border-red-200",
-  serious: "bg-orange-100 text-orange-800 border-orange-200",
-  moderate: "bg-amber-100 text-amber-800 border-amber-200",
-  minor: "bg-slate-100 text-slate-700 border-slate-200",
+// ---------- Impact (status colors: always paired with a visible label) ----------
+
+const IMPACT_DOT: Record<string, string> = {
+  critical: "bg-impact-critical",
+  serious: "bg-impact-serious",
+  moderate: "bg-impact-moderate",
+  minor: "bg-impact-minor",
+};
+
+const IMPACT_TEXT: Record<string, string> = {
+  critical: "text-impact-critical",
+  serious: "text-impact-serious",
+  moderate: "text-amber-700",
+  minor: "text-impact-minor",
 };
 
 export function ImpactBadge({ impact }: { impact: string }) {
   return (
     <span
-      className={`inline-block rounded-full border px-2.5 py-0.5 text-xs font-semibold capitalize ${IMPACT_STYLES[impact] ?? IMPACT_STYLES.minor}`}
+      className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-slate-50 px-2.5 py-0.5 text-xs font-semibold capitalize ring-1 ring-slate-200 ${IMPACT_TEXT[impact] ?? IMPACT_TEXT.minor}`}
     >
+      <span
+        aria-hidden="true"
+        className={`h-2 w-2 rounded-full ${IMPACT_DOT[impact] ?? IMPACT_DOT.minor}`}
+      />
       {impact}
     </span>
+  );
+}
+
+export function ImpactBar({ counts }: { counts: Record<string, number> }) {
+  const total = IMPACT_ORDER.reduce((a, k) => a + (counts[k] ?? 0), 0) || 1;
+  return (
+    <div>
+      {/* 2px white gaps keep adjacent fills separable without relying on hue */}
+      <div className="flex h-3.5 w-full gap-0.5 overflow-hidden rounded-full bg-slate-100">
+        {IMPACT_ORDER.map((k) =>
+          counts[k] ? (
+            <div
+              key={k}
+              className={`${IMPACT_DOT[k]} first:rounded-l-full last:rounded-r-full`}
+              style={{ width: `${(counts[k] / total) * 100}%` }}
+              title={`${k}: ${counts[k]} elements`}
+            />
+          ) : null
+        )}
+      </div>
+      <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-slate-600">
+        {IMPACT_ORDER.map((k) => (
+          <span key={k} className="flex items-center gap-1.5">
+            <span
+              aria-hidden="true"
+              className={`inline-block h-2.5 w-2.5 rounded-sm ${IMPACT_DOT[k]}`}
+            />
+            <span className="capitalize">{k}</span>
+            <span className="font-bold tabular-nums text-navy">{counts[k] ?? 0}</span>
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -73,11 +192,12 @@ export function ScoreRing({
   label?: string;
 }) {
   const tone = scoreTone(score);
-  const r = (size - 12) / 2;
+  const stroke = Math.max(6, Math.round(size * 0.075));
+  const r = (size - stroke - 2) / 2;
   const c = 2 * Math.PI * r;
   const filled = (score / 100) * c;
   return (
-    <div className="flex flex-col items-center gap-1">
+    <div className="flex flex-col items-center gap-1.5">
       <div className="relative" style={{ width: size, height: size }}>
         <svg width={size} height={size} role="img" aria-label={`Score ${score} out of 100`}>
           <circle
@@ -85,8 +205,8 @@ export function ScoreRing({
             cy={size / 2}
             r={r}
             fill="none"
-            stroke="#e5eaf0"
-            strokeWidth={10}
+            stroke="#eef2f6"
+            strokeWidth={stroke}
           />
           <circle
             cx={size / 2}
@@ -94,19 +214,24 @@ export function ScoreRing({
             r={r}
             fill="none"
             stroke={TONE_COLOR[tone]}
-            strokeWidth={10}
+            strokeWidth={stroke}
             strokeLinecap="round"
             strokeDasharray={`${filled} ${c - filled}`}
             transform={`rotate(-90 ${size / 2} ${size / 2})`}
           />
         </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
           <span
-            className="font-bold tabular-nums"
-            style={{ fontSize: size * 0.28, color: TONE_COLOR[tone] }}
+            className="font-bold leading-none tabular-nums"
+            style={{ fontSize: size * 0.27, color: TONE_COLOR[tone] }}
           >
             {score}
           </span>
+          {size >= 110 && (
+            <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+              / 100
+            </span>
+          )}
         </div>
       </div>
       {label && <span className="text-sm font-medium text-slate-500">{label}</span>}
@@ -117,98 +242,49 @@ export function ScoreRing({
 // ---------- Small score pill ----------
 
 const PILL_STYLES = {
-  good: "bg-green-50 text-green-800 border-green-200",
-  warn: "bg-amber-50 text-amber-800 border-amber-200",
-  bad: "bg-red-50 text-red-800 border-red-200",
+  good: "bg-good/10 text-good ring-good/20",
+  warn: "bg-warn/10 text-warn ring-warn/20",
+  bad: "bg-bad/10 text-bad ring-bad/20",
 };
 
 export function ScorePill({ score }: { score: number }) {
   return (
     <span
-      className={`inline-block min-w-11 rounded-md border px-2 py-0.5 text-center text-sm font-bold tabular-nums ${PILL_STYLES[scoreTone(score)]}`}
+      className={`inline-block min-w-11 rounded-lg px-2 py-0.5 text-center text-sm font-bold tabular-nums ring-1 ${PILL_STYLES[scoreTone(score)]}`}
     >
       {score}
     </span>
   );
 }
 
-// ---------- Impact distribution bar ----------
-
-const BAR_COLORS: Record<string, string> = {
-  critical: "#b91c1c",
-  serious: "#ea580c",
-  moderate: "#d97706",
-  minor: "#94a3b8",
-};
-
-export function ImpactBar({ counts }: { counts: Record<string, number> }) {
-  const total = IMPACT_ORDER.reduce((a, k) => a + (counts[k] ?? 0), 0) || 1;
-  return (
-    <div>
-      <div className="flex h-3 w-full overflow-hidden rounded-full bg-slate-100">
-        {IMPACT_ORDER.map((k) =>
-          counts[k] ? (
-            <div
-              key={k}
-              style={{ width: `${(counts[k] / total) * 100}%`, background: BAR_COLORS[k] }}
-              title={`${k}: ${counts[k]}`}
-            />
-          ) : null
-        )}
-      </div>
-      <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-600">
-        {IMPACT_ORDER.map((k) => (
-          <span key={k} className="flex items-center gap-1.5">
-            <span
-              className="inline-block h-2.5 w-2.5 rounded-sm"
-              style={{ background: BAR_COLORS[k] }}
-            />
-            <span className="capitalize">{k}</span>
-            <span className="font-semibold tabular-nums">{counts[k] ?? 0}</span>
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// ---------- Card ----------
-
-export function Card({
-  title,
-  children,
-  className = "",
-}: {
-  title?: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <section
-      className={`rounded-xl border border-slate-200 bg-white p-6 shadow-sm ${className}`}
-    >
-      {title && (
-        <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-500">
-          {title}
-        </h2>
-      )}
-      {children}
-    </section>
-  );
-}
-
 // ---------- Surface tag ----------
 
+// Fixed chip styles; discovered surfaces get a stable style by name.
 const SURFACE_STYLES: Record<string, string> = {
-  marketing: "bg-teal-light text-teal-dark",
-  pricing: "bg-navy-light text-navy",
-  "component-library": "bg-violet-50 text-violet-800",
+  marketing: "bg-teal-light text-teal-dark ring-teal/15",
+  pricing: "bg-navy-light text-navy ring-navy/15",
 };
+
+const EXTRA_STYLES = [
+  "bg-violet-50 text-violet-800 ring-violet-200",
+  "bg-sky-50 text-sky-800 ring-sky-200",
+  "bg-rose-50 text-rose-800 ring-rose-200",
+  "bg-emerald-50 text-emerald-800 ring-emerald-200",
+  "bg-amber-50 text-amber-800 ring-amber-200",
+];
+
+function surfaceStyle(surface: string): string {
+  if (SURFACE_STYLES[surface]) return SURFACE_STYLES[surface];
+  let hash = 0;
+  for (const ch of surface) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+  return EXTRA_STYLES[hash % EXTRA_STYLES.length];
+}
 
 export function SurfaceTag({ surface, label }: { surface: string; label: string }) {
   return (
     <span
-      className={`inline-block rounded-md px-2 py-0.5 text-xs font-semibold ${SURFACE_STYLES[surface] ?? "bg-slate-100 text-slate-700"}`}
+      className={`inline-block max-w-44 truncate whitespace-nowrap rounded-md px-2 py-0.5 align-middle text-xs font-semibold ring-1 ${surfaceStyle(surface)}`}
+      title={label}
     >
       {label}
     </span>
@@ -229,9 +305,45 @@ export function DetailLink({
   return (
     <Link
       href={`/detail/${surface}/${encodeURIComponent(scanId)}`}
-      className="font-medium text-teal underline-offset-2 hover:underline"
+      className="font-semibold text-teal-dark underline-offset-2 hover:text-teal hover:underline"
     >
       {children}
     </Link>
+  );
+}
+
+// ---------- Table primitives ----------
+
+export function Th({
+  children,
+  align = "left",
+}: {
+  children?: React.ReactNode;
+  align?: "left" | "right";
+}) {
+  return (
+    <th
+      className={`pb-2.5 pr-3 text-xs font-bold uppercase tracking-wider text-slate-400 last:pr-0 ${align === "right" ? "text-right" : "text-left"}`}
+    >
+      {children}
+    </th>
+  );
+}
+
+export function Td({
+  children,
+  align = "left",
+  className = "",
+}: {
+  children?: React.ReactNode;
+  align?: "left" | "right";
+  className?: string;
+}) {
+  return (
+    <td
+      className={`py-2.5 pr-3 last:pr-0 ${align === "right" ? "text-right" : ""} ${className}`}
+    >
+      {children}
+    </td>
   );
 }

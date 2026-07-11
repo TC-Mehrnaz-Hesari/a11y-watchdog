@@ -115,6 +115,7 @@ async function scanRepo(repo, staticDir, browser) {
   const ctx = await browser.newContext({ viewport: VIEWPORTS.desktop });
   const page = await ctx.newPage();
 
+  const written = new Set();
   let done = 0;
   for (const story of sample) {
     const group = story.title.split("/")[0];
@@ -133,6 +134,7 @@ async function scanRepo(repo, staticDir, browser) {
       });
       const fname = `component-${slug(repo)}__${slug(story.id)}.json`;
       await writeFile(path.join(OUT_DIR, fname), JSON.stringify(record, null, 2));
+      written.add(fname);
       done++;
       console.log(`[${repo} ${done}/${sample.length}] ${story.title} -> score ${record.score}`);
     } catch (err) {
@@ -142,6 +144,18 @@ async function scanRepo(repo, staticDir, browser) {
 
   await ctx.close();
   server.close();
+
+  // Drop scans for stories that no longer exist in this repo's sample —
+  // but only if this run actually produced data (don't wipe on a broken run).
+  if (written.size > 0) {
+    const prefix = `component-${slug(repo)}__`;
+    for (const f of await readdir(OUT_DIR)) {
+      if (f.startsWith(prefix) && !written.has(f)) {
+        await rm(path.join(OUT_DIR, f));
+        console.log(`[${repo}] removed stale scan ${f}`);
+      }
+    }
+  }
 }
 
 async function main() {
@@ -150,11 +164,6 @@ async function main() {
 
   const repos = await discoverStorybookRepos();
   console.log(`GitHub discovery (${ORG}): ${repos.length} repo(s) with a Storybook: ${repos.join(", ") || "none"}`);
-
-  // Old single-repo scan files used the component__ prefix; clear stale data.
-  for (const f of await readdir(OUT_DIR)) {
-    if (f.startsWith("component__")) await rm(path.join(OUT_DIR, f));
-  }
 
   const browser = await chromium.launch();
   for (const repo of repos) {
@@ -169,4 +178,7 @@ async function main() {
   console.log("Storybook scan complete.");
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

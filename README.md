@@ -14,8 +14,11 @@ the org what exists, so new repos are covered automatically on the next run:
 - **Live sites** — every repo that sets a GitHub homepage URL is scanned
   (desktop + mobile viewports) if publicly reachable; login-walled apps are
   skipped automatically
-- **Curated pages** — key trilogycare.com.au pages listed in
-  `scanner/targets.js`
+- **Pages per site** — each site's pages are auto-discovered from its
+  sitemap.xml and homepage links (shallowest-first, capped by
+  `WATCHDOG_PAGES_PER_SITE`, default 10), so nothing needs hand-listing
+- **Curated seeds** — guaranteed-scanned pages in `scanner/targets.js`, for
+  anything discovery can't find on its own (e.g. unlinked staging deploys)
 
 …rendered as a gamified dashboard: scores and letter grades per surface, a
 leaderboard with medals, achievement badges, and a **Quest Board** where every
@@ -24,7 +27,7 @@ issue is ranked by impact × occurrence and worth XP, each with a plain-English
 
 ## Structure
 
-```
+```text
 scanner/      axe-core + playwright scan scripts
 data/scans/   one JSON per scanned page/component (the dashboard's data)
 dashboard/    Next.js 15 dashboard (Tailwind v4, Trilogy theme)
@@ -42,14 +45,16 @@ npm run build && npm start     # http://localhost:3000
 # Re-run scans (writes data/scans/*.json)
 cd scanner
 npm install
-node scan-web.js               # curated pages + GitHub-discovered live sites
-node scan-storybook.js         # GitHub-discovered Storybook repos (clones/builds into work/)
+npm run scan                   # everything: web pages + Storybooks
+npm run scan:web               # curated seeds + GitHub-discovered sites + crawled pages
+npm run scan:storybook         # GitHub-discovered Storybook repos (clones/builds into work/)
 ```
 
 GitHub discovery uses the `gh` CLI and needs an authenticated session with
 read access to the org (`gh auth login`). Useful env vars:
 `WATCHDOG_ORG` (default `Trilogy-Care`), `WATCHDOG_REPOS` (comma-separated
-override for Storybook discovery), `FORCE_REBUILD=1` (rebuild Storybooks).
+override for Storybook discovery), `WATCHDOG_PAGES_PER_SITE` (default 10),
+`FORCE_REBUILD=1` (rebuild Storybooks).
 
 ## Access control
 

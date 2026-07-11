@@ -7,7 +7,7 @@ import { IMPACT_WEIGHTS } from "./targets.js";
 // score = round(100 * budget / (budget + penalty)), budget tuned so ~15 weighted pts ≈ 87.
 const SCORE_BUDGET = 100;
 
-export function computeScore(violations) {
+function computeScore(violations) {
   let penalty = 0;
   for (const v of violations) {
     const w = IMPACT_WEIGHTS[v.impact] ?? 1;

@@ -50,15 +50,21 @@ export const IMPACT_WEIGHTS: Record<string, number> = {
 
 export const IMPACT_ORDER = ["critical", "serious", "moderate", "minor"] as const;
 
-export const SURFACE_LABELS: Record<string, string> = {
+const SURFACE_LABELS: Record<string, string> = {
   marketing: "Marketing Site",
   pricing: "Pricing Website",
-  "component-library": "Component Library",
 };
 
-/** Known surfaces get friendly names; GitHub-discovered ones show the repo name. */
+const ACRONYMS = new Set(["tc", "ai", "a11y", "api", "ui", "ux", "aect"]);
+
+/** Known surfaces get friendly names; GitHub-discovered repo names are titleised. */
 export function surfaceLabel(surface: string): string {
-  return SURFACE_LABELS[surface] ?? surface;
+  if (SURFACE_LABELS[surface]) return SURFACE_LABELS[surface];
+  return surface
+    .split(/[-_]+/)
+    .filter(Boolean)
+    .map((w) => (ACRONYMS.has(w.toLowerCase()) ? w.toUpperCase() : w[0].toUpperCase() + w.slice(1)))
+    .join(" ");
 }
 
 // ---------- Loading ----------
@@ -112,7 +118,7 @@ export function getSurfaceSummaries(): SurfaceSummary[] {
       const byImpact = countNodesByImpact(ss);
       return {
         surface,
-        label: SURFACE_LABELS[surface] ?? surface,
+        label: surfaceLabel(surface),
         score: avgScore(ss),
         scanCount: ss.length,
         violationNodes: ss.reduce((a, s) => a + s.counts.violationNodes, 0),
@@ -168,6 +174,11 @@ export function getRankedIssues(): RankedIssue[] {
           priority: 0,
         };
         map.set(v.id, issue);
+      }
+      // The same rule can be reported at different impacts on different pages —
+      // rank (and badge) it by the worst one seen.
+      if ((IMPACT_WEIGHTS[v.impact] ?? 0) > (IMPACT_WEIGHTS[issue.impact] ?? 0)) {
+        issue.impact = v.impact;
       }
       issue.totalNodes += v.nodes.length;
       issue.affectedScans.push({

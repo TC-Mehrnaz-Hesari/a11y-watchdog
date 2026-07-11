@@ -1,20 +1,45 @@
 @import "tailwindcss";
 
 @theme {
+  /* Trilogy brand */
   --color-teal: #007f7e;
   --color-teal-dark: #00605f;
   --color-teal-light: #e6f4f4;
   --color-navy: #1e3452;
+  --color-navy-deep: #16273e;
   --color-navy-light: #eef2f7;
+
+  /* Score tones (used as text — all ≥ 4.5:1 on white) */
   --color-good: #1a7f4b;
   --color-warn: #b45309;
   --color-bad: #b91c1c;
+
+  /* Impact fills (validated: worst adjacent CVD ΔE 16.2; amber relies on the
+     always-visible legend labels for relief) */
+  --color-impact-critical: #b91c1c;
+  --color-impact-serious: #ea580c;
+  --color-impact-moderate: #eda100;
+  --color-impact-minor: #64748b;
+
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(15 40 70 / 0.05), 0 4px 16px -4px rgb(15 40 70 / 0.06);
+  --shadow-card-hover: 0 2px 4px rgb(15 40 70 / 0.06), 0 12px 28px -8px rgb(15 40 70 / 0.12);
 }
 
 body {
-  background-color: #f8fafb;
+  background-color: #f3f6f9;
   color: var(--color-navy);
   -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: var(--color-teal-light);
+  color: var(--color-teal-dark);
 }
