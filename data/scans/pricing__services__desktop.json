@@ -3,7 +3,7 @@
   "name": "Services",
   "url": "http://tc-pricing-website-staging-alb-932992966.ap-southeast-2.elb.amazonaws.com/services",
   "viewport": "desktop",
-  "timestamp": "2026-07-11T23:35:45.544Z",
+  "timestamp": "2026-07-12T16:55:56.656Z",
   "score": 81,
   "penalty": 24,
   "violations": [
@@ -19,7 +19,7 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
       "nodes": [
         {
-          "selector": ".text-base > span",
+          "selector": ".tracking-tight > span",
           "html": "<span style=\"color:hsl(201 78% 65%)\"> Prices</span>",
           "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #60bbeb, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
         },
@@ -60,7 +60,7 @@
       "nodes": [
         {
           "selector": "a.neu-raised-sm.whitespace-nowrap",
-          "html": "<a class=\"neu-raised-sm whitespace-nowrap px-4 py-2.5 text-sm font-bold transition-colors xl:px-5 hidden min-[620px]:inline-flex text-foreground/85 hover:text-foreground\" href=\"/methodology\">Our Data<",
+          "html": "<a class=\"neu-raised-sm whitespace-nowrap px-4 py-2.5 text-sm font-bold transition-colors xl:px-5 hidden min-[620px]:inline-flex text-foreground/85 hover:text-foreground\" href=\"/methodology\">Pricing</",
           "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
         }
       ]
@@ -78,7 +78,7 @@
       "nodes": [
         {
           "selector": "a.group.flex",
-          "html": "<a class=\"group flex shrink-0 items-center gap-2 md:gap-3\" href=\"/\"><div class=\"neu-raised-sm flex h-9 w-9 items-center justify-center rounded-lg md:h-11 md:w-11 md:rounded-xl\"><svg xmlns=\"http://www.",
+          "html": "<a class=\"group flex shrink-0 flex-col items-start gap-0.5 md:gap-1\" href=\"/\"><div class=\"flex items-center gap-2 md:gap-3\"><div class=\"neu-raised-sm flex h-9 w-9 items-center justify-center rounded-l",
           "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
         }
       ]

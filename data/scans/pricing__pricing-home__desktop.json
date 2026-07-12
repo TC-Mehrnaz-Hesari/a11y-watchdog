@@ -3,7 +3,7 @@
   "name": "Pricing Home",
   "url": "http://tc-pricing-website-staging-alb-932992966.ap-southeast-2.elb.amazonaws.com/",
   "viewport": "desktop",
-  "timestamp": "2026-07-11T23:33:23.720Z",
+  "timestamp": "2026-07-12T16:53:34.107Z",
   "score": 81,
   "penalty": 24,
   "violations": [
@@ -60,7 +60,7 @@
       "nodes": [
         {
           "selector": "a.neu-raised-sm.whitespace-nowrap",
-          "html": "<a class=\"neu-raised-sm whitespace-nowrap px-4 py-2.5 text-sm font-bold transition-colors xl:px-5 hidden min-[620px]:inline-flex text-foreground/85 hover:text-foreground\" href=\"/methodology\">Our Data<",
+          "html": "<a class=\"neu-raised-sm whitespace-nowrap px-4 py-2.5 text-sm font-bold transition-colors xl:px-5 hidden min-[620px]:inline-flex text-foreground/85 hover:text-foreground\" href=\"/methodology\">Pricing</",
           "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
         }
       ]
@@ -78,7 +78,7 @@
       "nodes": [
         {
           "selector": "a.group.flex",
-          "html": "<a class=\"group flex shrink-0 items-center gap-2 md:gap-3\" href=\"/\"><div class=\"neu-raised-sm flex h-9 w-9 items-center justify-center rounded-lg md:h-11 md:w-11 md:rounded-xl\"><svg xmlns=\"http://www.",
+          "html": "<a class=\"group flex shrink-0 flex-col items-start gap-0.5 md:gap-1\" href=\"/\"><div class=\"flex items-center gap-2 md:gap-3\"><div class=\"neu-raised-sm flex h-9 w-9 items-center justify-center rounded-l",
           "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
         }
       ]
@@ -87,7 +87,7 @@
   "counts": {
     "violations": 4,
     "violationNodes": 5,
-    "passes": 43,
+    "passes": 42,
     "incomplete": 2
   }
 }

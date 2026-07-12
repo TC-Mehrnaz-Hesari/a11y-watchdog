@@ -3,7 +3,7 @@
   "name": "Services",
   "url": "http://tc-pricing-website-staging-alb-932992966.ap-southeast-2.elb.amazonaws.com/services",
   "viewport": "mobile",
-  "timestamp": "2026-07-11T23:35:49.180Z",
+  "timestamp": "2026-07-12T16:56:02.731Z",
   "score": 89,
   "penalty": 12,
   "violations": [
@@ -19,7 +19,7 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
       "nodes": [
         {
-          "selector": ".text-base > span",
+          "selector": ".tracking-tight > span",
           "html": "<span style=\"color:hsl(201 78% 65%)\"> Prices</span>",
           "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #60bbeb, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
         },

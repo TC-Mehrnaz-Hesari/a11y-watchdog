@@ -1,9 +1,9 @@
 {
   "surface": "pricing",
-  "name": "Guides",
-  "url": "http://tc-pricing-website-staging-alb-932992966.ap-southeast-2.elb.amazonaws.com/guides",
+  "name": "Comparison",
+  "url": "http://tc-pricing-website-staging-alb-932992966.ap-southeast-2.elb.amazonaws.com/comparison",
   "viewport": "desktop",
-  "timestamp": "2026-07-12T16:55:31.359Z",
+  "timestamp": "2026-07-12T16:56:35.471Z",
   "score": 81,
   "penalty": 24,
   "violations": [
@@ -41,7 +41,7 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
       "nodes": [
         {
-          "selector": ".pb-\\[calc\\(5rem\\+env\\(safe-area-inset-bottom\\)\\)\\] > .text-center",
+          "selector": ".pb-\\[calc\\(5rem\\+env\\(safe-area-inset-bottom\\)\\)\\] > section",
           "html": "<section class=\"text-center text-white\" style=\"background:linear-gradient(135deg, hsl(215 47% 32%) 0%, hsl(215 55% 22%) 100%);padding:48px 16px 40px\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
@@ -87,7 +87,7 @@
   "counts": {
     "violations": 4,
     "violationNodes": 5,
-    "passes": 38,
+    "passes": 50,
     "incomplete": 2
   }
 }
