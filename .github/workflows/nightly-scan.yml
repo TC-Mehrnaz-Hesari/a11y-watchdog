@@ -1,0 +1,62 @@
+name: Nightly a11y scan
+
+on:
+  schedule:
+    - cron: "0 16 * * *" # 02:00 Brisbane (AEST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nightly-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: scanner/package-lock.json
+
+      - name: Install scanner
+        working-directory: scanner
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      # WATCHDOG_GH_TOKEN: a PAT with org read + repo clone access, used by
+      # `gh` for target discovery and by git for cloning Storybook repos.
+      # Falls back to the workflow token (public repos only).
+      - name: Authenticate gh for discovery
+        env:
+          GH_TOKEN: ${{ secrets.WATCHDOG_GH_TOKEN || github.token }}
+        run: gh auth setup-git
+
+      - name: Scan web surfaces
+        working-directory: scanner
+        env:
+          GH_TOKEN: ${{ secrets.WATCHDOG_GH_TOKEN || github.token }}
+        run: npm run scan:web
+
+      - name: Scan Storybook repos
+        working-directory: scanner
+        continue-on-error: true # a broken org repo build must not lose the web results
+        env:
+          GH_TOKEN: ${{ secrets.WATCHDOG_GH_TOKEN || github.token }}
+        run: npm run scan:storybook
+
+      - name: Commit scan results
+        run: |
+          git config user.name "a11y-watchdog[bot]"
+          git config user.email "a11y-watchdog[bot]@users.noreply.github.com"
+          git add data/scans
+          git diff --cached --quiet && echo "No scan changes." && exit 0
+          git commit -m "chore: nightly a11y scan $(date -u +%F)"
+          git push

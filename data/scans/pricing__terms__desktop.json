@@ -1,0 +1,98 @@
+{
+  "surface": "pricing",
+  "name": "Terms",
+  "url": "http://tc-pricing-website-staging-alb-932992966.ap-southeast-2.elb.amazonaws.com/terms",
+  "viewport": "desktop",
+  "timestamp": "2026-07-11T23:35:19.026Z",
+  "score": 79,
+  "penalty": 26,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag143"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "nodes": [
+        {
+          "selector": ".text-base > span",
+          "html": "<span style=\"color:hsl(201 78% 65%)\"> Prices</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #60bbeb, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".text-lg > span",
+          "html": "<span style=\"color:hsl(201 78% 65%)\"> Prices</span>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #60bbeb, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": ".relative",
+          "html": "<section class=\"relative py-12 md:py-16\" style=\"background:linear-gradient(135deg, hsl(215 47% 32%), hsl(215 55% 22%))\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".pb-\\[calc\\(5rem\\+env\\(safe-area-inset-bottom\\)\\)\\] > section",
+          "html": "<section class=\"text-center text-white\" style=\"background:linear-gradient(135deg, hsl(215 47% 32%) 0%, hsl(215 55% 22%) 100%);padding:48px 16px 40px\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-trap",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag212"
+      ],
+      "description": "Ensure keyboard focus is never trapped on a single element",
+      "help": "Keyboard focus must not be trapped",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html",
+      "nodes": [
+        {
+          "selector": "a.neu-raised-sm.whitespace-nowrap",
+          "html": "<a class=\"neu-raised-sm whitespace-nowrap px-4 py-2.5 text-sm font-bold transition-colors xl:px-5 hidden min-[620px]:inline-flex text-foreground/85 hover:text-foreground\" href=\"/methodology\">Our Data<",
+          "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-skip-link",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice",
+        "wcag241"
+      ],
+      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
+      "help": "Page should start with a skip-to-content link",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+      "nodes": [
+        {
+          "selector": "a.group.flex",
+          "html": "<a class=\"group flex shrink-0 items-center gap-2 md:gap-3\" href=\"/\"><div class=\"neu-raised-sm flex h-9 w-9 items-center justify-center rounded-lg md:h-11 md:w-11 md:rounded-xl\"><svg xmlns=\"http://www.",
+          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 4,
+    "violationNodes": 6,
+    "passes": 37,
+    "incomplete": 2
+  }
+}

@@ -10,4 +10,12 @@ export default [
       globals: globals.node,
     },
   },
+  {
+    // keyboard.js contains functions serialised into the page via
+    // page.evaluate(), which execute in the browser context.
+    files: ["keyboard.js"],
+    languageOptions: {
+      globals: { ...globals.node, ...globals.browser },
+    },
+  },
 ];

@@ -92,6 +92,10 @@ export function getScan(scanId: string): ScanRecord | undefined {
   return getAllScans().find((s) => s.scanId === scanId);
 }
 
+export function getScansForSurface(surface: string): ScanRecord[] {
+  return getAllScans().filter((s) => s.surface === surface);
+}
+
 // ---------- Aggregates ----------
 
 export function avgScore(scans: ScanRecord[]): number {
@@ -155,10 +159,13 @@ export interface RankedIssue {
   priority: number; // impact weight x total node occurrences
 }
 
-/** Ranks unique axe rules by impact weight x occurrence for the Top Fixes view. */
-export function getRankedIssues(): RankedIssue[] {
+/**
+ * Ranks unique axe rules by impact weight x occurrence. Pass a subset of
+ * scans (e.g. one surface's) to scope the ranking; defaults to the estate.
+ */
+export function getRankedIssues(scans: ScanRecord[] = getAllScans()): RankedIssue[] {
   const map = new Map<string, RankedIssue>();
-  for (const s of getAllScans()) {
+  for (const s of scans) {
     for (const v of s.violations) {
       let issue = map.get(v.id);
       if (!issue) {
@@ -205,6 +212,7 @@ const WCAG_NAMES: Record<string, string> = {
   wcag1410: "1.4.10 Reflow",
   wcag1412: "1.4.12 Text Spacing",
   wcag211: "2.1.1 Keyboard",
+  wcag212: "2.1.2 No Keyboard Trap",
   wcag241: "2.4.1 Bypass Blocks",
   wcag242: "2.4.2 Page Titled",
   wcag244: "2.4.4 Link Purpose",
@@ -323,6 +331,18 @@ const EXPLANATIONS: Record<string, Explanation> = {
   "landmark-banner-is-top-level": {
     why: "A banner landmark nested inside another landmark confuses page structure.",
     fix: "Move the <header role=\"banner\"> to the top level of the page.",
+  },
+  "keyboard-focus-visible": {
+    why: "Sighted keyboard users — common among older people who find a mouse difficult — steer by the focus outline. If focusing an element changes nothing visually, they are navigating blind.",
+    fix: "Never remove outlines without a replacement. Add a clear :focus-visible style (e.g. a 2px high-contrast outline with offset) to links, buttons and form fields.",
+  },
+  "keyboard-trap": {
+    why: "If Tab stops moving, keyboard users are stuck — they cannot reach the rest of the page or leave the widget without a mouse.",
+    fix: "Ensure every widget lets focus move on with Tab/Shift+Tab (or provides a documented Escape). Check custom carousels, chat widgets and embedded players.",
+  },
+  "keyboard-skip-link": {
+    why: "Without a skip link, keyboard users must Tab through the whole header and menu on every page before reaching the content.",
+    fix: "Make the first focusable element a 'Skip to main content' link targeting the <main> element; it can be visually hidden until focused.",
   },
   "landmark-no-duplicate-banner": {
     why: "Multiple banner landmarks make it unclear which is the page header.",

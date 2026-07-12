@@ -3,9 +3,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+// Which top-level nav item "owns" each route prefix.
+const SECTIONS: Record<string, string[]> = {
+  "/": ["/surfaces"],
+  "/scans": ["/detail"],
+  "/top-fixes": [],
+};
+
 export function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   const pathname = usePathname();
-  const active = href === "/" ? pathname === "/" || pathname.startsWith("/detail") : pathname.startsWith(href);
+  const owned = SECTIONS[href] ?? [];
+  const active =
+    (href === "/" ? pathname === "/" : pathname.startsWith(href)) ||
+    owned.some((p) => pathname.startsWith(p));
   return (
     <Link
       href={href}

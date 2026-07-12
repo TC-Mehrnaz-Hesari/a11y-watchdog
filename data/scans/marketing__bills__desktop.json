@@ -1,0 +1,180 @@
+{
+  "surface": "marketing",
+  "name": "Bills",
+  "url": "https://trilogycare.com.au/bills",
+  "viewport": "desktop",
+  "timestamp": "2026-07-11T23:34:03.995Z",
+  "score": 65,
+  "penalty": 54,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2aa",
+        "wcag143"
+      ],
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "nodes": [
+        {
+          "selector": ".space-x-4 > .px-8.hover\\:rounded-full.bg-\\[\\#5dbafa\\]",
+          "html": "<a class=\"bg-[#5dbafa] rounded-full text-sm font-medium text-white px-8 py-2.5 transition-all duration-200 hover:bg-[#368CC2] hover:text-white hover:rounded-full\" href=\"https://portal.trilogycare.com.au/login\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"https://portal.trilogycare.com.au/login\">",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.12 (foreground color: #ffffff, background color: #5dbafa, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
+      "nodes": [
+        {
+          "selector": ".mb-12 > a[href=\"/\"][data-uw-original-href=\"/\"][data-uw-rm-brl=\"PR\"]",
+          "html": "<a class=\"flex items-center\" href=\"/\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"/\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "div:nth-child(1) > .max-h-0.overflow-hidden.opacity-0",
+          "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "div:nth-child(2) > .max-h-0.overflow-hidden.opacity-0",
+          "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".p-4[href$=\"support-at-home\"][data-uw-original-href$=\"support-at-home\"]",
+          "html": "<a class=\"text-gray-500 no-und...\" href=\"/support-at-home\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/support-at-home\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "div:nth-child(4) > .max-h-0.overflow-hidden.opacity-0",
+          "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "div:nth-child(5) > .max-h-0.overflow-hidden.opacity-0",
+          "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"reimbursement\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/reimbursement\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/reimbursement\" aria-label=\"Reimbursement Submit...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".border-\\[\\#29507c\\]\\/30",
+          "html": "<a class=\"flex items-center ga...\" href=\"/bills\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/bills\" aria-label=\"Bills Submit and man...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"submit-a-worker\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/submit-a-worker\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/submit-a-worker\" aria-label=\"Workforce/Provider P...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"feedback\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/feedback\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/feedback\" aria-label=\"Feedback Share your ...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"incidents\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/incidents\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/incidents\" aria-label=\"Incidents Report inc...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"leave\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/leave\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/leave\" aria-label=\"Submit Leave Request...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"privacy-complaints\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/privacy-complaints\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/privacy-complaints\" aria-label=\"Privacy Complaints S...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"supplier-invoice\"] > div:nth-child(2)",
+          "html": "<div class=\"jsx-b72c876a3a35f27f\"><h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Supplier Invoice Template</h4><p class=\"jsx-b72c876a3a35f27f text-xs text-gray-400 mt-0.5\">Generate invoices for supplier payments</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".gap-4.flex-col.flex > .border-gray-200\\/50.bg-\\[\\#5dbafa\\].hover\\:bg-\\[\\#368CC2\\]",
+          "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].gap-2 > .hover\\:text-white.text-white[href=\"tel:1300459190\"]",
+          "html": "<a href=\"tel:1300459190\" class=\"text-sm text-gray-700 hover:text-[#1F3B63] transition-colors duration-200 font-roboto-flex text-white hover:text-white\">1300 459 190</a>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    },
+    {
+      "id": "tabindex",
+      "impact": "serious",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure tabindex attribute values are not greater than 0",
+      "help": "Elements should not have tabindex greater than zero",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/tabindex?application=playwright",
+      "nodes": [
+        {
+          "selector": "iframe[aria-label=\"Submit a Bill\"] #Date1-li",
+          "html": "<li tabindex=\"1\" elname=\"livefield-elem\" class=\"tempFrmWrapper date\" comptype=\"5\" id=\"Date1-li\" compname=\"Date1\" linkname=\"Date1\" needdata=\"true\" isvisible=\"true\" disableddays=\"{}\" startoftheweek=\"0\" mandatory=\"false\" page_no=\"1\" page_link_name=\"Page\" showlabel=\"true\" counteruid=\"\">",
+          "failureSummary": "Fix any of the following:\n  Element has a tabindex greater than 0"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-trap",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag212"
+      ],
+      "description": "Ensure keyboard focus is never trapped on a single element",
+      "help": "Keyboard focus must not be trapped",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html",
+      "nodes": [
+        {
+          "selector": "a.flex.items-center",
+          "html": "<a class=\"flex items-center gap-3 text-gray-500 no-underline p-3 rounded-lg transition-all duration-300 ease-out font-medium border border-transparent hover:text-[#29507c] hover:bg-[#29507c]/10 hover:",
+          "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-skip-link",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice",
+        "wcag241"
+      ],
+      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
+      "help": "Page should start with a skip-to-content link",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+      "nodes": [
+        {
+          "selector": "button#uw-skip-to-main",
+          "html": "<button class=\"uw-sl__item\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" lang=\"en-US\" id=\"uw-skip-to-main\"><span class=\"uw-sl__item__left\" data-uw-ignore-translate=\"true\"><span class=\"uw-s",
+          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "violations": 5,
+    "violationNodes": 20,
+    "passes": 53,
+    "incomplete": 4
+  }
+}

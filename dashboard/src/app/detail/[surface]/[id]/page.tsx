@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getAllScans, getScan, explain, wcagLabel, surfaceLabel } from "@/lib/data";
-import { Card, ScoreRing, ImpactBadge, SurfaceTag } from "@/components/ui";
+import { Card, ScoreRing, ImpactBadge, SurfaceTag, Breadcrumbs } from "@/components/ui";
 
 export function generateStaticParams() {
   return getAllScans().map((s) => ({ surface: s.surface, id: s.scanId }));
@@ -17,6 +17,17 @@ export default async function ScanDetailPage({
 
   return (
     <div className="space-y-8">
+      <Breadcrumbs
+        items={[
+          { href: "/", label: "Overview" },
+          {
+            href: `/surfaces/${encodeURIComponent(scan.surface)}`,
+            label: surfaceLabel(scan.surface),
+          },
+          { label: scan.name },
+        ]}
+      />
+
       <Card className="flex flex-wrap items-center justify-between gap-6">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2.5">

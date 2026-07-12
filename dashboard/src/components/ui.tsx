@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { IMPACT_ORDER, scoreTone, grade } from "@/lib/data";
+import {
+  IMPACT_ORDER,
+  scoreTone,
+  grade,
+  surfaceLabel,
+  type ScanRecord,
+} from "@/lib/data";
 
 // ---------- Cards & tiles ----------
 
@@ -312,6 +318,63 @@ export function DetailLink({
   );
 }
 
+// ---------- Navigation helpers ----------
+
+export function Breadcrumbs({
+  items,
+}: {
+  items: { href?: string; label: string }[];
+}) {
+  return (
+    <nav aria-label="Breadcrumb" className="text-sm text-slate-400">
+      <ol className="flex flex-wrap items-center gap-1.5">
+        {items.map((item, i) => (
+          <li key={i} className="flex items-center gap-1.5">
+            {i > 0 && <span aria-hidden="true">/</span>}
+            {item.href ? (
+              <Link
+                href={item.href}
+                className="font-medium text-teal-dark underline-offset-2 hover:underline"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <span aria-current="page" className="font-medium text-slate-500">
+                {item.label}
+              </span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+
+/** Link-based filter chip; filtering is expressed in the URL, so it needs no client JS. */
+export function FilterChip({
+  href,
+  active,
+  children,
+}: {
+  href: string;
+  active: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      aria-current={active ? "true" : undefined}
+      className={`whitespace-nowrap rounded-full px-3 py-1 text-xs font-semibold ring-1 transition-colors ${
+        active
+          ? "bg-teal text-white ring-teal"
+          : "bg-white text-slate-600 ring-slate-200 hover:bg-slate-50 hover:text-navy"
+      }`}
+    >
+      {children}
+    </Link>
+  );
+}
+
 // ---------- Table primitives ----------
 
 export function Th({
@@ -345,5 +408,63 @@ export function Td({
     >
       {children}
     </td>
+  );
+}
+
+/** Standard scan listing used by the scan explorer and surface pages. */
+export function ScanTable({
+  scans,
+  showSurface = true,
+}: {
+  scans: ScanRecord[];
+  showSurface?: boolean;
+}) {
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="border-b border-slate-200">
+            <Th>Page / component</Th>
+            {showSurface && <Th>Surface</Th>}
+            <Th>Viewport</Th>
+            <Th>Violations</Th>
+            <Th>Elements</Th>
+            <Th>Passes</Th>
+            <Th align="right">Score</Th>
+          </tr>
+        </thead>
+        <tbody>
+          {scans.map((s) => (
+            <tr
+              key={s.scanId}
+              className="border-b border-slate-100 transition-colors last:border-0 hover:bg-slate-50/60"
+            >
+              <Td className="max-w-72 truncate">
+                <DetailLink scanId={s.scanId} surface={s.surface}>
+                  {s.name}
+                </DetailLink>
+              </Td>
+              {showSurface && (
+                <Td>
+                  <SurfaceTag surface={s.surface} label={surfaceLabel(s.surface)} />
+                </Td>
+              )}
+              <Td className="text-slate-600">{s.viewport}</Td>
+              <Td className="tabular-nums text-slate-600">{s.counts.violations}</Td>
+              <Td className="tabular-nums text-slate-600">{s.counts.violationNodes}</Td>
+              <Td className="tabular-nums text-slate-600">{s.counts.passes}</Td>
+              <Td align="right">
+                <ScorePill score={s.score} />
+              </Td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {scans.length === 0 && (
+        <p className="py-8 text-center text-sm text-slate-400">
+          No scans match the current filters.
+        </p>
+      )}
+    </div>
   );
 }

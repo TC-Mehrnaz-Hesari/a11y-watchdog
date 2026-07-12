@@ -54,6 +54,24 @@ export async function runAxe(page, meta) {
   };
 }
 
+/** Append non-axe violations (e.g. keyboard audit) and recompute the score. */
+export function addViolations(record, extras) {
+  if (!extras.length) return record;
+  const violations = [...record.violations, ...extras];
+  const { score, penalty } = computeScore(violations);
+  return {
+    ...record,
+    score,
+    penalty,
+    violations,
+    counts: {
+      ...record.counts,
+      violations: violations.length,
+      violationNodes: violations.reduce((a, v) => a + v.nodes.length, 0),
+    },
+  };
+}
+
 // Safe slug for filenames.
 export function slug(s) {
   return s

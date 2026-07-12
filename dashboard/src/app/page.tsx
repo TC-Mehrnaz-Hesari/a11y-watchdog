@@ -9,6 +9,7 @@ import {
   totalXpAvailable,
   surfaceLabel,
 } from "@/lib/data";
+import { getClaims } from "@/lib/quests";
 import {
   Card,
   StatTile,
@@ -34,6 +35,7 @@ export default function OverviewPage() {
   const worst = scans.slice(0, 10);
   const topIssues = getRankedIssues().slice(0, 5);
   const badges = getBadges();
+  const claims = getClaims();
   const xpAvailable = totalXpAvailable();
   const leaderboard = [...surfaces].sort((a, b) => b.score - a.score);
   const totalNodes = scans.reduce((a, s) => a + s.counts.violationNodes, 0);
@@ -97,25 +99,37 @@ export default function OverviewPage() {
       <Card title="Surface leaderboard">
         <ul className="divide-y divide-slate-100">
           {leaderboard.map((s, rank) => (
-            <li key={s.surface} className="flex flex-wrap items-center gap-x-4 gap-y-2 py-3.5">
-              <span className="w-8 shrink-0 text-center">
-                <Medal rank={rank} />
-              </span>
-              <div className="min-w-40 flex-1">
-                <SurfaceTag surface={s.surface} label={s.label} />
-                <p className="mt-1 text-xs text-slate-500">
-                  {s.scanCount} scans · {s.violationNodes} affected elements
+            <li key={s.surface}>
+              <Link
+                href={`/surfaces/${encodeURIComponent(s.surface)}`}
+                className="group flex flex-wrap items-center gap-x-4 gap-y-2 rounded-lg px-2 py-3.5 transition-colors hover:bg-slate-50/80"
+              >
+                <span className="w-8 shrink-0 text-center">
+                  <Medal rank={rank} />
+                </span>
+                <div className="min-w-40 flex-1">
+                  <SurfaceTag surface={s.surface} label={s.label} />
+                  <p className="mt-1 text-xs text-slate-500">
+                    {s.scanCount} scans · {s.violationNodes} affected elements
+                  </p>
+                </div>
+                <p className="text-xs text-slate-500">
+                  <span className="font-bold text-bad tabular-nums">{s.criticalCount}</span>{" "}
+                  critical{" · "}
+                  <span className="font-bold text-warn tabular-nums">{s.seriousCount}</span>{" "}
+                  serious
                 </p>
-              </div>
-              <p className="text-xs text-slate-500">
-                <span className="font-bold text-bad tabular-nums">{s.criticalCount}</span> critical
-                {" · "}
-                <span className="font-bold text-warn tabular-nums">{s.seriousCount}</span> serious
-              </p>
-              <div className="flex items-center gap-3">
-                <GradeBadge score={s.score} />
-                <ScorePill score={s.score} />
-              </div>
+                <div className="flex items-center gap-3">
+                  <GradeBadge score={s.score} />
+                  <ScorePill score={s.score} />
+                  <span
+                    aria-hidden="true"
+                    className="text-slate-300 transition-transform group-hover:translate-x-0.5 group-hover:text-teal"
+                  >
+                    →
+                  </span>
+                </div>
+              </Link>
             </li>
           ))}
         </ul>
@@ -147,7 +161,17 @@ export default function OverviewPage() {
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Worst offenders */}
-        <Card title="Worst offenders">
+        <Card
+          title="Worst offenders"
+          action={
+            <Link
+              href="/scans"
+              className="text-xs font-bold text-teal-dark underline-offset-2 hover:underline"
+            >
+              All scans →
+            </Link>
+          }
+        >
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-slate-200">
@@ -203,6 +227,11 @@ export default function OverviewPage() {
                     <span className="font-semibold text-navy">{issue.help}</span>
                     <ImpactBadge impact={issue.impact} />
                     <XPChip xp={issue.priority} />
+                    {claims[issue.ruleId] && (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-navy-light px-2 py-0.5 text-[11px] font-bold text-navy">
+                        🐾 {claims[issue.ruleId].owner}
+                      </span>
+                    )}
                   </div>
                   <p className="mt-1 text-xs text-slate-500">
                     {issue.totalNodes} elements across {issue.affectedScans.length} scans ·{" "}
@@ -215,48 +244,6 @@ export default function OverviewPage() {
         </Card>
       </div>
 
-      {/* All scans */}
-      <Card title="All scans">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-slate-200">
-                <Th>Page / component</Th>
-                <Th>Surface</Th>
-                <Th>Viewport</Th>
-                <Th>Violations</Th>
-                <Th>Elements</Th>
-                <Th>Passes</Th>
-                <Th align="right">Score</Th>
-              </tr>
-            </thead>
-            <tbody>
-              {scans.map((s) => (
-                <tr
-                  key={s.scanId}
-                  className="border-b border-slate-100 transition-colors last:border-0 hover:bg-slate-50/60"
-                >
-                  <Td className="max-w-72 truncate">
-                    <DetailLink scanId={s.scanId} surface={s.surface}>
-                      {s.name}
-                    </DetailLink>
-                  </Td>
-                  <Td>
-                    <SurfaceTag surface={s.surface} label={surfaceLabel(s.surface)} />
-                  </Td>
-                  <Td className="text-slate-600">{s.viewport}</Td>
-                  <Td className="tabular-nums text-slate-600">{s.counts.violations}</Td>
-                  <Td className="tabular-nums text-slate-600">{s.counts.violationNodes}</Td>
-                  <Td className="tabular-nums text-slate-600">{s.counts.passes}</Td>
-                  <Td align="right">
-                    <ScorePill score={s.score} />
-                  </Td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Card>
     </div>
   );
 }

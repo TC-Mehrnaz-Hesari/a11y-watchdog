@@ -1,11 +1,11 @@
 {
   "surface": "aect-audit-tool",
   "name": "Home",
-  "url": "https://trilogy-care.github.io/aect-audit-tool/",
+  "url": "https://trilogy-care.github.io",
   "viewport": "desktop",
-  "timestamp": "2026-07-08T00:48:00.028Z",
-  "score": 40,
-  "penalty": 149,
+  "timestamp": "2026-07-11T23:36:05.448Z",
+  "score": 68,
+  "penalty": 47,
   "violations": [
     {
       "id": "color-contrast",
@@ -19,119 +19,96 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
       "nodes": [
         {
-          "selector": "div[data-tab=\"stale\"] > .tab-badge-warn.tab-badge",
-          "html": "<span class=\"tab-badge tab-badge-warn\">70</span>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.96 (foreground color: #ffffff, background color: #e04b51, font size: 6.8pt (9.1px), font weight: bold). Expected contrast ratio of 4.5:1"
+          "selector": "p:nth-child(2) > strong",
+          "html": "<strong>There isn't a GitHub Pages site here.</strong>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.85 (foreground color: #797979, background color: #f1f1f1, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
         },
         {
-          "selector": ".tab-action-items > .tab-badge-warn.tab-badge",
-          "html": "<span class=\"tab-badge tab-badge-warn\">22</span>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.96 (foreground color: #ffffff, background color: #e04b51, font size: 6.8pt (9.1px), font weight: bold). Expected contrast ratio of 4.5:1"
+          "selector": "p:nth-child(3)",
+          "html": "<p>\n        If you're trying to publish one,\n        <a href=\"https://help.github.com/pages/\">read the full documentation</a>\n        to learn how to set up <strong>GitHub Pages</strong>\n        for your repository, organization, or user account.\n      </p>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.85 (foreground color: #797979, background color: #f1f1f1, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
         },
         {
-          "selector": ".home-view > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1)",
-          "html": "<div style=\"font-size:1.5rem;font-weight:800;color:var(--amber);line-height:1\">20</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.67 (foreground color: #febd33, background color: #ffffff, font size: 15.8pt (21px), font weight: bold). Expected contrast ratio of 3:1"
+          "selector": "a[href$=\"pages/\"]",
+          "html": "<a href=\"https://help.github.com/pages/\">read the full documentation</a>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.52 (foreground color: #4183c4, background color: #f1f1f1, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
         },
         {
-          "selector": ".home-view > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(3) > div:nth-child(1)",
-          "html": "<div style=\"font-size:1.5rem;font-weight:800;color:var(--blue);line-height:1\">~12</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.11 (foreground color: #64bcea, background color: #ffffff, font size: 15.8pt (21px), font weight: bold). Expected contrast ratio of 3:1"
-        },
+          "selector": "p:nth-child(3) > strong",
+          "html": "<strong>GitHub Pages</strong>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.85 (foreground color: #797979, background color: #f1f1f1, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "html-has-lang",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2a",
+        "wcag311"
+      ],
+      "description": "Ensure every HTML document has a lang attribute",
+      "help": "<html> element must have a lang attribute",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/html-has-lang?application=playwright",
+      "nodes": [
         {
-          "selector": ".amber.std-cell[data-std=\"1\"] > .std-cell-status",
-          "html": "<div class=\"std-cell-status\">PRESSURE</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.3 (foreground color: #d69e2e, background color: #fffbeb, font size: 6.8pt (9.1px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
+          "selector": "html",
+          "html": "<html>",
+          "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the document has a main landmark",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=playwright",
+      "nodes": [
         {
-          "selector": ".amber.std-cell[data-std=\"2\"] > .std-cell-status",
-          "html": "<div class=\"std-cell-status\">PRESSURE</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.3 (foreground color: #d69e2e, background color: #fffbeb, font size: 6.8pt (9.1px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
+          "selector": "html",
+          "html": "<html>",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "link-in-text-block",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2a",
+        "wcag141"
+      ],
+      "description": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+      "help": "Links must be distinguishable without relying on color",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-in-text-block?application=playwright",
+      "nodes": [
         {
-          "selector": ".green.std-cell[data-std=\"3\"] > .std-cell-status",
-          "html": "<div class=\"std-cell-status\">STABLE</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.13 (foreground color: #38a169, background color: #f0fff4, font size: 6.8pt (9.1px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
+          "selector": "a[href$=\"pages/\"]",
+          "html": "<a href=\"https://help.github.com/pages/\">read the full documentation</a>",
+          "failureSummary": "Fix any of the following:\n  The link has insufficient color contrast of 1.09:1 with the surrounding text. (Minimum contrast is 3:1, link text: #4183c4, surrounding text: #797979)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+        }
+      ]
+    },
+    {
+      "id": "link-name",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2a",
+        "wcag244",
+        "wcag412"
+      ],
+      "description": "Ensure links have discernible text",
+      "help": "Links must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-name?application=playwright",
+      "nodes": [
         {
-          "selector": ".green.std-cell[data-std=\"4\"] > .std-cell-status",
-          "html": "<div class=\"std-cell-status\">STABLE</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.13 (foreground color: #38a169, background color: #f0fff4, font size: 6.8pt (9.1px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".red > .std-cell-status",
-          "html": "<div class=\"std-cell-status\">HOT</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.85 (foreground color: #e53e3e, background color: #fff5f5, font size: 6.8pt (9.1px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".scope-out.std-cell[data-std=\"6\"] > .std-cell-label",
-          "html": "<div class=\"std-cell-label\">Food &amp; Nutrition</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.34 (foreground color: #96a6bc, background color: #f6f9fb, font size: 6.8pt (9.1px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".scope-out.std-cell[data-std=\"6\"] > .std-cell-status",
-          "html": "<div class=\"std-cell-status\">N/A</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.83 (foreground color: #8b96a6, background color: #f6f9fb, font size: 6.8pt (9.1px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".scope-out.std-cell[data-std=\"7\"] > .std-cell-label",
-          "html": "<div class=\"std-cell-label\">Residential</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.34 (foreground color: #96a6bc, background color: #f6f9fb, font size: 6.8pt (9.1px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".scope-out.std-cell[data-std=\"7\"] > .std-cell-status",
-          "html": "<div class=\"std-cell-status\">N/A</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.83 (foreground color: #8b96a6, background color: #f6f9fb, font size: 6.8pt (9.1px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".std-meter-wrap > div:nth-child(3) > strong:nth-child(1)",
-          "html": "<strong style=\"color:#e53e3e\">HOT</strong>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #e53e3e, background color: #ffffff, font size: 7.9pt (10.5px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".std-meter-wrap > div:nth-child(3) > strong:nth-child(2)",
-          "html": "<strong style=\"color:#d69e2e\">PRESSURE</strong>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.38 (foreground color: #d69e2e, background color: #ffffff, font size: 7.9pt (10.5px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".std-meter-wrap > div:nth-child(3) > strong:nth-child(3)",
-          "html": "<strong style=\"color:#38a169\">STABLE</strong>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.24 (foreground color: #38a169, background color: #ffffff, font size: 7.9pt (10.5px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".home-group-label:nth-child(7)",
-          "html": "<div class=\"home-group-label\">Daily Workflow</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.4 (foreground color: #5373a3, background color: #f0f5fa, font size: 7.6pt (10.08px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": "button[data-home-goto=\"triage\"] > .home-tile-badge-amber.home-tile-badge",
-          "html": "<span class=\"home-tile-badge home-tile-badge-amber\">50</span>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.95 (foreground color: #b8860b, background color: #fff3da, font size: 6.5pt (8.68px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".home-tile-badge-red",
-          "html": "<span class=\"home-tile-badge home-tile-badge-red\">70</span>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.26 (foreground color: #e04b51, background color: #fae4e5, font size: 6.5pt (8.68px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".home-group-label:nth-child(9)",
-          "html": "<div class=\"home-group-label\">CI Register</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.4 (foreground color: #5373a3, background color: #f0f5fa, font size: 7.6pt (10.08px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": "button[data-home-goto=\"cqcc\"] > .home-tile-badge-amber.home-tile-badge",
-          "html": "<span class=\"home-tile-badge home-tile-badge-amber\">22</span>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.95 (foreground color: #b8860b, background color: #fff3da, font size: 6.5pt (8.68px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".home-group-label:nth-child(11)",
-          "html": "<div class=\"home-group-label\">Audit Reference</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.4 (foreground color: #5373a3, background color: #f0f5fa, font size: 7.6pt (10.08px), font weight: bold). Expected contrast ratio of 4.5:1"
-        },
-        {
-          "selector": ".home-group-label:nth-child(13)",
-          "html": "<div class=\"home-group-label\">Learn &amp; Contribute</div>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.4 (foreground color: #5373a3, background color: #f0f5fa, font size: 7.6pt (10.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+          "selector": ".logo-img-1x",
+          "html": "<a href=\"/\" class=\"logo logo-img-1x\">",
+          "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
         }
       ]
     },
@@ -146,97 +123,50 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
       "nodes": [
         {
-          "selector": "#onboardStep1",
-          "html": "<div id=\"onboardStep1\">",
+          "selector": "h1",
+          "html": "<h1>404</h1>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".header-left",
-          "html": "<div class=\"header-left\">",
+          "selector": "p:nth-child(2)",
+          "html": "<p><strong>There isn't a GitHub Pages site here.</strong></p>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "#auditCountdown",
-          "html": "<div id=\"auditCountdown\" data-tip=\"Days until ACQSC audit on 28 June 2026\" style=\"background: rgba(224, 75, 81, 0.18); border-color: rgb(224, 75, 81);\">",
+          "selector": "p:nth-child(3)",
+          "html": "<p>\n        If you're trying to publish one,\n        <a href=\"https://help.github.com/pages/\">read the full documentation</a>\n        to learn how to set up <strong>GitHub Pages</strong>\n        for your repository, organization, or user account.\n      </p>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".save-indicator:nth-child(3)",
-          "html": "<div class=\"save-indicator\" data-tip=\"State auto-saved to browser localStorage\"><span class=\"dot\"></span> Auto-saved</div>",
+          "selector": "#suggestions",
+          "html": "<div id=\"suggestions\">\n        <a href=\"https://githubstatus.com\">GitHub Status</a> —\n        <a href=\"https://twitter.com/githubstatus\">@githubstatus</a>\n      </div>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
+        }
+      ]
+    },
+    {
+      "id": "keyboard-skip-link",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice",
+        "wcag241"
+      ],
+      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
+      "help": "Page should start with a skip-to-content link",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+      "nodes": [
         {
-          "selector": ".save-indicator:nth-child(4)",
-          "html": "<div class=\"save-indicator\" style=\"background:rgba(67,192,190,.18);border:1px solid rgba(67,192,190,.4);padding:3px 9px;border-radius:12px\" data-tip=\"Last full org-wide sweep across Confluence, Qdrant, Linear, Zoho, complaints, incidents, SIRs, Aircall, ACQSC correspondence\">",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": "#peToggle",
-          "html": "<div class=\"pe-toggle\" id=\"peToggle\" data-tip=\"Plain-English mode — strips jargon (Strengthened Standard outcomes, ACQSC etc.) and uses everyday language\">\n      <span class=\"switch\"></span>\n      <span>Plain English</span>\n    </div>",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".home-hero",
-          "html": "<div class=\"home-hero\">",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".home-view > div:nth-child(2)",
-          "html": "<div style=\"background:linear-gradient(135deg,#fff5f5,#fff7ed);border:1.5px solid #e53e3e;border-radius:12px;padding:18px 22px;margin-bottom:24px;box-shadow:0 2px 8px rgba(229,62,62,.08)\">",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".home-view > div:nth-child(3)",
-          "html": "<div style=\"background:#fffbeb;border:1px solid #d69e2e;border-left:4px solid #d69e2e;border-radius:10px;padding:14px 18px;margin-bottom:24px\">",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".home-view > div:nth-child(4)",
-          "html": "<div style=\"background:#fff5f5;border:1px solid #e53e3e;border-left:4px solid #e53e3e;border-radius:10px;padding:14px 18px;margin-bottom:24px\">",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".home-view > div:nth-child(5)",
-          "html": "<div style=\"background:#eff6ff;border:1px solid #2b6cb0;border-left:4px solid #2b6cb0;border-radius:10px;padding:14px 18px;margin-bottom:24px\">",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".std-meter-wrap",
-          "html": "<div class=\"std-meter-wrap\">",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".home-group-label:nth-child(7)",
-          "html": "<div class=\"home-group-label\">Daily Workflow</div>",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".home-group-label:nth-child(9)",
-          "html": "<div class=\"home-group-label\">CI Register</div>",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".home-tile[href$=\"ci-register.html\"]",
-          "html": "<a class=\"home-tile\" href=\"./ci-register.html\" style=\"text-decoration:none\">",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".home-group-label:nth-child(11)",
-          "html": "<div class=\"home-group-label\">Audit Reference</div>",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".home-group-label:nth-child(13)",
-          "html": "<div class=\"home-group-label\">Learn &amp; Contribute</div>",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          "selector": "a",
+          "html": "<a href=\"https://help.github.com/pages/\">read the full documentation</a>",
+          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
         }
       ]
     }
   ],
   "counts": {
-    "violations": 2,
-    "violationNodes": 40,
-    "passes": 26,
+    "violations": 7,
+    "violationNodes": 13,
+    "passes": 12,
     "incomplete": 1
   }
 }

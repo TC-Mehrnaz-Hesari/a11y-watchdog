@@ -3,9 +3,9 @@
   "name": "Our Story",
   "url": "https://trilogycare.com.au/our-story",
   "viewport": "desktop",
-  "timestamp": "2026-07-08T00:46:17.318Z",
-  "score": 48,
-  "penalty": 107,
+  "timestamp": "2026-07-11T23:32:02.682Z",
+  "score": 46,
+  "penalty": 119,
   "violations": [
     {
       "id": "aria-prohibited-attr",
@@ -20,12 +20,12 @@
       "nodes": [
         {
           "selector": ".my-10.md\\:block.max-w-5xl > iframe[allowfullscreen=\"\"] #movie_player",
-          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/f551602d/player_embed.vflset/en_GB/base.js\" aria-label=\"YouTube Video Player\">",
+          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/66a6ea83/player_embed.vflset/en_GB/base.js\" aria-label=\"YouTube Video Player\">",
           "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
         },
         {
           "selector": "iframe[title=\"Paula Duncan smiling\"] #movie_player",
-          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/f551602d/player_embed.vflset/en_GB/base.js\" aria-label=\"YouTube Video Player\">",
+          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/66a6ea83/player_embed.vflset/en_GB/base.js\" aria-label=\"YouTube Video Player\">",
           "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
         }
       ]
@@ -254,11 +254,47 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
+    },
+    {
+      "id": "keyboard-trap",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag212"
+      ],
+      "description": "Ensure keyboard focus is never trapped on a single element",
+      "help": "Keyboard focus must not be trapped",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html",
+      "nodes": [
+        {
+          "selector": "a.flex.items-center",
+          "html": "<a class=\"flex items-center gap-3 text-gray-500 no-underline p-3 rounded-lg transition-all duration-300 ease-out font-medium border border-transparent hover:text-[#29507c] hover:bg-[#29507c]/10 hover:",
+          "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-skip-link",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice",
+        "wcag241"
+      ],
+      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
+      "help": "Page should start with a skip-to-content link",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+      "nodes": [
+        {
+          "selector": "button#uw-skip-to-main",
+          "html": "<button class=\"uw-sl__item\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" lang=\"en-US\" id=\"uw-skip-to-main\"><span class=\"uw-sl__item__left\" data-uw-ignore-translate=\"true\"><span class=\"uw-s",
+          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
+        }
+      ]
     }
   ],
   "counts": {
-    "violations": 5,
-    "violationNodes": 37,
+    "violations": 7,
+    "violationNodes": 39,
     "passes": 47,
     "incomplete": 2
   }

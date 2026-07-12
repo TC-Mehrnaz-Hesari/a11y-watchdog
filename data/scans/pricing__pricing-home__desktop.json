@@ -3,9 +3,9 @@
   "name": "Pricing Home",
   "url": "http://tc-pricing-website-staging-alb-932992966.ap-southeast-2.elb.amazonaws.com/",
   "viewport": "desktop",
-  "timestamp": "2026-07-08T00:47:37.306Z",
-  "score": 89,
-  "penalty": 12,
+  "timestamp": "2026-07-11T23:33:23.720Z",
+  "score": 81,
+  "penalty": 24,
   "violations": [
     {
       "id": "color-contrast",
@@ -46,11 +46,47 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
+    },
+    {
+      "id": "keyboard-trap",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag212"
+      ],
+      "description": "Ensure keyboard focus is never trapped on a single element",
+      "help": "Keyboard focus must not be trapped",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html",
+      "nodes": [
+        {
+          "selector": "a.neu-raised-sm.whitespace-nowrap",
+          "html": "<a class=\"neu-raised-sm whitespace-nowrap px-4 py-2.5 text-sm font-bold transition-colors xl:px-5 hidden min-[620px]:inline-flex text-foreground/85 hover:text-foreground\" href=\"/methodology\">Our Data<",
+          "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-skip-link",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice",
+        "wcag241"
+      ],
+      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
+      "help": "Page should start with a skip-to-content link",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+      "nodes": [
+        {
+          "selector": "a.group.flex",
+          "html": "<a class=\"group flex shrink-0 items-center gap-2 md:gap-3\" href=\"/\"><div class=\"neu-raised-sm flex h-9 w-9 items-center justify-center rounded-lg md:h-11 md:w-11 md:rounded-xl\"><svg xmlns=\"http://www.",
+          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
+        }
+      ]
     }
   ],
   "counts": {
-    "violations": 2,
-    "violationNodes": 3,
+    "violations": 4,
+    "violationNodes": 5,
     "passes": 43,
     "incomplete": 2
   }

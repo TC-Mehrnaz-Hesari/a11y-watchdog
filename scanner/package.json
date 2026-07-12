@@ -8,7 +8,8 @@
     "scan": "node scan-web.js && node scan-storybook.js",
     "scan:web": "node scan-web.js",
     "scan:storybook": "node scan-storybook.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "digest": "node digest.js"
   },
   "dependencies": {
     "@axe-core/playwright": "^4.12.1",

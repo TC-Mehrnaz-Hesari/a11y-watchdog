@@ -3,9 +3,9 @@
   "name": "Home",
   "url": "https://trilogycare.com.au/",
   "viewport": "desktop",
-  "timestamp": "2026-07-08T00:45:58.319Z",
-  "score": 58,
-  "penalty": 71,
+  "timestamp": "2026-07-11T23:31:43.936Z",
+  "score": 55,
+  "penalty": 83,
   "violations": [
     {
       "id": "color-contrast",
@@ -88,8 +88,8 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/nested-interactive?application=playwright",
       "nodes": [
         {
-          "selector": ".intercom-with-namespace-1p1gy5w #notification-214656621285359",
-          "html": "<div role=\"option\" id=\"notification-214656621285359\" class=\"intercom-dupaqg e3399q00\">",
+          "selector": ".intercom-with-namespace-1p1gy5w #notification-214656621449435",
+          "html": "<div role=\"option\" id=\"notification-214656621449435\" class=\"intercom-dupaqg e3399q00\">",
           "failureSummary": "Fix any of the following:\n  Element has focusable descendants"
         }
       ]
@@ -245,11 +245,47 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
+    },
+    {
+      "id": "keyboard-trap",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag212"
+      ],
+      "description": "Ensure keyboard focus is never trapped on a single element",
+      "help": "Keyboard focus must not be trapped",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html",
+      "nodes": [
+        {
+          "selector": "a.flex.items-center",
+          "html": "<a class=\"flex items-center gap-3 text-gray-500 no-underline p-3 rounded-lg transition-all duration-300 ease-out font-medium border border-transparent hover:text-[#29507c] hover:bg-[#29507c]/10 hover:",
+          "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-skip-link",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice",
+        "wcag241"
+      ],
+      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
+      "help": "Page should start with a skip-to-content link",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+      "nodes": [
+        {
+          "selector": "button#uw-skip-to-main",
+          "html": "<button class=\"uw-sl__item\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" lang=\"en-US\" id=\"uw-skip-to-main\"><span class=\"uw-sl__item__left\" data-uw-ignore-translate=\"true\"><span class=\"uw-s",
+          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
+        }
+      ]
     }
   ],
   "counts": {
-    "violations": 6,
-    "violationNodes": 33,
+    "violations": 8,
+    "violationNodes": 35,
     "passes": 61,
     "incomplete": 3
   }

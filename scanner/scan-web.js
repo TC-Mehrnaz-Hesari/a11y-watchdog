@@ -3,7 +3,8 @@ import { writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { WEB_TARGETS, VIEWPORTS } from "./targets.js";
-import { runAxe, slug } from "./scan-lib.js";
+import { runAxe, addViolations, slug } from "./scan-lib.js";
+import { auditKeyboard } from "./keyboard.js";
 import { discoverHomepageTargets, discoverSitePages, pageName } from "./discover.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -77,7 +78,18 @@ async function main() {
   let done = 0;
   const total = targets.length * Object.keys(VIEWPORTS).length;
 
+  // Different URLs can share a page name (e.g. two "Home"s on one surface);
+  // suffix a counter so one scan never overwrites another.
+  const usedKeys = new Map();
+  const fileKey = (target) => {
+    const base = `${target.surface}__${slug(target.name)}`;
+    const n = usedKeys.get(base) ?? 0;
+    usedKeys.set(base, n + 1);
+    return n === 0 ? base : `${base}-${n + 1}`;
+  };
+
   for (const target of targets) {
+    const key = fileKey(target);
     for (const [vpName, vp] of Object.entries(VIEWPORTS)) {
       const ctx = await browser.newContext({
         viewport: vp,
@@ -92,13 +104,21 @@ async function main() {
         await page.goto(target.url, { waitUntil: "domcontentloaded", timeout: 45000 });
         await page.waitForLoadState("load", { timeout: 15000 }).catch(() => {});
         await page.waitForTimeout(2500); // let JS-rendered/late content settle
-        const record = await runAxe(page, {
+        let record = await runAxe(page, {
           surface: target.surface,
           name: target.name,
           url: target.url,
           viewport: vpName,
         });
-        const fname = `${target.surface}__${slug(target.name)}__${vpName}.json`;
+        // Keyboard audit needs real keypresses; desktop viewport only.
+        if (vpName === "desktop") {
+          try {
+            record = addViolations(record, await auditKeyboard(page));
+          } catch (err) {
+            console.error(`[keyboard] ${label}: ${err.message}`);
+          }
+        }
+        const fname = `${key}__${vpName}.json`;
         await writeFile(path.join(OUT_DIR, fname), JSON.stringify(record, null, 2));
         done++;
         console.log(

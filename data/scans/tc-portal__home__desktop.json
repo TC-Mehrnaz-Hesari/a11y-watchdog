@@ -3,9 +3,9 @@
   "name": "Home",
   "url": "https://portal.trilogycare.com.au",
   "viewport": "desktop",
-  "timestamp": "2026-07-08T00:47:45.447Z",
-  "score": 57,
-  "penalty": 75,
+  "timestamp": "2026-07-11T23:33:46.406Z",
+  "score": 56,
+  "penalty": 77,
   "violations": [
     {
       "id": "button-name",
@@ -191,8 +191,8 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "#\\32 ebc886c-1a2d-4710-9bed-184a42abc8ec",
-          "html": "<input data-maska-tokens=\"[object Object]\" id=\"2ebc886c-1a2d-4710-9...\" inputmode=\"text\" type=\"password\" name=\"password\" maxlength=\"280\" autocomplete=\"current-password\" required=\"\" placeholder=\"Enter your password\" class=\"rounded-input inline...\" max=\"2026-07-08\" min=\"0\" step=\"1\">",
+          "selector": "#d799d42a-43fb-471d-b0fb-10f152932dbb",
+          "html": "<input data-maska-tokens=\"[object Object]\" id=\"d799d42a-43fb-471d-b...\" inputmode=\"text\" type=\"password\" name=\"password\" maxlength=\"280\" autocomplete=\"current-password\" required=\"\" placeholder=\"Enter your password\" class=\"rounded-input inline...\" max=\"2026-07-11\" min=\"0\" step=\"1\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
@@ -206,11 +206,29 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
+    },
+    {
+      "id": "keyboard-skip-link",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice",
+        "wcag241"
+      ],
+      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
+      "help": "Page should start with a skip-to-content link",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+      "nodes": [
+        {
+          "selector": "a.rounded-md.font-semibold",
+          "html": "<a data-v-3142ac0e=\"\" class=\"rounded-md font-semibold text-teal-700 underline outline-hidden focus:ring-2 focus:ring-teal-700 focus:ring-offset-2 focus:outline-hidden dark:focus:ring-offset-teal-800\" ",
+          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
+        }
+      ]
     }
   ],
   "counts": {
-    "violations": 9,
-    "violationNodes": 17,
+    "violations": 10,
+    "violationNodes": 18,
     "passes": 36,
     "incomplete": 0
   }

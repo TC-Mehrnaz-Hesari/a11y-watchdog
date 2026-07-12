@@ -31,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <nav aria-label="Main" className="flex items-center gap-1">
               <NavLink href="/">Overview</NavLink>
+              <NavLink href="/scans">All Scans</NavLink>
               <NavLink href="/top-fixes">Quest Board</NavLink>
             </nav>
           </div>

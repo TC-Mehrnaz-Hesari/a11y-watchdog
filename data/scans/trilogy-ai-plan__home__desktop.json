@@ -3,9 +3,9 @@
   "name": "Home",
   "url": "https://trilogy-care.github.io/trilogy-ai-plan/",
   "viewport": "desktop",
-  "timestamp": "2026-07-08T00:48:06.468Z",
-  "score": 20,
-  "penalty": 407,
+  "timestamp": "2026-07-11T23:33:54.894Z",
+  "score": 19,
+  "penalty": 419,
   "violations": [
     {
       "id": "color-contrast",
@@ -495,11 +495,47 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
+    },
+    {
+      "id": "keyboard-trap",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag212"
+      ],
+      "description": "Ensure keyboard focus is never trapped on a single element",
+      "help": "Keyboard focus must not be trapped",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html",
+      "nodes": [
+        {
+          "selector": "a.snav-tab",
+          "html": "<a class=\"snav-tab\" href=\"partners-hub.html\"><span class=\"snav-dot\" style=\"background:#00cec9;\"></span> Partners Hub</a>",
+          "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-skip-link",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice",
+        "wcag241"
+      ],
+      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
+      "help": "Page should start with a skip-to-content link",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+      "nodes": [
+        {
+          "selector": "a.snav-tab",
+          "html": "<a class=\"snav-tab\" href=\"progress.html\"><span class=\"snav-dot\" style=\"background:#3b82f6;\"></span> Progress</a>",
+          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
+        }
+      ]
     }
   ],
   "counts": {
-    "violations": 4,
-    "violationNodes": 88,
+    "violations": 6,
+    "violationNodes": 90,
     "passes": 24,
     "incomplete": 1
   }

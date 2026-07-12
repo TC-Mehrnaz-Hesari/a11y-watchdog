@@ -3,7 +3,7 @@
   "name": "Home",
   "url": "https://portal.trilogycare.com.au",
   "viewport": "mobile",
-  "timestamp": "2026-07-08T00:47:50.404Z",
+  "timestamp": "2026-07-11T23:33:51.366Z",
   "score": 58,
   "penalty": 73,
   "violations": [
@@ -191,8 +191,8 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "#\\32 1cf73b8-ead5-4a08-8ae3-8bd5de959787",
-          "html": "<input data-maska-tokens=\"[object Object]\" id=\"21cf73b8-ead5-4a08-8...\" inputmode=\"text\" type=\"password\" name=\"password\" maxlength=\"280\" autocomplete=\"current-password\" required=\"\" placeholder=\"Enter your password\" class=\"rounded-input inline...\" max=\"2026-07-08\" min=\"0\" step=\"1\">",
+          "selector": "#\\32 06cdd2e-759b-4844-ab74-2a9f037b304b",
+          "html": "<input data-maska-tokens=\"[object Object]\" id=\"206cdd2e-759b-4844-a...\" inputmode=\"text\" type=\"password\" name=\"password\" maxlength=\"280\" autocomplete=\"current-password\" required=\"\" placeholder=\"Enter your password\" class=\"rounded-input inline...\" max=\"2026-07-11\" min=\"0\" step=\"1\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {

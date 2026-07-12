@@ -3,9 +3,9 @@
   "name": "Home",
   "url": "https://tc-app-theme.vercel.app",
   "viewport": "desktop",
-  "timestamp": "2026-07-08T00:47:53.644Z",
-  "score": 94,
-  "penalty": 6,
+  "timestamp": "2026-07-11T23:33:38.552Z",
+  "score": 85,
+  "penalty": 18,
   "violations": [
     {
       "id": "landmark-one-main",
@@ -45,11 +45,47 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
+    },
+    {
+      "id": "keyboard-trap",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag212"
+      ],
+      "description": "Ensure keyboard focus is never trapped on a single element",
+      "help": "Keyboard focus must not be trapped",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html",
+      "nodes": [
+        {
+          "selector": "button.flex.flex-col",
+          "html": "<button type=\"button\" class=\"flex flex-col items-start gap-2 rounded-xl border border-border bg-card p-5 text-left transition-colors outline-none hover:border-primary hover:bg-accent focus-visible:rin",
+          "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-skip-link",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice",
+        "wcag241"
+      ],
+      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
+      "help": "Page should start with a skip-to-content link",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+      "nodes": [
+        {
+          "selector": "button.flex.flex-col",
+          "html": "<button type=\"button\" class=\"flex flex-col items-start gap-2 rounded-xl border border-border bg-card p-5 text-left transition-colors outline-none hover:border-primary hover:bg-accent focus-visible:rin",
+          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
+        }
+      ]
     }
   ],
   "counts": {
-    "violations": 2,
-    "violationNodes": 3,
+    "violations": 4,
+    "violationNodes": 5,
     "passes": 15,
     "incomplete": 0
   }

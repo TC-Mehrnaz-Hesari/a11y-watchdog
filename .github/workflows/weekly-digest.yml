@@ -1,0 +1,39 @@
+name: Weekly a11y digest
+
+on:
+  schedule:
+    - cron: "0 22 * * 0" # 08:00 Monday Brisbane (AEST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Set SLACK_WEBHOOK_URL and/or TEAMS_WEBHOOK_URL as repo secrets;
+      # with neither set the digest is printed to the job log (dry run).
+      - name: Build and send digest
+        working-directory: scanner
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          WATCHDOG_DASHBOARD_URL: ${{ vars.WATCHDOG_DASHBOARD_URL }}
+        run: node digest.js
+
+      - name: Commit updated baseline
+        run: |
+          git config user.name "a11y-watchdog[bot]"
+          git config user.email "a11y-watchdog[bot]@users.noreply.github.com"
+          git add data/digest-baseline.json
+          git diff --cached --quiet && echo "No baseline change." && exit 0
+          git commit -m "chore: weekly digest baseline $(date -u +%F)"
+          git push

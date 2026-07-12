@@ -19,11 +19,20 @@ the org what exists, so new repos are covered automatically on the next run:
   `WATCHDOG_PAGES_PER_SITE`, default 10), so nothing needs hand-listing
 - **Curated seeds** — guaranteed-scanned pages in `scanner/targets.js`, for
   anything discovery can't find on its own (e.g. unlinked staging deploys)
+- **Keyboard-navigation audit** — on desktop scans the watchdog also Tabs
+  through each page with real keypresses and reports missing focus
+  indicators, keyboard traps and missing skip links as scored violations
+  (checks axe alone can't do)
 
-…rendered as a gamified dashboard: scores and letter grades per surface, a
-leaderboard with medals, achievement badges, and a **Quest Board** where every
-issue is ranked by impact × occurrence and worth XP, each with a plain-English
-"why it matters / how to fix" and the exact failing elements.
+…rendered as a gamified dashboard: an **Overview** with scores, letter grades,
+a surface leaderboard with medals and achievement badges; a **surface page**
+per product drilling into its own score, impact mix, top quests and scans; an
+**All Scans** explorer filterable by surface and viewport; and a **Quest
+Board** (filterable by impact and surface) where every issue is ranked by
+impact × occurrence and worth XP, each with a plain-English "why it matters /
+how to fix" and the exact failing elements. Quests can be **claimed by name**
+(stored in `data/quests.json`) or turned into a **pre-filled GitHub issue**
+with one click (`WATCHDOG_ISSUES_REPO` sets the target repo).
 
 ## Structure
 
@@ -55,6 +64,20 @@ read access to the org (`gh auth login`). Useful env vars:
 `WATCHDOG_ORG` (default `Trilogy-Care`), `WATCHDOG_REPOS` (comma-separated
 override for Storybook discovery), `WATCHDOG_PAGES_PER_SITE` (default 10),
 `FORCE_REBUILD=1` (rebuild Storybooks).
+
+## Automation
+
+- **Nightly scans** — `.github/workflows/nightly-scan.yml` re-runs the full
+  scan every night (02:00 Brisbane) and commits refreshed `data/scans/*.json`,
+  so the dashboard stays current without anyone remembering to scan. Set the
+  `WATCHDOG_GH_TOKEN` secret (PAT with org read + clone access) for private
+  discovery; without it only public repos are found.
+- **Weekly digest** — `.github/workflows/weekly-digest.yml` posts a Monday
+  morning summary (score movement, new criticals, completed quests, top
+  quests) to Slack and/or Teams. Set `SLACK_WEBHOOK_URL` / `TEAMS_WEBHOOK_URL`
+  secrets and optionally a `WATCHDOG_DASHBOARD_URL` repo variable. Movement is
+  measured against `data/digest-baseline.json`, updated on each digest. Run
+  locally with `npm run digest` (dry-runs to stdout without webhooks).
 
 ## Access control
 
