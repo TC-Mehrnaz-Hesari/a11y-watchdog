@@ -3,10 +3,28 @@
   "name": "About Us",
   "url": "https://trilogycare.com.au/about-us",
   "viewport": "mobile",
-  "timestamp": "2026-07-17T17:04:53.772Z",
-  "score": 74,
-  "penalty": 36,
+  "timestamp": "2026-07-18T16:48:52.537Z",
+  "score": 68,
+  "penalty": 46,
   "violations": [
+    {
+      "id": "button-name",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag412"
+      ],
+      "description": "Ensure buttons have discernible text",
+      "help": "Buttons must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/button-name?application=playwright",
+      "nodes": [
+        {
+          "selector": ".bg-opacity-20",
+          "html": "<button class=\"absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-black rounded-full p-2 transition-all duration-200 cursor-pointer\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        }
+      ]
+    },
     {
       "id": "heading-order",
       "impact": "moderate",
@@ -17,11 +35,6 @@
       "help": "Heading levels should only increase by one",
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/heading-order?application=playwright",
       "nodes": [
-        {
-          "selector": ".flex-col.text-center.items-center:nth-child(1) > .md\\:text-left",
-          "html": "<h3 class=\"text-lg sm:text-xl lg:text-2xl font-thin mb-6 leading-snug font-roboto-serif text-center md:text-left\" style=\"color:#1F3B63\">Choice</h3>",
-          "failureSummary": "Fix any of the following:\n  Heading order invalid"
-        },
         {
           "selector": ".mb-3",
           "html": "<h4 class=\"text-[#29507c] mb-3 font-roboto-serif flex items-center gap-2 text-base sm:text-lg\">",
@@ -118,13 +131,18 @@
           "selector": ".gap-4.flex-col.flex > .bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].px-6 > .hover\\:text-white.text-gray-700[href=\"tel:1300459190\"]",
           "html": "<a href=\"tel:1300459190\" class=\"text-sm text-gray-700 hover:text-[#1F3B63] transition-colors duration-200 font-roboto-flex text-white hover:text-white\">1300 459 190</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".max-w-xs.h-auto.shadow-lg > .max-w-xs.h-auto.shadow-lg",
+          "html": "<div class=\"flex flex-col max-w-xs mx-auto h-auto rounded-lg overflow-hidden shadow-lg\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
     }
   ],
   "counts": {
-    "violations": 2,
-    "violationNodes": 18,
+    "violations": 3,
+    "violationNodes": 19,
     "passes": 44,
     "incomplete": 0
   }
