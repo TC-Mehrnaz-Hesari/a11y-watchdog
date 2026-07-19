@@ -3,28 +3,10 @@
   "name": "Privacy",
   "url": "https://trilogycare.com.au/privacy",
   "viewport": "mobile",
-  "timestamp": "2026-07-18T16:52:08.310Z",
-  "score": 69,
-  "penalty": 44,
+  "timestamp": "2026-07-19T16:52:49.495Z",
+  "score": 76,
+  "penalty": 32,
   "violations": [
-    {
-      "id": "button-name",
-      "impact": "critical",
-      "wcagTags": [
-        "wcag2a",
-        "wcag412"
-      ],
-      "description": "Ensure buttons have discernible text",
-      "help": "Buttons must have discernible text",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/button-name?application=playwright",
-      "nodes": [
-        {
-          "selector": ".absolute",
-          "html": "<button class=\"absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-black rounded-full p-2 transition-all duration-200 cursor-pointer\">",
-          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
-        }
-      ]
-    },
     {
       "id": "region",
       "impact": "moderate",
@@ -106,7 +88,7 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".gap-4.flex-col.flex > .border-gray-200\\/50.bg-\\[\\#5dbafa\\].hover\\:bg-\\[\\#368CC2\\]",
+          "selector": ".text-center.border-gray-200\\/50.bg-\\[\\#5dbafa\\]",
           "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
@@ -114,19 +96,14 @@
           "selector": ".bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].gap-2 > .hover\\:text-white.text-white[href=\"tel:1300459190\"]",
           "html": "<a href=\"tel:1300459190\" class=\"text-sm text-gray-700 hover:text-[#1F3B63] transition-colors duration-200 font-roboto-flex text-white hover:text-white\">1300 459 190</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".max-w-xs.h-auto.shadow-lg > .max-w-xs.h-auto.shadow-lg",
-          "html": "<div class=\"flex flex-col max-w-xs mx-auto h-auto rounded-lg overflow-hidden shadow-lg\">",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
     }
   ],
   "counts": {
-    "violations": 2,
-    "violationNodes": 18,
+    "violations": 1,
+    "violationNodes": 16,
     "passes": 44,
-    "incomplete": 0
+    "incomplete": 1
   }
 }

@@ -3,28 +3,10 @@
   "name": "Privacy",
   "url": "https://trilogycare.com.au/privacy",
   "viewport": "desktop",
-  "timestamp": "2026-07-18T16:52:02.505Z",
-  "score": 62,
-  "penalty": 61,
+  "timestamp": "2026-07-19T16:52:44.928Z",
+  "score": 67,
+  "penalty": 49,
   "violations": [
-    {
-      "id": "button-name",
-      "impact": "critical",
-      "wcagTags": [
-        "wcag2a",
-        "wcag412"
-      ],
-      "description": "Ensure buttons have discernible text",
-      "help": "Buttons must have discernible text",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/button-name?application=playwright",
-      "nodes": [
-        {
-          "selector": ".absolute",
-          "html": "<button class=\"absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-black rounded-full p-2 transition-all duration-200 cursor-pointer\">",
-          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
-        }
-      ]
-    },
     {
       "id": "color-contrast",
       "impact": "serious",
@@ -132,11 +114,6 @@
           "selector": ".bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].gap-2 > .hover\\:text-white.text-white[href=\"tel:1300459190\"]",
           "html": "<a href=\"tel:1300459190\" class=\"text-sm text-gray-700 hover:text-[#1F3B63] transition-colors duration-200 font-roboto-flex text-white hover:text-white\">1300 459 190</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".max-w-5xl.h-120.shadow-lg > .max-w-5xl.h-120.shadow-lg",
-          "html": "<div class=\"flex max-w-5xl mx-auto h-120 rounded-lg overflow-hidden shadow-lg\">",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
     },
@@ -178,9 +155,9 @@
     }
   ],
   "counts": {
-    "violations": 5,
-    "violationNodes": 21,
+    "violations": 4,
+    "violationNodes": 19,
     "passes": 44,
-    "incomplete": 0
+    "incomplete": 1
   }
 }
