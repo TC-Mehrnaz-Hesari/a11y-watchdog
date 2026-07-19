@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-12T22:41:34.748Z",
+  "generatedAt": "2026-07-19T22:44:50.192Z",
   "overall": 77,
-  "criticalNodes": 69,
+  "criticalNodes": 62,
   "surfaceScores": {
     "aect-audit-tool": 74,
     "tc-app-theme": 86,
-    "marketing": 63,
+    "marketing": 64,
     "pricing": 85,
     "tc-portal": 57,
     "trilogy-ai-plan": 22
@@ -39,7 +39,7 @@
     "region": {
       "impact": "moderate",
       "help": "All page content should be contained by landmarks",
-      "nodes": 833
+      "nodes": 862
     },
     "keyboard-skip-link": {
       "impact": "moderate",
@@ -49,7 +49,7 @@
     "page-has-heading-one": {
       "impact": "moderate",
       "help": "Page should contain a level-one heading",
-      "nodes": 26
+      "nodes": 27
     },
     "aria-dialog-name": {
       "impact": "serious",
@@ -79,7 +79,7 @@
     "heading-order": {
       "impact": "moderate",
       "help": "Heading levels should only increase by one",
-      "nodes": 24
+      "nodes": 29
     },
     "label": {
       "impact": "critical",
@@ -91,14 +91,14 @@
       "help": "Certain ARIA roles must contain particular children",
       "nodes": 1
     },
-    "button-name": {
-      "impact": "critical",
-      "help": "Buttons must have discernible text",
-      "nodes": 35
-    },
     "keyboard-trap": {
       "impact": "critical",
       "help": "Keyboard focus must not be trapped",
+      "nodes": 28
+    },
+    "button-name": {
+      "impact": "critical",
+      "help": "Buttons must have discernible text",
       "nodes": 28
     },
     "tabindex": {
