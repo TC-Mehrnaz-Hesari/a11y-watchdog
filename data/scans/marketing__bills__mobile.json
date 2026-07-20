@@ -3,10 +3,27 @@
   "name": "Bills",
   "url": "https://trilogycare.com.au/bills",
   "viewport": "mobile",
-  "timestamp": "2026-07-19T16:52:05.366Z",
-  "score": 73,
-  "penalty": 37,
+  "timestamp": "2026-07-20T17:30:20.870Z",
+  "score": 72,
+  "penalty": 39,
   "violations": [
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the order of headings is semantically correct",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/heading-order?application=playwright",
+      "nodes": [
+        {
+          "selector": ".lg\\:col-span-2 > div:nth-child(2) > .text-base.text-gray-900.font-bold",
+          "html": "<h4 class=\"text-base font-bold text-gray-900 mb-6 font-roboto-serif\">Contact</h4>",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
+        }
+      ]
+    },
     {
       "id": "region",
       "impact": "moderate",
@@ -118,8 +135,8 @@
     }
   ],
   "counts": {
-    "violations": 2,
-    "violationNodes": 17,
+    "violations": 3,
+    "violationNodes": 18,
     "passes": 53,
     "incomplete": 4
   }

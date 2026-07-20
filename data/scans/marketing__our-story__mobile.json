@@ -3,7 +3,7 @@
   "name": "Our Story",
   "url": "https://trilogycare.com.au/our-story",
   "viewport": "mobile",
-  "timestamp": "2026-07-19T16:50:01.490Z",
+  "timestamp": "2026-07-20T17:28:40.824Z",
   "score": 58,
   "penalty": 73,
   "violations": [
@@ -20,7 +20,7 @@
       "nodes": [
         {
           "selector": ".my-5.aspect-video.rounded-tl-2xl > iframe[allowfullscreen=\"\"] #movie_player",
-          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode ytp-small-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/882a803a/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
+          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode ytp-small-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/dfc3d2b2/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
           "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
         }
       ]

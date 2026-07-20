@@ -3,9 +3,9 @@
   "name": "Leave",
   "url": "https://trilogycare.com.au/leave",
   "viewport": "mobile",
-  "timestamp": "2026-07-19T16:52:16.925Z",
-  "score": 68,
-  "penalty": 47,
+  "timestamp": "2026-07-20T17:30:31.433Z",
+  "score": 67,
+  "penalty": 49,
   "violations": [
     {
       "id": "color-contrast",
@@ -22,6 +22,23 @@
           "selector": "iframe[aria-label=\"Home Care Package Leave\"] #formAccess > .pageFotDef > .alignSubmit > .inlineBlock.submitBtnCont.formRelative > .submitColor.submitWrapper.fmSmtButtom > em",
           "html": "<em>Submit</em>",
           "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.79 (foreground color: #ffffff, background color: #1988d6, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the order of headings is semantically correct",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/heading-order?application=playwright",
+      "nodes": [
+        {
+          "selector": ".lg\\:col-span-2 > div:nth-child(2) > .text-base.text-gray-900.font-bold",
+          "html": "<h4 class=\"text-base font-bold text-gray-900 mb-6 font-roboto-serif\">Contact</h4>",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
         }
       ]
     },
@@ -141,8 +158,8 @@
     }
   ],
   "counts": {
-    "violations": 3,
-    "violationNodes": 19,
+    "violations": 4,
+    "violationNodes": 20,
     "passes": 52,
     "incomplete": 4
   }
