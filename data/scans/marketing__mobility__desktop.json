@@ -3,7 +3,7 @@
   "name": "Mobility",
   "url": "https://trilogycare.com.au/mobility",
   "viewport": "desktop",
-  "timestamp": "2026-07-20T17:31:08.200Z",
+  "timestamp": "2026-07-21T17:12:21.510Z",
   "score": 51,
   "penalty": 97,
   "violations": [
@@ -38,7 +38,7 @@
       "nodes": [
         {
           "selector": ".space-x-4 > .px-8.hover\\:rounded-full.bg-\\[\\#5dbafa\\]",
-          "html": "<a class=\"bg-[#5dbafa] rounded-full text-sm font-medium text-white px-8 py-2.5 transition-all duration-200 hover:bg-[#368CC2] hover:text-white hover:rounded-full\" href=\"https://portal.trilogycare.com.au/login\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"https://portal.trilogycare.com.au/login\">",
+          "html": "<a class=\"bg-[#5dbafa] rounded-full text-sm font-medium text-white px-8 py-2.5 transition-all duration-200 hover:bg-[#368CC2] hover:text-white hover:rounded-full\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.12 (foreground color: #ffffff, background color: #5dbafa, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
         }
       ]
@@ -88,8 +88,8 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
       "nodes": [
         {
-          "selector": ".mb-12 > a[data-uw-original-href=\"/\"][href=\"/\"][data-uw-rm-brl=\"PR\"]",
-          "html": "<a class=\"flex items-center\" href=\"/\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"/\">",
+          "selector": ".mb-12 > a[href=\"/\"]",
+          "html": "<a class=\"flex items-center\" href=\"/\"><img alt=\"Trilogy Care\" width=\"300\" height=\"97\" decoding=\"async\" data-nimg=\"1\" class=\"h-12 w-auto\" style=\"color:transparent\" src=\"/_next/static/media/202509_Tc_Logo_01.823a9381.svg\" role=\"img\" data-uw-rm-alt=\"ALT\"></a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
@@ -143,8 +143,8 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".p-4[href$=\"support-at-home\"][data-uw-original-href$=\"support-at-home\"]",
-          "html": "<a class=\"text-gray-500 no-und...\" href=\"/support-at-home\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/support-at-home\">",
+          "selector": ".p-4.rounded-xl[href$=\"support-at-home\"]",
+          "html": "<a class=\"text-gray-500 no-underline p-4 rounded-xl transition-all duration-300 ease-out font-medium border border-transparent hover:text-[#29507c] hover:bg-[#29507c]/10 hover:border-[#29507c]/30 hover:translate-x-2 \" href=\"/support-at-home\">Support at Home</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
@@ -153,7 +153,7 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "a[data-uw-original-href$=\"knowledge-hub\"] > h4",
+          "selector": ".p-3.hover\\:translate-x-2[href$=\"knowledge-hub\"] > h4",
           "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Knowledge Hub</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
