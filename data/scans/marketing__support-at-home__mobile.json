@@ -3,28 +3,10 @@
   "name": "Support at Home",
   "url": "https://trilogycare.com.au/support-at-home",
   "viewport": "mobile",
-  "timestamp": "2026-07-21T17:10:26.682Z",
-  "score": 53,
-  "penalty": 88,
+  "timestamp": "2026-07-22T17:10:40.493Z",
+  "score": 57,
+  "penalty": 76,
   "violations": [
-    {
-      "id": "button-name",
-      "impact": "critical",
-      "wcagTags": [
-        "wcag2a",
-        "wcag412"
-      ],
-      "description": "Ensure buttons have discernible text",
-      "help": "Buttons must have discernible text",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/button-name?application=playwright",
-      "nodes": [
-        {
-          "selector": ".bg-opacity-20",
-          "html": "<button class=\"absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-black rounded-full p-2 transition-all duration-200 cursor-pointer\">",
-          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
-        }
-      ]
-    },
     {
       "id": "color-contrast",
       "impact": "serious",
@@ -105,7 +87,7 @@
       "nodes": [
         {
           "selector": ".mb-12.justify-between.items-center > a[href=\"/\"]",
-          "html": "<a class=\"flex items-center\" href=\"/\"><img alt=\"Trilogy Care\" width=\"300\" height=\"97\" decoding=\"async\" data-nimg=\"1\" class=\"h-12 w-auto\" style=\"color:transparent\" src=\"/_next/static/media/202509_Tc_Logo_01.823a9381.svg\" role=\"img\" data-uw-rm-alt=\"ALT\"></a>",
+          "html": "<a class=\"flex items-center\" href=\"/\"><img alt=\"Trilogy Care\" width=\"300\" height=\"97\" decoding=\"async\" data-nimg=\"1\" class=\"h-12 w-auto\" style=\"color:transparent\" src=\"/_next/static/media/202509_Tc_Logo_01.823a9381.svg\"></a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
@@ -239,13 +221,8 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".gap-4.flex-col.jsx-b72c876a3a35f27f > .hover\\:bg-\\[\\#1f3b63\\].bg-\\[\\#29507c\\].py-2\\.5 > .hover\\:text-white.text-white[href=\"tel:1300459190\"]",
+          "selector": ".hover\\:bg-\\[\\#1f3b63\\].bg-\\[\\#29507c\\].tracking-wide > .hover\\:text-white.text-white[href=\"tel:1300459190\"]",
           "html": "<a href=\"tel:1300459190\" class=\"text-sm text-gray-700 hover:text-[#1F3B63] transition-colors duration-200 font-roboto-flex text-white hover:text-white\">1300 459 190</a>",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        },
-        {
-          "selector": ".max-w-xs.h-auto.shadow-lg > .max-w-xs.h-auto.shadow-lg",
-          "html": "<div class=\"flex flex-col max-w-xs mx-auto h-auto rounded-lg overflow-hidden shadow-lg\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
@@ -257,8 +234,8 @@
     }
   ],
   "counts": {
-    "violations": 5,
-    "violationNodes": 37,
+    "violations": 4,
+    "violationNodes": 35,
     "passes": 45,
     "incomplete": 2
   }
