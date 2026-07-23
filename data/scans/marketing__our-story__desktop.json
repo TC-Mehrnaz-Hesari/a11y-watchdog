@@ -3,7 +3,7 @@
   "name": "Our Story",
   "url": "https://trilogycare.com.au/our-story",
   "viewport": "desktop",
-  "timestamp": "2026-07-22T17:09:43.872Z",
+  "timestamp": "2026-07-23T17:12:51.267Z",
   "score": 51,
   "penalty": 95,
   "violations": [
@@ -20,12 +20,12 @@
       "nodes": [
         {
           "selector": ".my-10.md\\:block.max-w-5xl > iframe[allowfullscreen=\"\"] #movie_player",
-          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/c80bf7e2/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
+          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/7a7969c2/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
           "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
         },
         {
           "selector": "iframe[title=\"Paula Duncan smiling\"] #movie_player",
-          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/c80bf7e2/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
+          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/7a7969c2/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
           "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
         }
       ]
@@ -179,7 +179,7 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".border-gray-200\\/50.bg-\\[\\#5dbafa\\].text-center",
+          "selector": ".bg-\\[\\#5dbafa\\].text-center.border-gray-200\\/50",
           "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },

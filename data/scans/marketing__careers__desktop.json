@@ -3,9 +3,9 @@
   "name": "Careers",
   "url": "https://trilogycare.com.au/careers",
   "viewport": "desktop",
-  "timestamp": "2026-07-22T17:12:11.279Z",
-  "score": 62,
-  "penalty": 62,
+  "timestamp": "2026-07-23T17:15:33.003Z",
+  "score": 56,
+  "penalty": 78,
   "violations": [
     {
       "id": "aria-prohibited-attr",
@@ -20,7 +20,7 @@
       "nodes": [
         {
           "selector": ".lg\\:w-270 #movie_player",
-          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/c80bf7e2/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
+          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/15147aab/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
           "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
         }
       ]
@@ -60,7 +60,7 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
       "nodes": [
         {
-          "selector": ".hover\\:text-white",
+          "selector": ".space-x-4 > .px-8.hover\\:rounded-full.bg-\\[\\#5dbafa\\]",
           "html": "<a class=\"bg-[#5dbafa] rounded-full text-sm font-medium text-white px-8 py-2.5 transition-all duration-200 hover:bg-[#368CC2] hover:text-white hover:rounded-full\" href=\"https://portal.trilogycare.com.au/login\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"https://portal.trilogycare.com.au/login\">",
           "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.12 (foreground color: #ffffff, background color: #5dbafa, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
         }
@@ -124,13 +124,53 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".jsx-b72c876a3a35f27f:nth-child(6) > .max-h-0.overflow-hidden.opacity-0",
-          "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
+          "selector": "a[href$=\"reimbursement\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/reimbursement\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/reimbursement\" aria-label=\"Reimbursement Submit...\" data-uw-rm-empty-ctr...=\"\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".pt-0",
-          "html": "<div class=\"jsx-b72c876a3a35f27f p-8 pt-0 mt-auto\">",
+          "selector": "a[href$=\"bills\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/bills\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/bills\" aria-label=\"Bills Submit and man...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"submit-a-worker\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/submit-a-worker\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/submit-a-worker\" aria-label=\"Workforce/Provider P...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"feedback\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/feedback\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/feedback\" aria-label=\"Feedback Share your ...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"incidents\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/incidents\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/incidents\" aria-label=\"Incidents Report inc...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"leave\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/leave\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/leave\" aria-label=\"Submit Leave Request...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"privacy-complaints\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/privacy-complaints\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/privacy-complaints\" aria-label=\"Privacy Complaints S...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"supplier-invoice\"] > .jsx-b72c876a3a35f27f:nth-child(2)",
+          "html": "<div class=\"jsx-b72c876a3a35f27f\"><h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Supplier Invoice Template</h4><p class=\"jsx-b72c876a3a35f27f text-xs text-gray-400 mt-0.5\">Generate invoices for supplier payments</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".gap-4.flex-col.flex > .bg-\\[\\#5dbafa\\].border-gray-200\\/50.hover\\:bg-\\[\\#368CC2\\]",
+          "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".gap-4.flex-col.flex > .bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].px-6 > .hover\\:text-white.text-gray-700[href=\"tel:0721124020\"]",
+          "html": "<a href=\"tel:0721124020\" class=\"text-sm text-gray-700 hover:text-[#1F3B63] transition-colors duration-200 font-roboto-flex text-white hover:text-white\">07 2112 4020</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
@@ -179,7 +219,7 @@
   ],
   "counts": {
     "violations": 7,
-    "violationNodes": 16,
+    "violationNodes": 24,
     "passes": 48,
     "incomplete": 0
   }

@@ -3,9 +3,9 @@
   "name": "Pricing",
   "url": "https://trilogycare.com.au/pricing",
   "viewport": "mobile",
-  "timestamp": "2026-07-22T17:10:04.327Z",
-  "score": 68,
-  "penalty": 48,
+  "timestamp": "2026-07-23T17:13:11.550Z",
+  "score": 66,
+  "penalty": 51,
   "violations": [
     {
       "id": "color-contrast",
@@ -19,12 +19,17 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
       "nodes": [
         {
-          "selector": ".delay-300 > .z-10.relative > .space-y-4 > .leading-loose.border-y.bold",
-          "html": "<p data-blok-c=\"{\"name\":\"paragraph\",...\" data-blok-uid=\"121027653655212-29bb...\" class=\"text-lg text-center ...\" style=\"color:#e04b51\">",
+          "selector": ".block.h-full:nth-child(3) > .py-6.rounded-2xl.shadow-md > .mb-4.gap-4.justify-center > h3",
+          "html": "<h3 class=\"text-lg sm:text-xl lg:text-2xl font-thin mb-6 leading-snug font-roboto-serif !-mb-4 mt-5\" style=\"color:#E04B51\" data-uw-rm-heading=\"prs\">Other Providers</h3>",
           "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.96 (foreground color: #e04b51, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
         },
         {
-          "selector": ".flex-\\[0_0_85\\%\\].min-w-0:nth-child(1) > .h-full > .hover\\:border-trilogy-teal\\/50.hover\\:shadow-md[role=\"radio\"] > .pt-3.space-y-1\\.5.pb-2 > .gap-2.items-start.justify-between > .gap-1\\.5.flex-wrap.items-center > .bg-\\[\\#3dbfbb\\].focus\\:ring-2.focus\\:ring-ring",
+          "selector": ".block.h-full:nth-child(3) > .py-6.rounded-2xl.shadow-md > .my-5.lg\\:my-0.text-xl",
+          "html": "<div class=\"text-xl font-semibold text-center mx-auto my-5 lg:my-0\" style=\"color:#E04B51\">* $135 per hour</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.96 (foreground color: #e04b51, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "selector": ".flex-\\[0_0_85\\%\\].min-w-0:nth-child(1) > .h-full > .hover\\:border-trilogy-teal\\/50.hover\\:shadow-md[role=\"radio\"] > .pt-3.space-y-1\\.5.pb-2 > .items-start.gap-2.justify-between > .gap-1\\.5.flex-wrap.items-center > .bg-\\[\\#3dbfbb\\].focus\\:ring-2.focus\\:ring-ring",
           "html": "<div class=\"inline-flex items-center rounded-full border transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-[9px] py-0.5 px-1.5 h-4 font-medium whitespace-nowrap bg-[#3dbfbb] text-white\">Full Pensioner</div>",
           "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.24 (foreground color: #ffffff, background color: #3dbfbb, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1"
         }
@@ -58,26 +63,9 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-no-duplicate-banner?application=playwright",
       "nodes": [
         {
-          "selector": ".-top-1",
-          "html": "<header class=\"jsx-b72c876a3a35f27f...\">",
+          "selector": "header",
+          "html": "<header class=\"jsx-b72c876a3a35f27f fixed -top-1 [1088px]:top-0 left-0 right-0 z-50 transition-all duration-300 ease-out border-b backdrop-blur-sm\n        bg-white/90 border-gray-200/50\n        max-[1087px]:bg-white/95\">",
           "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
-        }
-      ]
-    },
-    {
-      "id": "landmark-unique",
-      "impact": "moderate",
-      "wcagTags": [
-        "best-practice"
-      ],
-      "description": "Ensure landmarks are unique",
-      "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-unique?application=playwright",
-      "nodes": [
-        {
-          "selector": ".mt-0.mb-0[aria-labelledby=\"features-grid-heading\"]",
-          "html": "<section data-blok-c=\"{\"name\":\"features_gr...\" data-blok-uid=\"121027653655212-1dca...\" class=\"px-4 md:px-8 lg:px-1...\" style=\"background-color:#02...\" aria-labelledby=\"features-grid-headin...\">",
-          "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
         }
       ]
     },
@@ -92,7 +80,7 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
       "nodes": [
         {
-          "selector": ".mb-12 > a[href=\"/\"][data-uw-original-href=\"/\"][data-uw-rm-brl=\"PR\"]",
+          "selector": ".mb-12.justify-between.jsx-b72c876a3a35f27f > a[href=\"/\"][data-uw-original-href=\"/\"][data-uw-rm-brl=\"PR\"]",
           "html": "<a class=\"flex items-center\" href=\"/\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"/\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
@@ -162,7 +150,7 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".gap-4.flex-col.jsx-b72c876a3a35f27f > .border-gray-200\\/50.bg-\\[\\#5dbafa\\].hover\\:bg-\\[\\#368CC2\\]",
+          "selector": ".gap-4.flex-col.jsx-b72c876a3a35f27f > .bg-\\[\\#5dbafa\\].border-gray-200\\/50.hover\\:bg-\\[\\#368CC2\\]",
           "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
@@ -175,9 +163,9 @@
     }
   ],
   "counts": {
-    "violations": 5,
+    "violations": 4,
     "violationNodes": 21,
     "passes": 49,
-    "incomplete": 2
+    "incomplete": 1
   }
 }

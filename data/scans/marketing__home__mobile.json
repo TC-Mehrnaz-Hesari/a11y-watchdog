@@ -3,9 +3,9 @@
   "name": "Home",
   "url": "https://trilogycare.com.au/",
   "viewport": "mobile",
-  "timestamp": "2026-07-22T17:09:22.821Z",
-  "score": 67,
-  "penalty": 50,
+  "timestamp": "2026-07-23T17:12:31.169Z",
+  "score": 66,
+  "penalty": 52,
   "violations": [
     {
       "id": "color-contrast",
@@ -42,7 +42,7 @@
       "nodes": [
         {
           "selector": ".w-\\[50\\%\\]",
-          "html": "<th class=\"text-left py-2 bg-white w-[50%] min-w-[160px]\"></th>",
+          "html": "<th scope=\"col\" class=\"text-left py-2 bg-white w-[50%] min-w-[160px]\"></th>",
           "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers"
         }
       ]
@@ -76,8 +76,8 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/nested-interactive?application=playwright",
       "nodes": [
         {
-          "selector": ".intercom-with-namespace-1gdvgda #notification-214656621957194",
-          "html": "<div role=\"option\" id=\"notification-214656621957194\" class=\"intercom-dupaqg e3399q00\">",
+          "selector": ".intercom-with-namespace-1gdvgda #notification-214656622014051",
+          "html": "<div role=\"option\" id=\"notification-214656622014051\" class=\"intercom-dupaqg e3399q00\">",
           "failureSummary": "Fix any of the following:\n  Element has focusable descendants"
         }
       ]
@@ -163,13 +163,18 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".gap-4.flex-col.jsx-b72c876a3a35f27f > .border-gray-200\\/50.bg-\\[\\#5dbafa\\].hover\\:bg-\\[\\#368CC2\\]",
+          "selector": ".gap-4.flex-col.jsx-b72c876a3a35f27f > .bg-\\[\\#5dbafa\\].border-gray-200\\/50.hover\\:bg-\\[\\#368CC2\\]",
           "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].border-none > .hover\\:text-white.hover\\:text-\\[\\#1F3B63\\][href=\"tel:1300459190\"]",
+          "selector": ".gap-4.flex-col.jsx-b72c876a3a35f27f > .bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].py-2\\.5 > .hover\\:text-white.hover\\:text-\\[\\#1F3B63\\][href=\"tel:1300459190\"]",
           "html": "<a href=\"tel:1300459190\" class=\"text-sm text-gray-700 hover:text-[#1F3B63] transition-colors duration-200 font-roboto-flex text-white hover:text-white\">1300 459 190</a>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".max-w-xs.h-auto.shadow-lg > .max-w-xs.h-auto.shadow-lg",
+          "html": "<div class=\"flex flex-col max-w-xs mx-auto h-auto rounded-lg overflow-hidden shadow-lg\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
@@ -177,8 +182,8 @@
   ],
   "counts": {
     "violations": 5,
-    "violationNodes": 21,
-    "passes": 61,
+    "violationNodes": 22,
+    "passes": 62,
     "incomplete": 3
   }
 }

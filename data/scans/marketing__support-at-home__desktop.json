@@ -3,7 +3,7 @@
   "name": "Support at Home",
   "url": "https://trilogycare.com.au/support-at-home",
   "viewport": "desktop",
-  "timestamp": "2026-07-22T17:10:35.671Z",
+  "timestamp": "2026-07-23T17:13:48.379Z",
   "score": 57,
   "penalty": 74,
   "violations": [
@@ -72,17 +72,17 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
       "nodes": [
         {
-          "selector": ".mb-12.justify-between.items-center > a[href=\"/\"][data-uw-original-href=\"/\"][data-uw-rm-brl=\"PR\"]",
+          "selector": ".mb-12.justify-between.jsx-b72c876a3a35f27f > a[href=\"/\"][data-uw-original-href=\"/\"][data-uw-rm-brl=\"PR\"]",
           "html": "<a class=\"flex items-center\" href=\"/\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"/\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".jsx-b72c876a3a35f27f:nth-child(1) > .max-h-0.opacity-0.ease-out",
+          "selector": ".jsx-b72c876a3a35f27f:nth-child(1) > .max-h-0.ease-out.opacity-0",
           "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".jsx-b72c876a3a35f27f:nth-child(2) > .max-h-0.opacity-0.ease-out",
+          "selector": ".jsx-b72c876a3a35f27f:nth-child(2) > .max-h-0.ease-out.opacity-0",
           "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
@@ -92,12 +92,12 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".jsx-b72c876a3a35f27f:nth-child(4) > .max-h-0.opacity-0.ease-out",
+          "selector": ".jsx-b72c876a3a35f27f:nth-child(4) > .max-h-0.ease-out.opacity-0",
           "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".jsx-b72c876a3a35f27f:nth-child(5) > .max-h-0.opacity-0.ease-out",
+          "selector": ".jsx-b72c876a3a35f27f:nth-child(5) > .max-h-0.ease-out.opacity-0",
           "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
@@ -142,7 +142,7 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".gap-4.flex-col.jsx-b72c876a3a35f27f > .border-gray-200\\/50.bg-\\[\\#5dbafa\\].hover\\:bg-\\[\\#368CC2\\]",
+          "selector": ".gap-4.flex-col.jsx-b72c876a3a35f27f > .bg-\\[\\#5dbafa\\].border-gray-200\\/50.hover\\:bg-\\[\\#368CC2\\]",
           "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
@@ -162,8 +162,8 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".font-roboto-serif-flex",
-          "html": "<p class=\"font-roboto-serif-flex text-lg text-gray-600 leading-relaxed text-left lg:text-left mx-auto lg:mx-0 max-w-lg lg:max-w-none\">Join thousands of Australians and choose Trilogy Care! Start today and we'll fast track your care with Same Day Sign On!</p>",
+          "selector": ".lg\\:mx-0",
+          "html": "<p class=\"font-roboto-serif text-lg text-gray-600 leading-relaxed text-left lg:text-left mx-auto lg:mx-0 max-w-lg lg:max-w-none\">Join thousands of Australians and choose Trilogy Care! Start today and we'll fast track your care with Same Day Sign On!</p>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {

@@ -3,9 +3,9 @@
   "name": "Careers",
   "url": "https://trilogycare.com.au/careers",
   "viewport": "mobile",
-  "timestamp": "2026-07-22T17:12:17.901Z",
-  "score": 69,
-  "penalty": 45,
+  "timestamp": "2026-07-23T17:15:39.214Z",
+  "score": 62,
+  "penalty": 61,
   "violations": [
     {
       "id": "aria-prohibited-attr",
@@ -106,13 +106,53 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".jsx-b72c876a3a35f27f:nth-child(6) > .max-h-0.overflow-hidden.opacity-0",
-          "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
+          "selector": "a[href$=\"reimbursement\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/reimbursement\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/reimbursement\" aria-label=\"Reimbursement Submit...\" data-uw-rm-empty-ctr...=\"\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".pt-0",
-          "html": "<div class=\"jsx-b72c876a3a35f27f p-8 pt-0 mt-auto\">",
+          "selector": "a[href$=\"bills\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/bills\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/bills\" aria-label=\"Bills Submit and man...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"submit-a-worker\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/submit-a-worker\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/submit-a-worker\" aria-label=\"Workforce/Provider P...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"feedback\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/feedback\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/feedback\" aria-label=\"Feedback Share your ...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"incidents\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/incidents\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/incidents\" aria-label=\"Incidents Report inc...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"leave\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/leave\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/leave\" aria-label=\"Submit Leave Request...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"privacy-complaints\"]",
+          "html": "<a class=\"flex items-center ga...\" href=\"/privacy-complaints\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/privacy-complaints\" aria-label=\"Privacy Complaints S...\" data-uw-rm-empty-ctr...=\"\">",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"supplier-invoice\"] > .jsx-b72c876a3a35f27f:nth-child(2)",
+          "html": "<div class=\"jsx-b72c876a3a35f27f\"><h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Supplier Invoice Template</h4><p class=\"jsx-b72c876a3a35f27f text-xs text-gray-400 mt-0.5\">Generate invoices for supplier payments</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".gap-4.flex-col.flex > .bg-\\[\\#5dbafa\\].border-gray-200\\/50.hover\\:bg-\\[\\#368CC2\\]",
+          "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".gap-4.flex-col.flex > .bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].px-6 > .hover\\:text-white.text-gray-700[href=\"tel:0721124020\"]",
+          "html": "<a href=\"tel:0721124020\" class=\"text-sm text-gray-700 hover:text-[#1F3B63] transition-colors duration-200 font-roboto-flex text-white hover:text-white\">07 2112 4020</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
@@ -125,7 +165,7 @@
   ],
   "counts": {
     "violations": 4,
-    "violationNodes": 13,
+    "violationNodes": 21,
     "passes": 48,
     "incomplete": 0
   }

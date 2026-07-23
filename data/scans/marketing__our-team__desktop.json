@@ -1,11 +1,11 @@
 {
   "surface": "marketing",
-  "name": "Fully Coordinated",
-  "url": "https://trilogycare.com.au/services/fully-coordinated",
-  "viewport": "mobile",
-  "timestamp": "2026-07-23T17:13:40.797Z",
-  "score": 66,
-  "penalty": 51,
+  "name": "Our Team",
+  "url": "https://trilogycare.com.au/our-team",
+  "viewport": "desktop",
+  "timestamp": "2026-07-23T17:15:58.095Z",
+  "score": 59,
+  "penalty": 69,
   "violations": [
     {
       "id": "button-name",
@@ -19,7 +19,7 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/button-name?application=playwright",
       "nodes": [
         {
-          "selector": ".right-4",
+          "selector": ".bg-opacity-20",
           "html": "<button class=\"absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-black rounded-full p-2 transition-all duration-200 cursor-pointer\">",
           "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
         }
@@ -37,9 +37,60 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
       "nodes": [
         {
-          "selector": ".shrink-0.grow-0.basis-full:nth-child(1) > .md\\:h-full.h-auto.rounded-\\[60px\\] > .md\\:mb-6.flex-grow.text-left > .md\\:text-2xl.italic",
-          "html": "<h2 class=\"text-xl md:text-2xl font-roboto-serif italic text-[#007F7E] mb-4\" data-uw-rm-heading=\"prs\">Compliance support</h2>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.04 (foreground color: #007f7e, background color: #daefed, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          "selector": ".space-x-4 > .px-8.hover\\:rounded-full.bg-\\[\\#5dbafa\\]",
+          "html": "<a class=\"bg-[#5dbafa] rounded-full text-sm font-medium text-white px-8 py-2.5 transition-all duration-200 hover:bg-[#368CC2] hover:text-white hover:rounded-full\" href=\"https://portal.trilogycare.com.au/login\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"https://portal.trilogycare.com.au/login\">",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.12 (foreground color: #ffffff, background color: #5dbafa, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the order of headings is semantically correct",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/heading-order?application=playwright",
+      "nodes": [
+        {
+          "selector": ".mt-6 > .bg-transparent.max-w-7xl.mx-auto > .ease-in-out.pt-16.max-h-0 > .pb-4.sm\\:pb-6.sm\\:px-6 > .from-gray-50\\/50.to-white.sm\\:p-6 > .mb-3.sm\\:text-lg.text-base",
+          "html": "<h4 class=\"text-[#29507c] mb-3 font-roboto-serif flex items-center gap-2 text-base sm:text-lg\">",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
+        }
+      ]
+    },
+    {
+      "id": "landmark-main-is-top-level",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the main landmark is at top level",
+      "help": "Main landmark should not be contained in another landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-main-is-top-level?application=playwright",
+      "nodes": [
+        {
+          "selector": ".overflow-x-clip",
+          "html": "<main class=\"overflow-x-clip\">",
+          "failureSummary": "Fix any of the following:\n  The main landmark is contained in another landmark."
+        }
+      ]
+    },
+    {
+      "id": "landmark-no-duplicate-main",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the document has at most one main landmark",
+      "help": "Document should not have more than one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-no-duplicate-main?application=playwright",
+      "nodes": [
+        {
+          "selector": "#main-content",
+          "html": "<main id=\"main-content\">",
+          "failureSummary": "Fix any of the following:\n  Document has more than one main landmark"
         }
       ]
     },
@@ -54,8 +105,8 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-unique?application=playwright",
       "nodes": [
         {
-          "selector": ".space-y-12 > .gap-4.items-center.flex > div[aria-roledescription=\"carousel\"][data-slot=\"carousel\"][role=\"region\"]",
-          "html": "<div class=\"relative w-full flex-1 flex items-center gap-4\" role=\"region\" aria-roledescription=\"carousel\" data-slot=\"carousel\">",
+          "selector": "#main-content",
+          "html": "<main id=\"main-content\">",
           "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
         }
       ]
@@ -71,7 +122,7 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
       "nodes": [
         {
-          "selector": ".mb-12.justify-between.items-center > a[href=\"/\"][data-uw-original-href=\"/\"][data-uw-rm-brl=\"PR\"]",
+          "selector": ".mb-12 > a[href=\"/\"][data-uw-original-href=\"/\"][data-uw-rm-brl=\"PR\"]",
           "html": "<a class=\"flex items-center\" href=\"/\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"/\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
@@ -141,27 +192,63 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".gap-4.flex-col.jsx-b72c876a3a35f27f > .bg-\\[\\#5dbafa\\].border-gray-200\\/50.hover\\:bg-\\[\\#368CC2\\]",
+          "selector": ".gap-4.flex-col.flex > .bg-\\[\\#5dbafa\\].border-gray-200\\/50.hover\\:bg-\\[\\#368CC2\\]",
           "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".gap-4.flex-col.jsx-b72c876a3a35f27f > .bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].py-2\\.5 > .hover\\:text-white.text-white[href=\"tel:1300459190\"]",
+          "selector": ".gap-4.flex-col.flex > .bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].px-6 > .hover\\:text-white.text-gray-700[href=\"tel:1300459190\"]",
           "html": "<a href=\"tel:1300459190\" class=\"text-sm text-gray-700 hover:text-[#1F3B63] transition-colors duration-200 font-roboto-flex text-white hover:text-white\">1300 459 190</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".shadow-lg.h-auto.max-w-xs > .shadow-lg.h-auto.max-w-xs",
-          "html": "<div class=\"flex flex-col max-w-xs mx-auto h-auto rounded-lg overflow-hidden shadow-lg\">",
+          "selector": ".h-120.shadow-lg.max-w-5xl > .h-120.shadow-lg.max-w-5xl",
+          "html": "<div class=\"flex max-w-5xl mx-auto h-120 rounded-lg overflow-hidden shadow-lg\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-trap",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag212"
+      ],
+      "description": "Ensure keyboard focus is never trapped on a single element",
+      "help": "Keyboard focus must not be trapped",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html",
+      "nodes": [
+        {
+          "selector": "a.flex.items-center",
+          "html": "<a class=\"flex items-center gap-3 text-gray-500 no-underline p-3 rounded-lg transition-all duration-300 ease-out font-medium border border-transparent hover:text-[#29507c] hover:bg-[#29507c]/10 hover:",
+          "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-skip-link",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice",
+        "wcag241"
+      ],
+      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
+      "help": "Page should start with a skip-to-content link",
+      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
+      "nodes": [
+        {
+          "selector": "button#uw-skip-to-main",
+          "html": "<button class=\"uw-sl__item\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" lang=\"en-US\" id=\"uw-skip-to-main\"><span class=\"uw-sl__item__left\" data-uw-ignore-translate=\"true\"><span class=\"uw-s",
+          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
         }
       ]
     }
   ],
   "counts": {
-    "violations": 4,
-    "violationNodes": 20,
-    "passes": 53,
-    "incomplete": 1
+    "violations": 9,
+    "violationNodes": 25,
+    "passes": 42,
+    "incomplete": 2
   }
 }

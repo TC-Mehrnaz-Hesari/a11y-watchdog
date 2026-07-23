@@ -3,7 +3,7 @@
   "name": "Events",
   "url": "https://trilogycare.com.au/events",
   "viewport": "desktop",
-  "timestamp": "2026-07-22T17:11:59.702Z",
+  "timestamp": "2026-07-23T17:15:20.333Z",
   "score": 61,
   "penalty": 63,
   "violations": [
@@ -141,7 +141,7 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".border-gray-200\\/50.bg-\\[\\#5dbafa\\].text-center",
+          "selector": ".bg-\\[\\#5dbafa\\].text-center.border-gray-200\\/50",
           "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },

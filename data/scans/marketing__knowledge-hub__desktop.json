@@ -3,7 +3,7 @@
   "name": "Knowledge Hub",
   "url": "https://trilogycare.com.au/knowledge-hub",
   "viewport": "desktop",
-  "timestamp": "2026-07-22T17:10:47.332Z",
+  "timestamp": "2026-07-23T17:14:02.179Z",
   "score": 59,
   "penalty": 69,
   "violations": [
@@ -124,7 +124,7 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".text-center.border-gray-200\\/50.bg-\\[\\#5dbafa\\]",
+          "selector": ".text-center.bg-\\[\\#5dbafa\\].border-gray-200\\/50",
           "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
@@ -144,8 +144,8 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".font-roboto-serif-flex",
-          "html": "<p class=\"font-roboto-serif-flex text-lg text-gray-600 leading-relaxed text-left lg:text-left mx-auto lg:mx-0 max-w-lg lg:max-w-none\">Join thousands of Australians and choose Trilogy Care! Start today and we'll fast track your care with Same Day Sign On!</p>",
+          "selector": ".lg\\:mx-0",
+          "html": "<p class=\"font-roboto-serif text-lg text-gray-600 leading-relaxed text-left lg:text-left mx-auto lg:mx-0 max-w-lg lg:max-w-none\">Join thousands of Australians and choose Trilogy Care! Start today and we'll fast track your care with Same Day Sign On!</p>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {

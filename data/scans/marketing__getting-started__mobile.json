@@ -3,7 +3,7 @@
   "name": "Getting Started",
   "url": "https://trilogycare.com.au/getting-started",
   "viewport": "mobile",
-  "timestamp": "2026-07-22T17:11:04.280Z",
+  "timestamp": "2026-07-23T17:14:20.657Z",
   "score": 68,
   "penalty": 46,
   "violations": [
@@ -106,7 +106,7 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".gap-4.flex-col.flex > .border-gray-200\\/50.bg-\\[\\#5dbafa\\].hover\\:bg-\\[\\#368CC2\\]",
+          "selector": ".gap-4.flex-col.flex > .bg-\\[\\#5dbafa\\].border-gray-200\\/50.hover\\:bg-\\[\\#368CC2\\]",
           "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
