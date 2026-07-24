@@ -3,7 +3,7 @@
   "name": "Home",
   "url": "https://trilogycare.com.au/",
   "viewport": "mobile",
-  "timestamp": "2026-07-23T17:12:31.169Z",
+  "timestamp": "2026-07-24T17:23:10.506Z",
   "score": 66,
   "penalty": 52,
   "violations": [
@@ -76,8 +76,8 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/nested-interactive?application=playwright",
       "nodes": [
         {
-          "selector": ".intercom-with-namespace-1gdvgda #notification-214656622014051",
-          "html": "<div role=\"option\" id=\"notification-214656622014051\" class=\"intercom-dupaqg e3399q00\">",
+          "selector": ".intercom-with-namespace-1gdvgda #notification-214656622089981",
+          "html": "<div role=\"option\" id=\"notification-214656622089981\" class=\"intercom-dupaqg e3399q00\">",
           "failureSummary": "Fix any of the following:\n  Element has focusable descendants"
         }
       ]
