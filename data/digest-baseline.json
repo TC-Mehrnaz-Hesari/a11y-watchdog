@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-19T22:44:50.192Z",
-  "overall": 77,
-  "criticalNodes": 62,
+  "generatedAt": "2026-07-26T22:55:06.089Z",
+  "overall": 76,
+  "criticalNodes": 71,
   "surfaceScores": {
     "aect-audit-tool": 74,
     "tc-app-theme": 86,
-    "marketing": 64,
+    "marketing": 63,
     "pricing": 85,
     "tc-portal": 57,
     "trilogy-ai-plan": 22
@@ -14,7 +14,7 @@
     "color-contrast": {
       "impact": "serious",
       "help": "Elements must meet minimum color contrast ratio thresholds",
-      "nodes": 230
+      "nodes": 234
     },
     "html-has-lang": {
       "impact": "serious",
@@ -39,17 +39,17 @@
     "region": {
       "impact": "moderate",
       "help": "All page content should be contained by landmarks",
-      "nodes": 862
+      "nodes": 884
     },
     "keyboard-skip-link": {
       "impact": "moderate",
       "help": "Page should start with a skip-to-content link",
-      "nodes": 30
+      "nodes": 31
     },
     "page-has-heading-one": {
       "impact": "moderate",
       "help": "Page should contain a level-one heading",
-      "nodes": 27
+      "nodes": 26
     },
     "aria-dialog-name": {
       "impact": "serious",
@@ -79,7 +79,7 @@
     "heading-order": {
       "impact": "moderate",
       "help": "Heading levels should only increase by one",
-      "nodes": 29
+      "nodes": 25
     },
     "label": {
       "impact": "critical",
@@ -91,15 +91,15 @@
       "help": "Certain ARIA roles must contain particular children",
       "nodes": 1
     },
-    "keyboard-trap": {
-      "impact": "critical",
-      "help": "Keyboard focus must not be trapped",
-      "nodes": 28
-    },
     "button-name": {
       "impact": "critical",
       "help": "Buttons must have discernible text",
-      "nodes": 28
+      "nodes": 36
+    },
+    "keyboard-trap": {
+      "impact": "critical",
+      "help": "Keyboard focus must not be trapped",
+      "nodes": 29
     },
     "tabindex": {
       "impact": "serious",
@@ -120,6 +120,16 @@
       "impact": "serious",
       "help": "Interactive controls must not be nested",
       "nodes": 4
+    },
+    "landmark-main-is-top-level": {
+      "impact": "moderate",
+      "help": "Main landmark should not be contained in another landmark",
+      "nodes": 2
+    },
+    "landmark-no-duplicate-main": {
+      "impact": "moderate",
+      "help": "Document should not have more than one main landmark",
+      "nodes": 2
     },
     "landmark-banner-is-top-level": {
       "impact": "moderate",
