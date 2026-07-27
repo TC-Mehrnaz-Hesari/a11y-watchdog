@@ -3,30 +3,77 @@
   "name": "Pricing Home",
   "url": "http://tc-pricing-website-staging-alb-932992966.ap-southeast-2.elb.amazonaws.com/",
   "viewport": "mobile",
-  "timestamp": "2026-07-26T16:54:30.878Z",
-  "score": 89,
-  "penalty": 12,
+  "timestamp": "2026-07-27T17:41:09.559Z",
+  "score": 86,
+  "penalty": 16,
   "violations": [
     {
-      "id": "color-contrast",
+      "id": "document-title",
       "impact": "serious",
       "wcagTags": [
-        "wcag2aa",
-        "wcag143"
+        "wcag2a",
+        "wcag242"
       ],
-      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
-      "help": "Elements must meet minimum color contrast ratio thresholds",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "description": "Ensure each HTML document contains a non-empty <title> element",
+      "help": "Documents must have <title> element to aid in navigation",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/document-title?application=playwright",
       "nodes": [
         {
-          "selector": ".tracking-tight > span",
-          "html": "<span style=\"color:hsl(201 78% 65%)\"> Prices</span>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #60bbeb, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
+          "selector": "html",
+          "html": "<html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Home Care Prices - private preview. Authentication required.</pre></body></html>",
+          "failureSummary": "Fix any of the following:\n  Document does not have a non-empty <title> element"
+        }
+      ]
+    },
+    {
+      "id": "html-has-lang",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2a",
+        "wcag311"
+      ],
+      "description": "Ensure every HTML document has a lang attribute",
+      "help": "<html> element must have a lang attribute",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/html-has-lang?application=playwright",
+      "nodes": [
         {
-          "selector": ".font-black.text-lg.text-white > span",
-          "html": "<span style=\"color:hsl(201 78% 65%)\"> Prices</span>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #60bbeb, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          "selector": "html",
+          "html": "<html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Home Care Prices - private preview. Authentication required.</pre></body></html>",
+          "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the document has a main landmark",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Home Care Prices - private preview. Authentication required.</pre></body></html>",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Home Care Prices - private preview. Authentication required.</pre></body></html>",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
         }
       ]
     },
@@ -41,17 +88,17 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
       "nodes": [
         {
-          "selector": ".pb-\\[calc\\(5rem\\+env\\(safe-area-inset-bottom\\)\\)\\] > section",
-          "html": "<section class=\"text-center text-white\" style=\"background:linear-gradient(135deg, hsl(215 47% 32%) 0%, hsl(215 55% 22%) 100%);padding:48px 16px 40px\">",
+          "selector": "pre",
+          "html": "<pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Home Care Prices - private preview. Authentication required.</pre>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         }
       ]
     }
   ],
   "counts": {
-    "violations": 2,
-    "violationNodes": 3,
-    "passes": 42,
-    "incomplete": 2
+    "violations": 5,
+    "violationNodes": 5,
+    "passes": 3,
+    "incomplete": 0
   }
 }

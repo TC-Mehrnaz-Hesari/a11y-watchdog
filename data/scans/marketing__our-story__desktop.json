@@ -3,7 +3,7 @@
   "name": "Our Story",
   "url": "https://trilogycare.com.au/our-story",
   "viewport": "desktop",
-  "timestamp": "2026-07-26T16:52:31.761Z",
+  "timestamp": "2026-07-27T17:39:05.941Z",
   "score": 51,
   "penalty": 95,
   "violations": [
@@ -20,12 +20,12 @@
       "nodes": [
         {
           "selector": ".my-10.md\\:block.max-w-5xl > iframe[allowfullscreen=\"\"] #movie_player",
-          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/7a7969c2/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
+          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/15147aab/player_embed.vflset/es_MX/base.js\" aria-label=\"Reproductor de video de YouTube\">",
           "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
         },
         {
           "selector": "iframe[title=\"Paula Duncan smiling\"] #movie_player",
-          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/7a7969c2/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
+          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/15147aab/player_embed.vflset/es_MX/base.js\" aria-label=\"Reproductor de video de YouTube\">",
           "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
         }
       ]

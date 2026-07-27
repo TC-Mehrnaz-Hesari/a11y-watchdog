@@ -3,30 +3,77 @@
   "name": "Pricing Home",
   "url": "http://tc-pricing-website-staging-alb-932992966.ap-southeast-2.elb.amazonaws.com/",
   "viewport": "desktop",
-  "timestamp": "2026-07-26T16:54:24.200Z",
-  "score": 81,
-  "penalty": 24,
+  "timestamp": "2026-07-27T17:41:06.041Z",
+  "score": 86,
+  "penalty": 16,
   "violations": [
     {
-      "id": "color-contrast",
+      "id": "document-title",
       "impact": "serious",
       "wcagTags": [
-        "wcag2aa",
-        "wcag143"
+        "wcag2a",
+        "wcag242"
       ],
-      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
-      "help": "Elements must meet minimum color contrast ratio thresholds",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+      "description": "Ensure each HTML document contains a non-empty <title> element",
+      "help": "Documents must have <title> element to aid in navigation",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/document-title?application=playwright",
       "nodes": [
         {
-          "selector": ".tracking-tight > span",
-          "html": "<span style=\"color:hsl(201 78% 65%)\"> Prices</span>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #60bbeb, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
-        },
+          "selector": "html",
+          "html": "<html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Home Care Prices - private preview. Authentication required.</pre></body></html>",
+          "failureSummary": "Fix any of the following:\n  Document does not have a non-empty <title> element"
+        }
+      ]
+    },
+    {
+      "id": "html-has-lang",
+      "impact": "serious",
+      "wcagTags": [
+        "wcag2a",
+        "wcag311"
+      ],
+      "description": "Ensure every HTML document has a lang attribute",
+      "help": "<html> element must have a lang attribute",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/html-has-lang?application=playwright",
+      "nodes": [
         {
-          "selector": ".font-black.text-lg.text-white > span",
-          "html": "<span style=\"color:hsl(201 78% 65%)\"> Prices</span>",
-          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #60bbeb, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          "selector": "html",
+          "html": "<html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Home Care Prices - private preview. Authentication required.</pre></body></html>",
+          "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+        }
+      ]
+    },
+    {
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the document has a main landmark",
+      "help": "Document should have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Home Care Prices - private preview. Authentication required.</pre></body></html>",
+          "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+        }
+      ]
+    },
+    {
+      "id": "page-has-heading-one",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+      "help": "Page should contain a level-one heading",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=playwright",
+      "nodes": [
+        {
+          "selector": "html",
+          "html": "<html><head><meta name=\"color-scheme\" content=\"light dark\"></head><body><pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Home Care Prices - private preview. Authentication required.</pre></body></html>",
+          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
         }
       ]
     },
@@ -41,53 +88,17 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
       "nodes": [
         {
-          "selector": ".pb-\\[calc\\(5rem\\+env\\(safe-area-inset-bottom\\)\\)\\] > section",
-          "html": "<section class=\"text-center text-white\" style=\"background:linear-gradient(135deg, hsl(215 47% 32%) 0%, hsl(215 55% 22%) 100%);padding:48px 16px 40px\">",
+          "selector": "pre",
+          "html": "<pre style=\"word-wrap: break-word; white-space: pre-wrap;\">Home Care Prices - private preview. Authentication required.</pre>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
-        }
-      ]
-    },
-    {
-      "id": "keyboard-trap",
-      "impact": "critical",
-      "wcagTags": [
-        "wcag2a",
-        "wcag212"
-      ],
-      "description": "Ensure keyboard focus is never trapped on a single element",
-      "help": "Keyboard focus must not be trapped",
-      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/no-keyboard-trap.html",
-      "nodes": [
-        {
-          "selector": "a.neu-raised-sm.whitespace-nowrap",
-          "html": "<a class=\"neu-raised-sm whitespace-nowrap px-4 py-2.5 text-sm font-bold transition-colors xl:px-5 hidden min-[620px]:inline-flex text-foreground/85 hover:text-foreground\" href=\"/methodology\">Pricing</",
-          "failureSummary": "Fix the following:\n  Pressing Tab repeatedly leaves focus on this element — keyboard users cannot move past it"
-        }
-      ]
-    },
-    {
-      "id": "keyboard-skip-link",
-      "impact": "moderate",
-      "wcagTags": [
-        "best-practice",
-        "wcag241"
-      ],
-      "description": "Ensure the first tab stop is a skip link so keyboard users can bypass repeated navigation",
-      "help": "Page should start with a skip-to-content link",
-      "helpUrl": "https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html",
-      "nodes": [
-        {
-          "selector": "a.group.flex",
-          "html": "<a class=\"group flex shrink-0 flex-col items-start gap-0.5 md:gap-1\" href=\"/\"><div class=\"flex items-center gap-2 md:gap-3\"><div class=\"neu-raised-sm flex h-9 w-9 items-center justify-center rounded-l",
-          "failureSummary": "Fix the following:\n  The first Tab press lands here instead of on a 'Skip to content' link"
         }
       ]
     }
   ],
   "counts": {
-    "violations": 4,
+    "violations": 5,
     "violationNodes": 5,
-    "passes": 42,
-    "incomplete": 2
+    "passes": 3,
+    "incomplete": 0
   }
 }

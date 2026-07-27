@@ -3,9 +3,9 @@
   "name": "Bills",
   "url": "https://trilogycare.com.au/bills",
   "viewport": "desktop",
-  "timestamp": "2026-07-26T16:54:38.099Z",
-  "score": 65,
-  "penalty": 54,
+  "timestamp": "2026-07-27T17:41:18.534Z",
+  "score": 56,
+  "penalty": 80,
   "violations": [
     {
       "id": "color-contrast",
@@ -20,8 +20,25 @@
       "nodes": [
         {
           "selector": ".space-x-4 > .px-8.hover\\:rounded-full.bg-\\[\\#5dbafa\\]",
-          "html": "<a class=\"bg-[#5dbafa] rounded-full text-sm font-medium text-white px-8 py-2.5 transition-all duration-200 hover:bg-[#368CC2] hover:text-white hover:rounded-full\" href=\"https://portal.trilogycare.com.au/login\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"https://portal.trilogycare.com.au/login\">",
+          "html": "<a class=\"bg-[#5dbafa] rounded-full text-sm font-medium text-white px-8 py-2.5 transition-all duration-200 hover:bg-[#368CC2] hover:text-white hover:rounded-full\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.12 (foreground color: #ffffff, background color: #5dbafa, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "wcagTags": [
+        "best-practice"
+      ],
+      "description": "Ensure the order of headings is semantically correct",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/heading-order?application=playwright",
+      "nodes": [
+        {
+          "selector": ".lg\\:col-span-2 > div:nth-child(2) > .text-base.text-gray-900.font-bold",
+          "html": "<h4 class=\"text-base font-bold text-gray-900 mb-6 font-roboto-serif\">Contact</h4>",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
         }
       ]
     },
@@ -36,68 +53,128 @@
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=playwright",
       "nodes": [
         {
-          "selector": ".mb-12 > a[href=\"/\"][data-uw-original-href=\"/\"][data-uw-rm-brl=\"PR\"]",
-          "html": "<a class=\"flex items-center\" href=\"/\" data-uw-rm-brl=\"PR\" data-uw-original-href=\"/\">",
+          "selector": ".mb-12 > a[href=\"/\"]",
+          "html": "<a class=\"flex items-center\" href=\"/\"><img alt=\"Trilogy Care\" width=\"300\" height=\"97\" decoding=\"async\" data-nimg=\"1\" class=\"h-12 w-auto\" style=\"color:transparent\" src=\"/_next/static/media/202509_Tc_Logo_01.823a9381.svg\"></a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "div:nth-child(1) > .max-h-0.overflow-hidden.opacity-0",
-          "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
+          "selector": "a[href$=\"about-us\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">About Us</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "div:nth-child(2) > .max-h-0.overflow-hidden.opacity-0",
-          "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
+          "selector": "a[href$=\"our-story\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Our Story</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".p-4[href$=\"support-at-home\"][data-uw-original-href$=\"support-at-home\"]",
-          "html": "<a class=\"text-gray-500 no-und...\" href=\"/support-at-home\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/support-at-home\">",
+          "selector": "a[href$=\"our-team\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Our Team</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "div:nth-child(4) > .max-h-0.overflow-hidden.opacity-0",
-          "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
+          "selector": "a[href$=\"our-partners\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Our Partners</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "div:nth-child(5) > .max-h-0.overflow-hidden.opacity-0",
-          "html": "<div class=\"jsx-b72c876a3a35f27f transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0\">",
+          "selector": "a[href$=\"community-partners\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Community Partners</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "a[href$=\"reimbursement\"]",
-          "html": "<a class=\"flex items-center ga...\" href=\"/reimbursement\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/reimbursement\" aria-label=\"Reimbursement Submit...\" data-uw-rm-empty-ctr...=\"\">",
+          "selector": "a[href$=\"trilogy-club-care\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Trilogy Club Care</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".border-\\[\\#29507c\\]\\/30",
-          "html": "<a class=\"flex items-center ga...\" href=\"/bills\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/bills\" aria-label=\"Bills Submit and man...\" data-uw-rm-empty-ctr...=\"\">",
+          "selector": "a[href$=\"events\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Events</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "a[href$=\"submit-a-worker\"]",
-          "html": "<a class=\"flex items-center ga...\" href=\"/submit-a-worker\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/submit-a-worker\" aria-label=\"Workforce/Provider P...\" data-uw-rm-empty-ctr...=\"\">",
+          "selector": "a[href$=\"pricing\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Pricing</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "a[href$=\"feedback\"]",
-          "html": "<a class=\"flex items-center ga...\" href=\"/feedback\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/feedback\" aria-label=\"Feedback Share your ...\" data-uw-rm-empty-ctr...=\"\">",
+          "selector": "a[href$=\"self-managed\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Self Managed</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "a[href$=\"incidents\"]",
-          "html": "<a class=\"flex items-center ga...\" href=\"/incidents\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/incidents\" aria-label=\"Incidents Report inc...\" data-uw-rm-empty-ctr...=\"\">",
+          "selector": "a[href$=\"fully-coordinated\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Fully Coordinated</h4>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "a[href$=\"leave\"]",
-          "html": "<a class=\"flex items-center ga...\" href=\"/leave\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/leave\" aria-label=\"Submit Leave Request...\" data-uw-rm-empty-ctr...=\"\">",
+          "selector": ".p-4.rounded-xl[href$=\"support-at-home\"]",
+          "html": "<a class=\"text-gray-500 no-underline p-4 rounded-xl transition-all duration-300 ease-out font-medium border border-transparent hover:text-[#29507c] hover:bg-[#29507c]/10 hover:border-[#29507c]/30 hover:translate-x-2 \" href=\"/support-at-home\">Support at Home</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": "a[href$=\"privacy-complaints\"]",
-          "html": "<a class=\"flex items-center ga...\" href=\"/privacy-complaints\" data-uw-rm-brl=\"PR\" data-uw-original-hre...=\"/privacy-complaints\" aria-label=\"Privacy Complaints S...\" data-uw-rm-empty-ctr...=\"\">",
+          "selector": "a[href$=\"getting-started\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Getting Started</h4>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"knowledge-hub\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Knowledge Hub</h4>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"supplier-resources\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Supplier Resources</h4>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"home-care-packages-faqs\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">FAQ</h4>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"contact\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Contact Us</h4>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"careers\"] > h4",
+          "html": "<h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Careers</h4>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"reimbursement\"] > div:nth-child(2)",
+          "html": "<div class=\"jsx-b72c876a3a35f27f\"><h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Reimbursement</h4><p class=\"jsx-b72c876a3a35f27f text-xs text-gray-400 mt-0.5\">Submit expense reimbursement requests</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".border-\\[\\#29507c\\]\\/30 > div:nth-child(2)",
+          "html": "<div class=\"jsx-b72c876a3a35f27f\"><h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Bills</h4><p class=\"jsx-b72c876a3a35f27f text-xs text-gray-400 mt-0.5\">Submit and manage billing information</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"submit-a-worker\"] > div:nth-child(2)",
+          "html": "<div class=\"jsx-b72c876a3a35f27f\"><h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Workforce/Provider</h4><p class=\"jsx-b72c876a3a35f27f text-xs text-gray-400 mt-0.5\">Provider registration and workforce details</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"feedback\"] > div:nth-child(2)",
+          "html": "<div class=\"jsx-b72c876a3a35f27f\"><h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Feedback</h4><p class=\"jsx-b72c876a3a35f27f text-xs text-gray-400 mt-0.5\">Share your experience and suggestions</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"incidents\"] > div:nth-child(2)",
+          "html": "<div class=\"jsx-b72c876a3a35f27f\"><h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Incidents</h4><p class=\"jsx-b72c876a3a35f27f text-xs text-gray-400 mt-0.5\">Report incidents and safety concerns</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"leave\"] > div:nth-child(2)",
+          "html": "<div class=\"jsx-b72c876a3a35f27f\"><h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Submit Leave</h4><p class=\"jsx-b72c876a3a35f27f text-xs text-gray-400 mt-0.5\">Request time off and leave applications</p></div>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": "a[href$=\"privacy-complaints\"] > div:nth-child(2)",
+          "html": "<div class=\"jsx-b72c876a3a35f27f\"><h4 class=\"jsx-b72c876a3a35f27f font-medium text-sm\">Privacy Complaints</h4><p class=\"jsx-b72c876a3a35f27f text-xs text-gray-400 mt-0.5\">Submit privacy-related complaints</p></div>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
@@ -172,8 +249,8 @@
     }
   ],
   "counts": {
-    "violations": 5,
-    "violationNodes": 20,
+    "violations": 6,
+    "violationNodes": 33,
     "passes": 53,
     "incomplete": 4
   }
