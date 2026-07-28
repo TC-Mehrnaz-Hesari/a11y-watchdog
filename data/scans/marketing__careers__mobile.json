@@ -3,7 +3,7 @@
   "name": "Careers",
   "url": "https://trilogycare.com.au/careers",
   "viewport": "mobile",
-  "timestamp": "2026-07-27T17:42:13.578Z",
+  "timestamp": "2026-07-28T17:24:48.565Z",
   "score": 62,
   "penalty": 61,
   "violations": [
@@ -20,7 +20,7 @@
       "nodes": [
         {
           "selector": ".lg\\:w-270 #movie_player",
-          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode ytp-small-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/15147aab/player_embed.vflset/es_MX/base.js\" aria-label=\"Reproductor de video de YouTube\">",
+          "html": "<div class=\"html5-video-player ytp-hide-controls ytp-exp-bottom-control-flexbox ytp-modern-caption ytp-livebadge-color unstarted-mode ytp-small-mode\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/b81a9a58/player_embed.vflset/en_US/base.js\" aria-label=\"YouTube Video Player\">",
           "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
         }
       ]
