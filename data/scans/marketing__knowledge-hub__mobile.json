@@ -3,10 +3,28 @@
   "name": "Knowledge Hub",
   "url": "https://trilogycare.com.au/knowledge-hub",
   "viewport": "mobile",
-  "timestamp": "2026-07-29T17:09:12.011Z",
-  "score": 62,
-  "penalty": 62,
+  "timestamp": "2026-07-30T17:20:12.166Z",
+  "score": 58,
+  "penalty": 72,
   "violations": [
+    {
+      "id": "button-name",
+      "impact": "critical",
+      "wcagTags": [
+        "wcag2a",
+        "wcag412"
+      ],
+      "description": "Ensure buttons have discernible text",
+      "help": "Buttons must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/button-name?application=playwright",
+      "nodes": [
+        {
+          "selector": ".top-4",
+          "html": "<button class=\"absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-black rounded-full p-2 transition-all duration-200 cursor-pointer\">",
+          "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        }
+      ]
+    },
     {
       "id": "heading-order",
       "impact": "moderate",
@@ -25,23 +43,6 @@
       ]
     },
     {
-      "id": "page-has-heading-one",
-      "impact": "moderate",
-      "wcagTags": [
-        "best-practice"
-      ],
-      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
-      "help": "Page should contain a level-one heading",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=playwright",
-      "nodes": [
-        {
-          "selector": "html",
-          "html": "<html lang=\"en\" class=\"scroll-smooth\" data-uw-w-loader=\"\">",
-          "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
-        }
-      ]
-    },
-    {
       "id": "region",
       "impact": "moderate",
       "wcagTags": [
@@ -53,7 +54,7 @@
       "nodes": [
         {
           "selector": ".mb-12 > a[href=\"/\"]",
-          "html": "<a class=\"flex items-center\" href=\"/\"><img alt=\"Trilogy Care\" width=\"300\" height=\"97\" decoding=\"async\" data-nimg=\"1\" class=\"h-12 w-auto\" style=\"color:transparent\" src=\"/_next/static/media/202509_Tc_Logo_01.823a9381.svg\"></a>",
+          "html": "<a class=\"flex items-center\" href=\"/\"><img alt=\"Trilogy Care\" width=\"300\" height=\"97\" decoding=\"async\" data-nimg=\"1\" class=\"h-12 w-auto\" style=\"color:transparent\" src=\"/_next/static/media/202509_Tc_Logo_01.823a9381.svg\" role=\"img\" data-uw-rm-alt=\"ALT\"></a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
@@ -182,13 +183,18 @@
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".text-center.bg-\\[\\#5dbafa\\].border-gray-200\\/50",
+          "selector": ".gap-4.flex-col.flex > .bg-\\[\\#5dbafa\\].border-gray-200\\/50.hover\\:bg-\\[\\#368CC2\\]",
           "html": "<a target=\"_blank\" rel=\"noopener noreferrer\" class=\"bg-[#5dbafa] text-center w-full px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 ease-out border border-gray-200/50 text-white hover:bg-[#368CC2]\" href=\"https://portal.trilogycare.com.au/login\">Portal</a>",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
-          "selector": ".bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].gap-2 > .hover\\:text-white.text-white[href=\"tel:1300459190\"]",
+          "selector": ".gap-4.flex-col.flex > .bg-\\[\\#29507c\\].hover\\:bg-\\[\\#1f3b63\\].px-6 > .hover\\:text-white.text-white[href=\"tel:1300459190\"]",
           "html": "<a href=\"tel:1300459190\" class=\"text-sm text-gray-700 hover:text-[#1F3B63] transition-colors duration-200 font-roboto-flex text-white hover:text-white\">1300 459 190</a>",
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "selector": ".h-auto.shadow-lg.max-w-xs > .h-auto.shadow-lg.max-w-xs",
+          "html": "<div class=\"flex flex-col max-w-xs mx-auto h-auto rounded-lg overflow-hidden shadow-lg\">",
           "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
         },
         {
@@ -201,8 +207,8 @@
   ],
   "counts": {
     "violations": 3,
-    "violationNodes": 31,
-    "passes": 45,
+    "violationNodes": 32,
+    "passes": 46,
     "incomplete": 0
   }
 }
