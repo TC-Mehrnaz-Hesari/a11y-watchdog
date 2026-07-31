@@ -3,9 +3,9 @@
   "name": "Home",
   "url": "https://trilogycare.com.au/",
   "viewport": "desktop",
-  "timestamp": "2026-07-30T17:18:34.238Z",
-  "score": 54,
-  "penalty": 85,
+  "timestamp": "2026-07-31T17:22:07.553Z",
+  "score": 56,
+  "penalty": 80,
   "violations": [
     {
       "id": "color-contrast",
@@ -66,24 +66,6 @@
           "selector": ".mb-3.sm\\:text-lg.gap-2",
           "html": "<h4 class=\"text-[#29507c] mb-3 font-roboto-serif flex items-center gap-2 text-base sm:text-lg\">",
           "failureSummary": "Fix any of the following:\n  Heading order invalid"
-        }
-      ]
-    },
-    {
-      "id": "nested-interactive",
-      "impact": "serious",
-      "wcagTags": [
-        "wcag2a",
-        "wcag412"
-      ],
-      "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
-      "help": "Interactive controls must not be nested",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/nested-interactive?application=playwright",
-      "nodes": [
-        {
-          "selector": ".intercom-with-namespace-1p1gy5w #notification-214656622333430",
-          "html": "<div role=\"option\" id=\"notification-214656622333430\" class=\"intercom-dupaqg e3399q00\">",
-          "failureSummary": "Fix any of the following:\n  Element has focusable descendants"
         }
       ]
     },
@@ -277,9 +259,9 @@
     }
   ],
   "counts": {
-    "violations": 7,
-    "violationNodes": 36,
-    "passes": 62,
-    "incomplete": 4
+    "violations": 6,
+    "violationNodes": 35,
+    "passes": 57,
+    "incomplete": 3
   }
 }
