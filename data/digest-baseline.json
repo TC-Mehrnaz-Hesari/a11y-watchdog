@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-26T22:55:06.089Z",
+  "generatedAt": "2026-08-02T22:51:00.348Z",
   "overall": 76,
-  "criticalNodes": 71,
+  "criticalNodes": 75,
   "surfaceScores": {
     "aect-audit-tool": 74,
     "tc-app-theme": 86,
-    "marketing": 63,
+    "marketing": 62,
     "pricing": 85,
     "tc-portal": 57,
     "trilogy-ai-plan": 22
@@ -14,17 +14,17 @@
     "color-contrast": {
       "impact": "serious",
       "help": "Elements must meet minimum color contrast ratio thresholds",
-      "nodes": 234
+      "nodes": 230
     },
     "html-has-lang": {
       "impact": "serious",
       "help": "<html> element must have a lang attribute",
-      "nodes": 4
+      "nodes": 6
     },
     "landmark-one-main": {
       "impact": "moderate",
       "help": "Document should have one main landmark",
-      "nodes": 34
+      "nodes": 36
     },
     "link-in-text-block": {
       "impact": "serious",
@@ -44,12 +44,12 @@
     "keyboard-skip-link": {
       "impact": "moderate",
       "help": "Page should start with a skip-to-content link",
-      "nodes": 31
+      "nodes": 30
     },
     "page-has-heading-one": {
       "impact": "moderate",
       "help": "Page should contain a level-one heading",
-      "nodes": 26
+      "nodes": 28
     },
     "aria-dialog-name": {
       "impact": "serious",
@@ -79,7 +79,7 @@
     "heading-order": {
       "impact": "moderate",
       "help": "Heading levels should only increase by one",
-      "nodes": 25
+      "nodes": 29
     },
     "label": {
       "impact": "critical",
@@ -99,12 +99,17 @@
     "keyboard-trap": {
       "impact": "critical",
       "help": "Keyboard focus must not be trapped",
-      "nodes": 29
+      "nodes": 28
     },
     "tabindex": {
       "impact": "serious",
       "help": "Elements should not have tabindex greater than zero",
       "nodes": 6
+    },
+    "aria-allowed-attr": {
+      "impact": "critical",
+      "help": "Elements must only use supported ARIA attributes",
+      "nodes": 5
     },
     "aria-prohibited-attr": {
       "impact": "serious",
@@ -140,6 +145,11 @@
       "impact": "critical",
       "help": "Images must have alternative text",
       "nodes": 4
+    },
+    "document-title": {
+      "impact": "serious",
+      "help": "Documents must have <title> element to aid in navigation",
+      "nodes": 2
     },
     "meta-viewport": {
       "impact": "moderate",
